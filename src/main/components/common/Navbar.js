@@ -2,7 +2,7 @@ import style from "../../static/css/Navbar.module.css"
 
 function Navbar() {
 
-  const isLogin = false; 
+  const isLogin = null; 
 
   const menuList = (isLogin) => {
     if (isLogin == 'null' || isLogin == undefined || isLogin == null) {
