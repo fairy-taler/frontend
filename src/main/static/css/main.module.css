@@ -3,16 +3,14 @@
   opacity: 0;
   display: none;
 }
-
 .mainBox{
   width : 100vw;
-  height : 100vh;
+  height : 90vh;
   position: fixed;
   top: 0%;
   left: 0%;
   z-index: -1;
 }
-
 .banner{
     width : 100vw;
     height : 100vh;
@@ -20,22 +18,27 @@
     display : flex;
     justify-content: space-between;
 }
-
-.banner div,img{
+.banner div{
   margin: auto;
 }
 
+.banner img{
+  margin: auto;
+}
 .sliderLeftButton{
-  width : 50px;
-  height : 50px;
+  width : 4%;
+  height : 6%;
   position: fixed;
   top: 50%;
   left: 5%;
   z-index: 1;
 }
+.sliderLeftButton:hover,.sliderRightButton:hover,.downloadButton:hover{
+  opacity: 0.7;
+}
 .sliderRightButton{
-  width : 50px;
-  height : 50px;
+  width : 4%;
+  height : 6%;
   position: fixed;
   top: 50%;
   right: 5%;
@@ -43,14 +46,13 @@
 }
 
 .logoImg{
-  width : 500px;
-  padding: 30px;
+  width : 20%;
+  padding-bottom: 2%;
 }
 .bannerTextImg{
-  width : 500px;
-  padding: 30px;
+  width : 25%;
+  padding-bottom: 2%;
 }
-
 .downloadButton{
-  width : 100px;
+  width : 7%;
 }

@@ -9,15 +9,16 @@ import style from "../static/css/Main.module.css"
 
 function Main() {
  
- //슬라이더 앞뒤로 이동하기
+  //슬라이더 앞뒤로 이동하기
   const slider = useRef();
 
   //버튼을 클릭하면 앞 뒤 배너로 이동
-  const goToAfterBanner= () => {
+  const goToNextBanner= () => {
     slider.current.slickNext();
   }
-  const goToBeforeBanner= () => {
-    slider.current.slickNext();
+  const goToPreBanner= () => {
+    // slider.current.();
+    slider.current.slickPrev();
   }
 
   //프로그램 다운로드 이벤트
@@ -43,8 +44,8 @@ function Main() {
 
 return (
   <div className={style.mainBox}>
-    <img className={style.sliderLeftButton} src={require("../static/images/preButton.png")} onClick={goToBeforeBanner}/>
-    <img className={style.sliderRightButton} src={require("../static/images/nextButton.png")} onClick={goToAfterBanner}/>
+    <img className={style.sliderLeftButton} src={require("../static/images/preButton.png")} onClick={goToPreBanner}/>
+    <img className={style.sliderRightButton} src={require("../static/images/nextButton.png")} onClick={goToNextBanner}/>
     <div>
       {/* 배너 */}
       <Slider {...settings} ref={slider}>
