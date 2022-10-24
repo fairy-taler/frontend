@@ -1,4 +1,4 @@
-import style from "../../static/css/footer.module.css";
+import "../../static/css/footer.module.css";
 import { NavLink } from "react-router-dom";
 
 function Footer() {
