@@ -1,4 +1,4 @@
-import style from "../../static/css/navbar.module.css"
+import style from "../../static/css/Navbar.module.css"
 
 function Navbar() {
 

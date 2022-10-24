@@ -1,5 +1,5 @@
 import Navbar from "./Navbar"
-import style from "../../static/css/header.module.css"
+import style from "../../static/css/Header.module.css"
 import { useState } from "react"
 
 function Header(){
