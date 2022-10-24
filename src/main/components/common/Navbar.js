@@ -2,16 +2,52 @@ import style from "../../static/css/navbar.module.css"
 
 function Navbar() {
 
+  const isLogin = false; 
+
+  const menuList = (isLogin) => {
+    if (isLogin == 'null' || isLogin == undefined || isLogin == null) {
+      return (
+        <>
+        
+          <button className={style.btn}><img src={require('../../static/images/login-arrow.png')}/></button><br/>
+          <button className={style.btn}><img src={require('../../static/images/id-search-btn.png')}/></button><br/>
+          <button className={style.btn}><img src={require('../../static/images/pwd-search-btn.png')}/></button>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <button className={style.btn}><img src={require('../../static/images/mytale-btn.png')}/></button><br/>
+          <button className={style.btn}><img src={require('../../static/images/community-btn.png')}/></button>
+        </>
+      );
+    }
+  };
+  
+    const menuLogin = (isLogin) =>{
+      if (isLogin == 'null' || isLogin == undefined || isLogin == null) {
+        return (
+          <>
+            <button className={style.btn}><img className={style.joinBtn} src={require('../../static/images/join-btn.png')}/></button>
+          </>
+        );
+      } else {
+        return (
+          <>
+            <button className={style.btn}><img className={style.joinBtn} src={require('../../static/images/mypage-btn.png')}/></button>
+          </>
+        );
+    }
+  }
+
   return (
       <div className={style.navbarDiv}>
         <div className={style.flexDiv}>
             <div className={style.menus}>
-                <button className={style.btn}><img className={style.joinBtn} src={require('../../static/images/join-btn.png')}/></button>
+                {menuLogin(isLogin)}
                 <div className={style.btnsDiv}>
                   <div className={style.btnGroup}>
-                    <button className={style.btn}><img src={require('../../static/images/login-arrow.png')}/></button><br/>
-                    <button className={style.btn}><img src={require('../../static/images/id-search-btn.png')}/></button><br/>
-                    <button className={style.btn}><img src={require('../../static/images/pwd-search-btn.png')}/></button>
+                    {menuList(isLogin)}
                   </div>
                   <div className={style.btnGroup}>
                     <button className={style.btn}><img src={require('../../static/images/commu-btn.png')}/></button><br/>
