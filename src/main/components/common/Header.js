@@ -15,8 +15,8 @@ function Header(){
         <div>
             { navbar ? <Navbar/> : null}
             <div className={style.headerDiv}>
-                <button className={style.btn} onClick={ onClickHandler }>  <img src={!navbar?require(`../../static/images/menu-btn.png`): require(`../../static/images/close-btn.png`)}/> </button>
-                <img src={require('../../static/images/login-btn.png')}/>
+                <button className={style.btn} onClick={ onClickHandler }>  <img className={style.headerImg} src={!navbar?require(`../../static/images/menu-btn.png`): require(`../../static/images/close-btn.png`)}/> </button>
+                <img className={style.headerImg}  src={require('../../static/images/login-btn.png')}/>
             </div>
         </div>
         
