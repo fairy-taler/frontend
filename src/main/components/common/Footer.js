@@ -1,7 +1,9 @@
+import footerStyle from "../../static/css/Footer.module.css";
+
 function Footer() {
   return (
-    <div>
-      <h1>footer</h1>
+    <div className={footerStyle.footerBox}>
+      <img className={footerStyle.footerImg} src={require('../../static/images/footer.png')}/>
     </div>
   );
 }
