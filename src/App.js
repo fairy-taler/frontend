@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
-          <Route path="/notice" element={<Error />}/>
+          <Route path="/notice" element={<Notice />}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>
