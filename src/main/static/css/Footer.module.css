@@ -1,0 +1,14 @@
+.footerBox {
+    background-color: white;
+    width : 100vw;
+    height : 5vh;
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    display: flex;
+}
+.footerImg{
+    width : 20%;
+    height : 25%;
+    margin : auto;
+}

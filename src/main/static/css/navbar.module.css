@@ -33,7 +33,7 @@ button{
 }
 
 .btnGroup{
-
+  z-index: 50;
 }
 
 .btnGroup img{

@@ -1,6 +1,5 @@
 
 .headerDiv {
-    background: #fd5f5f; /* 배너가 생기면 지워질 예정 */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,4 +16,5 @@ img{
     border: none;
     background: none;
     z-index: 100;
+    margin-top: 20px;
 }

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
+import "./style.css"
 import Main from "./main/pages/Main";
 import Error from "./error/page/Error";
 import Layout from "./layouts/Layout";

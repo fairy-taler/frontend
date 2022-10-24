@@ -2,7 +2,6 @@ import style from "../../static/css/navbar.module.css"
 
 function Navbar() {
 
-
   return (
       <div className={style.navbarDiv}>
         <div className={style.flexDiv}>
