@@ -5,6 +5,7 @@ import Main from "./main/pages/Main";
 import Error from "./error/page/Error";
 import Layout from "./layouts/Layout";
 import Notice from "./community/pages/Notice";
+import Join from "./member/pages/Join";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="/notice" element={<Notice />}/>
+          <Route path="/join" element={<Join />}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>

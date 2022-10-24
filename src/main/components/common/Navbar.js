@@ -30,7 +30,7 @@ function Navbar() {
       if (isLogin == 'null' || isLogin == undefined || isLogin == null) {
         return (
           <>
-            <button className={style.btn}><img className={style.joinBtn} src={require('../../static/images/join-btn.png')}/></button>
+            <NavLink to="/join"><button className={style.btn}><img className={style.joinBtn} src={require('../../static/images/join-btn.png')}/></button></NavLink>
           </>
         );
       } else {
