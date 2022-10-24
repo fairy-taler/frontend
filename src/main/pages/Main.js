@@ -1,14 +1,29 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 //슬라이드 배너 라이브러리 (slick) 추가
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import "slick-carousel/slick/slick-theme.css";
+import { useSelector, useDispatch } from 'react-redux';
+import { ON_WHITE, ON_CLICK } from '../../modules/mainModules/headerModule';
 // 스타일 모듈 추가
 import style from "../static/css/Main.module.css"
 
 function Main() {
- 
+
+  const dispatch = useDispatch();
+  const header = useSelector(state => state.headerReducer);
+
+  const onClickHandler = (e) => {
+      dispatch({ type: ON_CLICK, payload : !header.clicked });
+  }
+  useEffect(
+    ()=>{
+      dispatch({ type: ON_WHITE });
+    }
+    ,[]
+  )
+
   //슬라이더 앞뒤로 이동하기
   const slider = useRef();
 

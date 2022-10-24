@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import style from "../../static/css/navbar.module.css"
 
 function Navbar() {
@@ -15,7 +16,7 @@ function Navbar() {
                   </div>
                   <div className={style.btnGroup}>
                     <button className={style.btn}><img src={require('../../static/images/commu-btn.png')}/></button><br/>
-                    <button className={style.btn}><img src={require('../../static/images/info-btn.png')}/></button>
+                    <NavLink to="/notice"><button className={style.btn}><img src={require('../../static/images/info-btn.png')}/></button></NavLink>
                   </div>
                 </div>
             </div>
