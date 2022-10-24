@@ -1,0 +1,20 @@
+
+.headerDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 100px 0px;
+    z-index: 1;
+}
+
+img{
+    height: 30px;
+}
+
+.btn{
+    text-decoration: none;
+    border: none;
+    background: none;
+    z-index: 100;
+    margin-top: 20px;
+}
