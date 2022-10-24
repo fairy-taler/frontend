@@ -4,6 +4,7 @@ import "./style.css"
 import Main from "./main/pages/Main";
 import Error from "./error/page/Error";
 import Layout from "./layouts/Layout";
+import Notice from "./community/pages/Notice";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
+          <Route path="/notice" element={<Notice />}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>
