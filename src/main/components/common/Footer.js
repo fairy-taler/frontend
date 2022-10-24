@@ -1,5 +1,5 @@
-import footerStyle from "../../static/css/Footer.module.css";
 
+import footerStyle from "../../static/css/Footer.module.css";
 function Footer() {
   return (
     <div className={footerStyle.footerBox}>
