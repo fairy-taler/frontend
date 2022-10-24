@@ -1,0 +1,146 @@
+.layout {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  padding-left: 330px;
+  padding-right: 330px;
+
+  position: sticky;
+  width: 1280px;
+  height: 44.02px;
+  top: 0px;
+
+  background-color: #ffffff;
+
+  z-index: 2;
+}
+
+.userButton {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  /* logo type */
+  background-image: url(../images/mainlogo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 317px;
+  height: 45px;
+}
+
+.searchButton {
+  background-image: url(../images/searchbutton.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 25.35px;
+  height: 26.19px;
+
+  cursor: pointer;
+
+  position: relative;
+  left: 485px;
+  top: -36px;
+}
+
+.searchBox {
+  /* Article */
+
+  width: 386px;
+  height: 40px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+  /* 메인컬러 */
+  border: 1px solid #7332c3;
+  border-radius: 20px;
+
+  padding-left: 30px;
+  padding-top: 5px;
+
+  margin-left: 105px;
+  margin-right: 80px;
+
+  color: #7332c3;
+  line-height: 15px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.searchBox::placeholder {
+  color: #7332c3;
+  line-height: 15px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.searchBox:focus {
+  outline: none;
+}
+
+.button {
+  /* 회원가입 */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+  width: 120px;
+  height: 40px;
+  background: none;
+  border: none;
+}
+
+.loginButton {
+  /* 회원가입 */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin-left: 120px;
+
+  /* 메인컬러 */
+  color: #7332c3;
+  width: 120px;
+  height: 40px;
+}
+
+.loginButton {
+  /* 회원가입 */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin-left: 120px;
+
+  /* 메인컬러 */
+  color: #7332c3;
+  width: 120px;
+  height: 40px;
+}

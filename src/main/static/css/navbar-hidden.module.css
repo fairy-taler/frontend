@@ -1,0 +1,1513 @@
+.layout {
+  /* Navbar_Boardgame */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: relative;
+  width: calc(90% - 1280px / 2);
+  height: calc(100% - 1280px / 2);
+  left: calc(55.7% - 1280px / 2);
+  top: 1px;
+
+  z-index: 1;
+
+  background-color: cadetblue;
+}
+
+.frame {
+  /* Frame 27 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 1064px;
+  height: 240px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.frame1 {
+  /* Frame 20 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 1064px;
+  height: 60px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.element1 {
+  /* Frame 4 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 메인컬러 */
+  background: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button1 {
+  /* 전체상품 */
+
+  width: 62px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 흰색 */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element5 {
+  /* Frame 12 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button5 {
+  /* 전체상품 */
+
+  width: 62px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element9 {
+  /* Frame 5 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element13 {
+  /* Frame 6 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element17 {
+  /* Frame 7 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element21 {
+  /* Frame 8 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element25 {
+  /* Frame 9 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 6;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element29 {
+  /* Frame 10 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 7;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element33 {
+  /* Frame 11 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 8;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.frame2 {
+  /* Frame 21 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 1064px;
+  height: 60px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.element2 {
+  /* Frame 4 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 메인컬러 */
+  background: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button2 {
+  /* 장르 */
+
+  width: 31px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 흰색 */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element6 {
+  /* Frame 12 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button6 {
+  /* 전략 */
+
+  width: 31px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  z-index: 1;
+}
+
+.element10 {
+  /* Frame 5 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button10 {
+  /* 추리 */
+
+  width: 31px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element14 {
+  /* Frame 6 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button14 {
+  /* 심리 */
+
+  width: 31px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element18 {
+  /* Frame 7 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button18 {
+  /* 협동 */
+
+  width: 31px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element22 {
+  /* Frame 8 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button22 {
+  /* 협상 */
+
+  width: 31px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element26 {
+  /* Frame 9 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 6;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button26 {
+  /* 순발력 */
+
+  width: 47px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element30 {
+  /* Frame 10 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 7;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button30 {
+  /* 팀전 */
+
+  width: 31px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element34 {
+  /* Frame 11 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 8;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button34 {
+  /* 개인전 */
+
+  width: 47px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.frame3 {
+  /* Frame 22 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 1064px;
+  height: 60px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.element3 {
+  /* Frame 4 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 메인컬러 */
+  background: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button3 {
+  /* 난이도 */
+
+  width: 47px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 흰색 */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element7 {
+  /* Frame 12 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button7 {
+  /* 쉬움 */
+
+  width: 31px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element11 {
+  /* Frame 5 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button11 {
+  /* 중간 */
+
+  width: 31px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element15 {
+  /* Frame 6 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button15 {
+  /* 어려움 */
+
+  width: 47px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element19 {
+  /* Frame 7 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button19 {
+  /* 매우 어려움 */
+
+  width: 82px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element23 {
+  /* Frame 8 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element27 {
+  /* Frame 9 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 6;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element31 {
+  /* Frame 10 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 7;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element35 {
+  /* Frame 11 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 8;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.frame4 {
+  /* Frame 23 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 1064px;
+  height: 60px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.element4 {
+  /* Frame 4 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 메인컬러 */
+  background: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button4 {
+  /* 플레이타임 */
+
+  width: 77px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 흰색 */
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element8 {
+  /* Frame 12 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button8 {
+  /* 30분 이하 */
+
+  width: 73px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element12 {
+  /* Frame 5 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button12 {
+  /* 30분~1시간 */
+
+  width: 85px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element16 {
+  /* Frame 6 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button16 {
+  /* 1~2시간 */
+
+  width: 58px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element20 {
+  /* Frame 7 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button20 {
+  /* 2~3시간 */
+
+  width: 62px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element24 {
+  /* Frame 8 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.button24 {
+  /* 3시간 이상 */
+
+  width: 77px;
+  height: 18px;
+
+  font-family: "Gmarket Sans TTF";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* 메인컬러 */
+  color: #7332c3;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.element28 {
+  /* Frame 9 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 6;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element32 {
+  /* Frame 10 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 7;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.element36 {
+  /* Frame 11 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* 서브컬러 */
+  background: #ebe9f2;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 8;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.filterBox {
+  /* Frame 12 */
+
+  position: absolute;
+  left: 550px;
+  top: 260px;
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: flex-end;
+  padding: 0px;
+
+  width: 118.22px;
+  height: 60px;
+
+  /* Onclick */
+  background: #e0daf1;
+}
+
+.filterCancelButton {
+  background-image: url(../images/filtercancelbutton.png);
+  background-size: cover;
+
+  width: 25px;
+  height: 25px;
+
+  margin-top: 1px;
+  margin-right: 2.5px;
+
+  cursor: pointer;
+  z-index: 2;
+}

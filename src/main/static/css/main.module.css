@@ -1,0 +1,215 @@
+/* 전체 레이아웃 */
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 배너 레이아웃 */
+.bannerBox {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 389px;
+  margin-bottom: 100px;
+}
+
+.banner {
+  background-image: url(../images/banner.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  width: 1280px;
+  height: 389px;
+}
+
+.leftArrow {
+  position: absolute;
+  left: 58px;
+
+  width: 48px;
+  height: 48px;
+
+  cursor: pointer;
+}
+
+.rightArrow {
+  position: absolute;
+  float: right;
+  right: 58px;
+
+  width: 48px;
+  height: 48px;
+
+  cursor: pointer;
+}
+
+/* 상품 레이아웃 */
+.bestBox {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 500px;
+}
+
+.pickBox {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 500px;
+  margin-top: 50px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 24px;
+
+  color: #7332c3;
+}
+
+.titleBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100px;
+}
+
+.productBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  width: 100%;
+  height: 400px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 205px;
+  height: 336px;
+}
+
+.product:hover {
+  width: 205px;
+  height: 342px;
+
+  border: 3px solid #7332c3;
+  box-sizing: border-box;
+}
+
+.imageBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 197px;
+  height: 197px;
+
+  background-color: #ebe9f2;
+}
+
+.image {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 150px;
+  height: 150px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 16px;
+  width: 197px;
+  height: 123px;
+}
+
+.boardgameName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 197px;
+  height: 41px;
+
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.boardgamePrice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 197px;
+  height: 41px;
+
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+
+  width: 197px;
+  height: 41px;
+}
+
+.category > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 63.67px;
+  height: 41px;
+
+  border-radius: 5px;
+  background-color: #ebe9f2;
+  color: #7332c3;
+  font-size: 12px;
+}
+
+.backImage {
+  background: url(../images/backimage.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1920px 912px;
+
+  position: static;
+  top: 1250px;
+
+  width: 100%;
+  height: 300px;
+
+  opacity: 0.45;
+}
