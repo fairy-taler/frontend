@@ -1,5 +1,6 @@
 import style from "../static/css/Join.module.css";
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from "react-router-dom"
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
@@ -21,7 +22,7 @@ function Join(){
     console.log(member)
     return (
         <div className={style.joinDiv}>
-            <img className={style.joinLogo} src={require('../static/images/logo.png')}></img><br/>
+            <Link to="/"> <img className={style.joinLogo} src={require('../static/images/logo.png')}></img></Link><br/>
             <img className={style.joinP} src={require('../static/images/join-p.png')}></img>
             {member[0].memberRole == '' ? <SelectRole/>:<InputInfo/>}
         </div>

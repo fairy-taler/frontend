@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
 .joinDiv{
     text-align: center;
+    margin-top: 50px;
 }
 
 .joinP{
-    height: 40px;
+    height: 35px;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .joinLogo{
@@ -13,4 +17,51 @@
 
 .selectBtn img{
     height: 100px;
+    margin-bottom: 30px;
+}
+
+.joinSection{
+    margin-bottom: 50px;
+}
+
+.joinText {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+.inputBox{ 
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.joinForm{
+    text-align: -webkit-center;
+}
+
+.inputBox input[type="text"], input[type="password"]  {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    width: 300px;
+    height: 30px;
+    margin : 5px;
+    border : 1px solid #888888;
+    border-radius: 30px;
+    padding: 10px 20px 10px 10px;
+}
+
+.authBtn img{
+    height: 52px;
+}
+.emailBox{
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.submitBtn img{
+    width: 332px;
+    margin: 50px 0px 300px 0px; 
 }
