@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 
 
-function Notice(){
+function FAQ(){
     //공지사항 정보 불러오기
     const results = [{"tag":"공지", "title" : "10월 정기점검 안내", "date" :"2022-10-23"},
                      {"tag":"공지", "title" : "9월 정기점검 안내", "date" :"2022-9-23"},
@@ -41,4 +41,4 @@ function Notice(){
     )
 }
 
-export default Notice;
+export default FAQ;

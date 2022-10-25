@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../../modules/mainModules/headerModule';
+import { NavLink } from "react-router-dom";
          
 function Header(){
   
@@ -21,7 +22,8 @@ function Header(){
             { header.clicked ? <Navbar/> : null}
             <div className={style.headerDiv}>
                 <button className={style.btn} onClick={ onClickHandler }>  <img className={style.headerImg} src={!header.clicked? header.color=="black"? require(`../../static/images/menu-btn-black.png`):require(`../../static/images/menu-btn.png`):require(`../../static/images/close-btn.png`)}/> </button>
-                {header.color=="black"? <img className={style.logoImg}  src={require(`../../static/images/logo-mini.png`)}/> : null}
+                {/* 가운데 미니 로고 */}
+                {header.color=="black"? <NavLink to="/"><img className={style.logoImg}  src={require(`../../static/images/logo-mini.png`)}/></NavLink> : null}
                 <img className={style.headerImg}  src={header.color=="black"? require(`../../static/images/login-btn-black.png`):require(`../../static/images/login-btn.png`)}/>
             </div>
         </div>
