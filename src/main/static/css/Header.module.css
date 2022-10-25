@@ -10,7 +10,9 @@
 .headerImg{
     height: 30px;
 }
-
+.logoImg{
+    height : 80px;
+}
 .btn{
     text-decoration: none;
     border: none;
