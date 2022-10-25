@@ -7,6 +7,8 @@ import Layout from "./layouts/Layout";
 import Notice from "./community/pages/Notice";
 import Join from "./member/pages/Join";
 import Login from "./member/pages/Login";
+import ServiceCenter from "./community/pages/ServiceCenter";
+import Search from "./member/pages/Search";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/notice" element={<Notice />}/>
           <Route path="/join" element={<Join />}/>
           <Route path="/login" element={<Login />}/>
+          <Route path="/serviceCenter" element={<ServiceCenter />}/>
+          <Route path="/idsearch" element={<Search />}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>
