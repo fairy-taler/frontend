@@ -11,8 +11,13 @@
 .headerImg{
     height: 30px;
 }
+
 .headerImgMenu{
     height: 25px;
+}
+
+.logoImg{
+    height : 80px;
 }
 
 .btn{
