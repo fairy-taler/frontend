@@ -66,7 +66,7 @@ function Navbar() {
                   </div>
                   <div className={style.btnGroup}>
                     <NavLink to="/serviceCenter"><button className={style.btn}><img src={require('../../static/images/commu-btn.png')}/></button></NavLink><br/>
-                    <NavLink to="/notice"><button className={style.btn}><img src={require('../../static/images/info-btn.png')}/></button></NavLink>
+                    <NavLink to="/notices"><button className={style.btn}><img src={require('../../static/images/info-btn.png')}/></button></NavLink>
                   </div>
                 </div>
             </div>
