@@ -65,7 +65,7 @@ function Navbar() {
                     {menuList(isLogin)}
                   </div>
                   <div className={style.btnGroup}>
-                    <button className={style.btn}><img src={require('../../static/images/commu-btn.png')}/></button><br/>
+                    <NavLink to="/serviceCenter"><button className={style.btn}><img src={require('../../static/images/commu-btn.png')}/></button></NavLink><br/>
                     <NavLink to="/notice"><button className={style.btn}><img src={require('../../static/images/info-btn.png')}/></button></NavLink>
                   </div>
                 </div>
