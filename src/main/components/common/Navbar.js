@@ -2,8 +2,21 @@
 import { NavLink } from "react-router-dom";
 import style from "../../static/css/Navbar.module.css"
 import { Link } from "react-router-dom";
-
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    ON_CLICK
+} from '../../../modules/mainModules/headerModule';
+        
 function Navbar() {
+  
+  const dispatch = useDispatch();
+  const header = useSelector(state => state.headerReducer);
+
+  console.log(header)
+  const onClickHandler = (e) => {
+      dispatch({ type: ON_CLICK, payload : !header.clicked});
+  }
+
 
   const isLogin = null; 
 
@@ -52,12 +65,12 @@ function Navbar() {
                     {menuList(isLogin)}
                   </div>
                   <div className={style.btnGroup}>
-                    <button className={style.btn}><img src={require('../../static/images/commu-btn.png')}/></button><br/>
+                    <NavLink to="/serviceCenter"><button className={style.btn}><img src={require('../../static/images/commu-btn.png')}/></button></NavLink><br/>
                     <NavLink to="/notice"><button className={style.btn}><img src={require('../../static/images/info-btn.png')}/></button></NavLink>
                   </div>
                 </div>
             </div>
-            <div className={style.blockedDiv}>
+            <div className={style.blockedDiv} onClick={onClickHandler}>
             </div>
         </div>
       </div>

@@ -9,13 +9,18 @@
     padding-left : 100px;
     margin : 1vw;
 }
+.subTitleImg{
+    width : 7.5vw;
+    padding-left : 100px;
+    margin : 1vw;
+}
 
 .lineImg{
     width : 100%;
 }
 
 .tableBox{
-    height : 70vh;
+    height : 25vh;
 }
 
 .communityTable{
@@ -23,6 +28,7 @@
     font-weight : bold;
     padding-top : 15px;
     padding-left : 100px;
+    font-size : 14px;
 }
 
 .communityTable tr:hover{
