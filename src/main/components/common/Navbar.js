@@ -1,6 +1,7 @@
 
 import { NavLink } from "react-router-dom";
 import style from "../../static/css/Navbar.module.css"
+import { Link } from "react-router-dom";
 
 function Navbar() {
 
@@ -10,8 +11,7 @@ function Navbar() {
     if (isLogin == 'null' || isLogin == undefined || isLogin == null) {
       return (
         <>
-        
-          <button className={style.btn}><img src={require('../../static/images/login-arrow.png')}/></button><br/>
+          <Link to = "/login"><button className={style.btn}><img src={require('../../static/images/login-arrow.png')}/></button><br/></Link>
           <button className={style.btn}><img src={require('../../static/images/id-search-btn.png')}/></button><br/>
           <button className={style.btn}><img src={require('../../static/images/pwd-search-btn.png')}/></button>
         </>

@@ -6,6 +6,7 @@ import Error from "./error/page/Error";
 import Layout from "./layouts/Layout";
 import Notice from "./community/pages/Notice";
 import Join from "./member/pages/Join";
+import Login from "./member/pages/Login";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Main />} />
           <Route path="/notice" element={<Notice />}/>
           <Route path="/join" element={<Join />}/>
+          <Route path="/login" element={<Login />}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>
