@@ -4,6 +4,19 @@
     justify-content: center;
     margin-bottom: 10vh;
 }
+.searchBox{
+    border : 1px solid black;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBox img {
+    height : 80%;
+}
+.searchBox input{
+    border : none;
+    font-weight: bold;
+}
 .titleImg{
     width : 8vw;
     padding-left : 100px;
