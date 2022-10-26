@@ -5,7 +5,7 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
 
-function NoticeList(){
+function FAQInfo(){
     //공지사항 정보 불러오기
     const result = {"tag" :"공지",
                     "title" :"10월 정기 점검 안내", 
@@ -77,4 +77,4 @@ function NoticeList(){
     )
 }
 
-export default NoticeList;
+export default FAQInfo;
