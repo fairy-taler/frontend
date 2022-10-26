@@ -26,28 +26,39 @@ function ServiceCenter(){
 
     return (
         <div className={style.noticeBox}>
+            {/* 고객센터 타이틀 */}
             <div>
             <img className={style.titleImg} src={require("../static/images/service-center-title.png")}/>
             </div>
             {/* 자주 찾는 도움말 */}
+            {/* 자주 찾는 도움말 제목 */}
             <img className={style.line} src={require("../static/images/line.png")} />
             <img className={style.subTitleImg} src={require("../static/images/faq-title.png")}/>
             <img className={style.line} src={require("../static/images/line.png")} />
+            {/* 자주 찾는 도움말 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
                     {results.map((result, index)=>(<tr><td style={{width : "100px"}}>[{result.tag}]</td><td>{result.title}</td><td>{result.date}</td></tr>))}
                 </table>
             </div>
+            {/* 페이지 버튼 */}
             <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
             {/* 나의 문의 목록 */}
+            {/* 1대1 문의하기 버튼 */}
+            <div>
+                <img className={style.line} src={require("../static/images/line.png")} />
+            </div>
+            {/* 나의 문의 목록 제목 */}
             <img className={style.line} src={require("../static/images/line.png")} />
             <img className={style.subTitleImg} src={require("../static/images/my-inquiry-title.png")}/>
             <img className={style.line} src={require("../static/images/line.png")} />
+            {/* 문의 목록 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
                     {results.map((result, index)=>(<tr><td style={{width : "100px"}}>[{result.tag}]</td><td>{result.title}</td><td>{result.date}</td></tr>))}
                 </table>
             </div>
+            {/* 페이지 버튼 */}
             <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
         </div>
     )
