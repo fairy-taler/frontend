@@ -36,7 +36,7 @@ function SearchResultId(){
         <div className={style.searchDiv}>
             <div className={style.selectOption}>
                 <button ><img src={require("../static/images/active-id-btn.png")}/> </button>
-                <button ><img src={require("../static/images/pwd-btn.png")}/> </button>
+                <Link to="/pwdsearch"> <button ><img src={require("../static/images/pwd-btn.png")}/> </button></Link>
             </div>
             <img className={style.openMailImg} src={require("../static/images/open-mail.png")}/>
             <div className={style.phrase}>  회원님의 아이디는 <span className={style.colorOrg}> abcde </span> 입니다.</div>
