@@ -16,6 +16,7 @@ import SearchPwd from "./member/pages/SearchPwd";
 import SearchResultId from "./member/pages/SearchResultId";
 import SearchResultPwd from "./member/pages/SearchResultPwd";
 import Mypage from "./member/pages/Mypage";
+import InsertInquiry from "./community/pages/InsertInquiry";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/notices/:1" element={<NoticeInfo/>} />
           <Route path="/faq/:1" element={<FAQInfo />} />
           <Route path="/myInquiry/:1" element={<InquiryInfo />} />
+          <Route path="/insertInquiry" element={<InsertInquiry />} />
           <Route path="/join" element={<Join />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/serviceCenter" element={<ServiceCenter />}/>

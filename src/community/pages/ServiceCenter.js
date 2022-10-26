@@ -35,6 +35,11 @@ function ServiceCenter(){
     const toInquiryInfo = (e) =>{
         navigate(`/myInquiry/${e.target.id}`);
     }
+    // 1대1문의하기 클릭 이벤트
+    const toInsertInquiry = (e) =>{
+        navigate(`/insertInquiry`);
+    }
+
 
     return (
         <div className={style.noticeBox}>
@@ -67,7 +72,7 @@ function ServiceCenter(){
             <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
             {/* 나의 문의 목록 */}
             {/* 1대1 문의하기 버튼 */}
-            <div className={style.insertButtonBox}>
+            <div className={style.insertButtonBox} onClick={toInsertInquiry}>
                 <img className={style.insertButton} src={require("../static/images/inquiry-btn.png")} />
             </div>
             {/* 나의 문의 목록 제목 */}
