@@ -23,7 +23,7 @@ button{
 }
 
 .joinBtn{
-  height: 40px;
+  height: 5vh;
   margin-bottom: 40px;
 }
 
@@ -37,7 +37,7 @@ button{
 }
 
 .btnGroup img{
-  height: 20px;
+  height: 3vh;
   margin-bottom: 8px;
 }
 
