@@ -5,8 +5,6 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
 
-
-
 function NoticeList(){
     //공지사항 정보 불러오기
     const results = [{"tag":"공지", "title" : "10월 정기점검 안내", "date" :"2022-10-23"},
@@ -14,8 +12,7 @@ function NoticeList(){
                      {"tag":"공지", "title" : "8월 정기점검 안내", "date" :"2022-8-23"}];
 
     const pages = Array(10).fill()
-    
-
+   
     // 헤더 설정 변경
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerReducer);

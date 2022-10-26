@@ -5,14 +5,21 @@
     align-items: center;
     margin: 0px 100px 0px;
     z-index: 1;
+    align-items: baseline;
 }
 
 .headerImg{
     height: 30px;
 }
+
+.headerImgMenu{
+    height: 25px;
+}
+
 .logoImg{
     height : 80px;
 }
+
 .btn{
     text-decoration: none;
     border: none;

@@ -6,8 +6,9 @@ import Error from "./error/page/Error";
 import Layout from "./layouts/Layout";
 import NoticeList from "./community/pages/NoticeList";
 import NoticeInfo from "./community/pages/NoticeInfo";
+import Join from "./member/pages/Join";
+import Login from "./member/pages/Login";
 import ServiceCenter from "./community/pages/ServiceCenter";
-
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,8 @@ function App() {
           <Route index element={<Main />} />
           <Route path="/notices" element={<NoticeList />}/>
           <Route path="/notices/:1" element={<NoticeInfo />} />
+          <Route path="/join" element={<Join />}/>
+          <Route path="/login" element={<Login />}/>
           <Route path="/serviceCenter" element={<ServiceCenter />}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
