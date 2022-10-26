@@ -26,12 +26,10 @@ function ServiceCenter(){
 
     return (
         <div className={style.noticeBox}>
-            {/* 고객센터 타이틀 */}
-            <div>
-            <img className={style.titleImg} src={require("../static/images/service-center-title.png")}/>
-            </div>
-            {/* 검색창 */}
             <div className={style.insertButtonBox}>
+                {/* 고객센터 타이틀 */}
+                <img className={style.titleImg} src={require("../static/images/service-center-title.png")}/>
+                {/* 검색창 */}
                 <div className={style.searchBox}>
                     <input placeholder="검색어를 입력하세요."/>
                     <img src={require("../static/images/search-btn.png")}/>
