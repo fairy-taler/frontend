@@ -46,3 +46,12 @@
     width: 332px;
     margin: 50px 0px 300px 0px; 
 }
+
+.authBtn img{
+    height: 52px;
+}
+.emailBox{
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+}
