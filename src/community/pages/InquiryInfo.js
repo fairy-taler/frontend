@@ -5,23 +5,19 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
 
-function NoticeInfo(){
+function InquiryInfo(){
     //공지사항 정보 불러오기
-    const result = {"tag" :"공지",
-                    "title" :"10월 정기 점검 안내", 
+    const result = {"tag" :"문의",
+                    "title" :"구매한 동화책이 보이지 않아요.", 
                     "content" :"안녕하세요. " 
-                                + " \n 10월 정기점검 안내합니다. 오후 11시부터 오전 1시까지 서비스 점검을 진행합니다."
-                                + "\n 너그러운 양해 부탁드립니다."
-                                + "\n 갑사합니다.",
+                                + " \n 구매한 동화책이 보이지 않아요. 어디서 확인할 수 있나요?",
                     "date" :"2022-10-23"
                     }
-    const nextResult = {"tag" :"공지",
-                        "title" :"10월 정기 점검 안내", 
+    const nextResult = {"tag" :"문의",
+                        "title" :"게임 오류 목록 확인", 
                                 "content" :"안녕하세요. " 
-                                            + " \n 10월 정기점검 안내합니다. 오후 11시부터 오전 1시까지 서비스 점검을 진행합니다."
-                                            + "\n 너그러운 양해 부탁드립니다."
-                                            + "\n 갑사합니다.",
-                                "date" :"2022-10-23"
+                                            + " \n ID 보호 모드를 해제하고 싶어요.",
+                                "date" :"2022-10-13"
                         }
                      
    
@@ -36,10 +32,10 @@ function NoticeInfo(){
 
     return (
         <div className={style.noticeBox}>
-            {/* 공지사항 제목 이미지 */}
+            {/* 1대1문의 제목 이미지 */}
             <div className={style.betweenBox}>
-                {/* 공지사항 타이틀 */}
-                <img className={style.titleImg} src={require("../static/images/notice-title.png")}/>
+                {/* 자주 찾는 도움말 타이틀 */}
+                <img className={style.titleImg} src={require("../static/images/my-inquiry-title.png")}/>
                 {/* 검색창 */}
                 <div className={style.searchBox}>
                     <input placeholder="검색어를 입력하세요."/>
@@ -52,19 +48,19 @@ function NoticeInfo(){
             <div className={style.subTitleBox}>
                 <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
             </div>
-            {/* 공지사항 제목 */}
+            {/* FAQ 제목 */}
             <div className={style.contentTitleBox}> 
                 {result.title}
             </div>
-            {/* 공지사항 날짜 */}
+            {/* FAQ 날짜 */}
             <div className={style.contentDateBox}>
                 {result.date}
             </div>
-            {/* 공지사항 내용 */}
+            {/* FAQ 내용 */}
             <div className={style.contentContentBox}>
                 {result.content}
             </div>
-            {/* 다음 공지사항 */}
+            {/* 다음 FAQ */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             <div className={style.nextContentsBox}>
                 <span style={{width : "5%"}}><img src={require("../static/images/under-arrow-btn.png")}/></span>
@@ -77,4 +73,4 @@ function NoticeInfo(){
     )
 }
 
-export default NoticeInfo;
+export default InquiryInfo;

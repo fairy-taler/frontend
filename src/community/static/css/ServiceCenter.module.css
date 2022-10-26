@@ -5,65 +5,83 @@
     margin-bottom: 10vh;
 }
 .searchBox{
-    border : 1px solid black;
+    width : 250px;
+    height : 30px;
+    border : 1px solid #BBBBBB;
     display : flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding : 5px;
 }
 .searchBox img {
     height : 80%;
 }
 .searchBox input{
+    height : 100%;
     border : none;
     font-weight: bold;
 }
 .titleImg{
-    width : 8vw;
-    padding-left : 100px;
+    height : 32px;
     margin : 1vw;
 }
 .subTitleImg{
-    width : 5vw;
+    width : 100px;
+    height : 16px;
     padding-left : 100px;
     margin : 1vw;
 }
 .lineImg{
-    width : 100%;
+    padding : 0px 100px 0px 100px;
+    height : 4px;
 }
 .tableBox{
-    height : 25vh;
+    height : 240px;
+    padding : 16px 0px 0px 0px
 }
 .communityTable{
     width : 100%;
     font-weight : bold;
     padding-top : 15px;
-    padding-left : 100px;
+    padding: 0px 100px 0px 100px;
     font-size : 14px;
 }
 .communityTable tr:hover{
     background-color: #EEEEEE;
 }
 .communityTable td {
+    align-items: center;
+    padding : auto;
     padding : 0px 0px 20px 20px;
 }
 .pageListBox{
     display: flex;
     justify-content: center;
-    padding : 1vh;
+    padding : 10px 100px 0px 100px;
 }
 .pageButton {
-    font-size: 1.5vh;
-    padding : 0.5vh;
+    font-size: 16px;
+    padding : 0px 4px 0px 4px;
     color : #BBBBBB;
 }
 .pageButton:hover{
     color : black;
 }
+.betweenBox{
+    display: flex;
+    justify-content: space-between;
+    padding : 100px 100px 10px 100px;
+}
+.leftBox{
+    display: flex;
+    justify-content: space-between;
+    padding : 100px 100px 10px 100px;
+}
 .insertButtonBox{
     display: flex;
     justify-content: right;
-    padding : 3vh 2vw 3vh 5vw;
+    padding : 10px 100px 10px 100px;
 }
 .insertButton{
-    width : 5vw;
+    width : 100px;
 }
