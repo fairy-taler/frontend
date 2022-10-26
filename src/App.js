@@ -6,6 +6,8 @@ import Error from "./error/page/Error";
 import Layout from "./layouts/Layout";
 import NoticeList from "./community/pages/NoticeList";
 import NoticeInfo from "./community/pages/NoticeInfo";
+import InquiryInfo from "./community/pages/InquiryInfo";
+import FAQInfo from "./community/pages/FAQInfo";
 import Join from "./member/pages/Join";
 import Login from "./member/pages/Login";
 import ServiceCenter from "./community/pages/ServiceCenter";
@@ -14,6 +16,7 @@ import SearchPwd from "./member/pages/SearchPwd";
 import SearchResultId from "./member/pages/SearchResultId";
 import SearchResultPwd from "./member/pages/SearchResultPwd";
 import Mypage from "./member/pages/Mypage";
+import InsertInquiry from "./community/pages/InsertInquiry";
 
 function App() {
   return (
@@ -22,7 +25,11 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="/notices" element={<NoticeList />}/>
-          <Route path="/notices/:1" element={<NoticeInfo />} />
+          <Route path="/notices" element={<NoticeList />}/>
+          <Route path="/notices/:1" element={<NoticeInfo/>} />
+          <Route path="/faq/:1" element={<FAQInfo />} />
+          <Route path="/myInquiry/:1" element={<InquiryInfo />} />
+          <Route path="/insertInquiry" element={<InsertInquiry />} />
           <Route path="/join" element={<Join />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/serviceCenter" element={<ServiceCenter />}/>
