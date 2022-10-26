@@ -11,6 +11,9 @@ import Login from "./member/pages/Login";
 import ServiceCenter from "./community/pages/ServiceCenter";
 import SearchId from "./member/pages/SearchId";
 import SearchPwd from "./member/pages/SearchPwd";
+import SearchResultId from "./member/pages/SearchResultId";
+import SearchResultPwd from "./member/pages/SearchResultPwd";
+import Mypage from "./member/pages/Mypage";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route path="/serviceCenter" element={<ServiceCenter />}/>
           <Route path="/idsearch" element={<SearchId />}/>
           <Route path="/pwdsearch" element={<SearchPwd />}/>
+          <Route path="/idresult" element={<SearchResultId />}/>
+          <Route path="/pwdresult" element={<SearchResultPwd />}/>
+          <Route path="/mypage" element={<Mypage />}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>

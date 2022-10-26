@@ -35,6 +35,13 @@ function ServiceCenter(){
                     <img src={require("../static/images/search-btn.png")}/>
                 </div>
             </div>
+            {/* 검색창 */}
+            <div className={style.insertButtonBox}>
+                <div className={style.searchBox}>
+                    <input placeholder="검색어를 입력하세요."/>
+                    <img src={require("../static/images/search-btn.png")}/>
+                </div>
+            </div>
             {/* 자주 찾는 도움말 */}
             {/* 자주 찾는 도움말 제목 */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
