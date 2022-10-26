@@ -36,7 +36,7 @@ function SearchId(){
         <div className={style.searchDiv}>
             <div className={style.selectOption}>
                 <button ><img src={require("../static/images/active-id-btn.png")}/> </button>
-                <button ><img src={require("../static/images/pwd-btn.png")}/> </button>
+                <Link to="/pwdsearch"> <button ><img src={require("../static/images/pwd-btn.png")}/> </button></Link>
             </div>
             <div className={style.phrase}> 아이디 찾기를 위한 본인확인을 진행해 주세요 </div>
             <img className={style.commonImg} src={require("../static/images/mail.png")}/>
@@ -47,7 +47,7 @@ function SearchId(){
                 <input type="text" name="email" id="email" value={member[1].email} onChange={ onChangeHandler } placeholder="이메일" required />
                 <br />
             </div>
-            <button className={style.submitBtn}><img src={require("../static/images/id-search-btn.png")} /> </button>
+            <Link to="/idresult"><button className={style.submitBtn}><img src={require("../static/images/id-search-btn.png")} /> </button></Link>
         </div>
     )
 }
