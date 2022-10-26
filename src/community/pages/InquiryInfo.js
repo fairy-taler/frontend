@@ -5,16 +5,16 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
 
-function FAQInfo(){
+function InquiryInfo(){
     //공지사항 정보 불러오기
     const result = {"tag" :"문의",
-                    "title" :"게임에 대해 궁금한 점이 있습니다.", 
+                    "title" :"구매한 동화책이 보이지 않아요.", 
                     "content" :"안녕하세요. " 
-                                + " \n 동화를 직접 만드려면 어디로 가야하나요?",
+                                + " \n 구매한 동화책이 보이지 않아요. 어디서 확인할 수 있나요?",
                     "date" :"2022-10-23"
                     }
     const nextResult = {"tag" :"문의",
-                        "title" :"ID 보호모드를 해제하고 싶어요.", 
+                        "title" :"게임 오류 목록 확인", 
                                 "content" :"안녕하세요. " 
                                             + " \n ID 보호 모드를 해제하고 싶어요.",
                                 "date" :"2022-10-13"
@@ -32,10 +32,10 @@ function FAQInfo(){
 
     return (
         <div className={style.noticeBox}>
-            {/* 자주 찾는 도움말 제목 이미지 */}
+            {/* 1대1문의 제목 이미지 */}
             <div className={style.betweenBox}>
                 {/* 자주 찾는 도움말 타이틀 */}
-                <img className={style.titleImg} src={require("../static/images/faq-title.png")}/>
+                <img className={style.titleImg} src={require("../static/images/my-inquiry-title.png")}/>
                 {/* 검색창 */}
                 <div className={style.searchBox}>
                     <input placeholder="검색어를 입력하세요."/>
@@ -73,4 +73,4 @@ function FAQInfo(){
     )
 }
 
-export default FAQInfo;
+export default InquiryInfo;
