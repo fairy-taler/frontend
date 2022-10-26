@@ -4,6 +4,7 @@ import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -24,6 +25,17 @@ function ServiceCenter(){
         dispatch({ type: ON_BLACK});
     },[])
 
+    //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
+    const navigate = useNavigate();
+    // FAQ 리스트 클릭 이벤트
+    const toFAQInfo = (e) =>{
+        navigate(`/faq/${e.target.id}`);
+    }
+    // 나의 문의 목록 리스트 클릭 이벤트
+    const toInquiryInfo = (e) =>{
+        navigate(`/myInquiry/${e.target.id}`);
+    }
+
     return (
         <div className={style.noticeBox}>
             <div className={style.betweenBox}>
@@ -43,7 +55,12 @@ function ServiceCenter(){
             {/* 자주 찾는 도움말 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
-                    {results.map((result, index)=>(<tr><td style={{width : "100px"}}>[{result.tag}]</td><td>{result.title}</td><td>{result.date}</td></tr>))}
+                    {results.map((result, index)=>(
+                        <tr onClick={toFAQInfo} key={index} id={index}>
+                            <td  id={index} style={{width : "100px"}}>[{result.tag}]</td>
+                            <td  id={index}>{result.title}</td>
+                            <td  id={index}>{result.date}</td>
+                        </tr>))}
                 </table>
             </div>
             {/* 페이지 버튼 */}
@@ -60,7 +77,12 @@ function ServiceCenter(){
             {/* 문의 목록 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
-                    {results.map((result, index)=>(<tr><td style={{width : "100px"}}>[{result.tag}]</td><td>{result.title}</td><td>{result.date}</td></tr>))}
+                    {results.map((result, index)=>(
+                        <tr onClick={toInquiryInfo} key={index} id={index}>
+                            <td  key={index} id={index} style={{width : "100px"}}>[{result.tag}]</td>
+                            <td  key={index} id={index} >{result.title}</td>
+                            <td  key={index} id={index} >{result.date}</td>
+                        </tr>))}
                 </table>
             </div>
             {/* 페이지 버튼 */}
