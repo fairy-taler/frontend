@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+
+.selectBtn img{
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+
+.mypageText {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+.inputBox{ 
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.changeForm{
+    text-align: -webkit-center;
+}
+
+.inputBox input[type="text"], input[type="password"]  {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    width: 300px;
+    height: 30px;
+    margin : 5px;
+    border : 1px solid #888888;
+    border-radius: 30px;
+    padding: 10px 20px 10px 10px;
+}
+
+.authBtn img{
+    height: 52px;
+}
+.emailBox, .passwordBox{
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.submitBtn img{
+    width: 332px;
+    margin: 50px 0px 20px 0px; 
+}
+
+.title{
+    margin: 100px 0px 0px 100px;
+    display: flex;
+}
+
+.title img{
+    height: 32px;
+}
+
+.lineImg{
+    width: 100%;
+}
+
+.lineDiv{
+    padding: 10px 100px 100px 100px;
+}
+
+.ChangeSection{
+    margin-bottom: 50px;
+}
+.unregist{
+    margin-bottom: 100px;
+}
+
+.unregist button{
+    text-decoration: underline;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    width: 300px;
+    text-align: center;
+}

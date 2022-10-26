@@ -35,16 +35,13 @@ function SearchPwd(){
     return (
         <div className={style.searchDiv}>
             <div className={style.selectOption}>
-                <button ><img src={require("../static/images/id-btn.png")}/> </button>
+                <Link to="/idsearch"><button ><img src={require("../static/images/id-btn.png")}/> </button></Link>
                 <button ><img src={require("../static/images/active-pwd-btn.png")}/> </button>
             </div>
             <div className={style.phrase}> 비밀번호 찾기를 위한 본인확인을 진행해 주세요 </div>
             <img className={style.commonImg} src={require("../static/images/mail.png")}/>
             <div className={style.inputBox}>
-                <input type="text" name="memberName" id="memberName" value={member[1].memberName} onChange={ onChangeHandler } placeholder="이름" required />
-            </div>
-            <div className={style.inputBox}>
-                <input type="text" name="email" id="email" value={member[1].email} onChange={ onChangeHandler } placeholder="이메일" required />
+                <input type="text" name="memberId" id="memberId" value={member[1].memberId} onChange={ onChangeHandler } placeholder="아이디" required />
             </div>
             <div className={style.inputBox}>
                 <div className={style.emailBox}>
@@ -56,7 +53,7 @@ function SearchPwd(){
                 <input type="text" name="mainAuth" id="mainAuth" value={member.mainAuth} onChange={ onChangeHandler } placeholder="인증번호" required/>
                 <br />
             </div>
-            <button className={style.submitBtn}><img src={require("../static/images/id-search-btn.png")} /> </button>
+            <Link to="/pwdresult"> <button className={style.submitBtn}><img src={require("../static/images/pwd-search-btn.png")} /> </button></Link>
         </div>
     )
 }
