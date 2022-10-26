@@ -53,3 +53,12 @@
 .pageButton:hover{
     color : black;
 }
+.insertButtonBox{
+    display: flex;
+    justify-content: right;
+    padding : 3vh 2vw 3vh 5vw;
+}
+
+.insertButton{
+    width : 5vw;
+}

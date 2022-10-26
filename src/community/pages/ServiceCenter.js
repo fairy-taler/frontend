@@ -45,8 +45,8 @@ function ServiceCenter(){
             <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
             {/* 나의 문의 목록 */}
             {/* 1대1 문의하기 버튼 */}
-            <div>
-                <img className={style.line} src={require("../static/images/line.png")} />
+            <div className={style.insertButtonBox}>
+                <img className={style.insertButton} src={require("../static/images/inquiry-btn.png")} />
             </div>
             {/* 나의 문의 목록 제목 */}
             <img className={style.line} src={require("../static/images/line.png")} />
