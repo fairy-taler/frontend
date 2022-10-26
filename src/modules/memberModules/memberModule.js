@@ -20,12 +20,21 @@ const initialState = [
     {
         memberPwd: '',
         confirmPwd: ''
+    }, 
+    {
+        memberRole: '',
+        memberId : '',
+        memberName: '',
+        phone: '',
+        email: '',
+        emailAuth: ''
     }
 ]
 
 export const INPUT_INFO = "join/INPUT_INFO"
 export const SEARCH_INFO = "search/SEARCH_INFO"
 export const CHANGE_PWD = "change/CHANGE_PWD"
+export const CHANGE_INFO = "change/CHANGE_INFO"
 
 export const joinReducer = handleActions(
     {
@@ -55,6 +64,12 @@ export const changeReducer = handleActions(
     {
         [CHANGE_PWD]: (state, { payload }) => {
             state[2][(payload.name)] = payload.value;
+            return{
+                ...state
+            }
+        },
+        [CHANGE_INFO]: (state, { payload }) => {
+            state[3][(payload.name)] = payload.value;
             return{
                 ...state
             }
