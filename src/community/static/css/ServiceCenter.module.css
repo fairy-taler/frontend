@@ -2,27 +2,24 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 10vh;
 }
-
 .titleImg{
     width : 8vw;
     padding-left : 100px;
     margin : 1vw;
 }
 .subTitleImg{
-    width : 7.5vw;
+    width : 5vw;
     padding-left : 100px;
     margin : 1vw;
 }
-
 .lineImg{
     width : 100%;
 }
-
 .tableBox{
     height : 25vh;
 }
-
 .communityTable{
     width : 100%;
     font-weight : bold;
@@ -30,24 +27,20 @@
     padding-left : 100px;
     font-size : 14px;
 }
-
 .communityTable tr:hover{
     background-color: #EEEEEE;
 }
-
 .communityTable td {
     padding : 0px 0px 20px 20px;
 }
-
 .pageListBox{
     display: flex;
     justify-content: center;
     padding : 1vh;
 }
-
 .pageButton {
-    font-size: 18px;
-    padding : 5px;
+    font-size: 1.5vh;
+    padding : 0.5vh;
     color : #BBBBBB;
 }
 .pageButton:hover{
@@ -58,7 +51,6 @@
     justify-content: right;
     padding : 3vh 2vw 3vh 5vw;
 }
-
 .insertButton{
     width : 5vw;
 }
