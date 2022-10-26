@@ -25,8 +25,8 @@ function Navbar() {
       return (
         <>
           <Link to = "/login"><button className={style.btn}><img src={require('../../static/images/login-arrow.png')}/></button><br/></Link>
-          <button className={style.btn}><img src={require('../../static/images/id-search-btn.png')}/></button><br/>
-          <button className={style.btn}><img src={require('../../static/images/pwd-search-btn.png')}/></button>
+          <Link to = "/idsearch"><button className={style.btn}><img src={require('../../static/images/id-search-btn.png')}/></button><br/></Link>
+          <Link to = "/pwdsearch"><button className={style.btn}><img src={require('../../static/images/pwd-search-btn.png')}/></button></Link>
         </>
       );
     } else {
@@ -66,7 +66,7 @@ function Navbar() {
                   </div>
                   <div className={style.btnGroup}>
                     <NavLink to="/serviceCenter"><button className={style.btn}><img src={require('../../static/images/commu-btn.png')}/></button></NavLink><br/>
-                    <NavLink to="/notice"><button className={style.btn}><img src={require('../../static/images/info-btn.png')}/></button></NavLink>
+                    <NavLink to="/notices"><button className={style.btn}><img src={require('../../static/images/info-btn.png')}/></button></NavLink>
                   </div>
                 </div>
             </div>
