@@ -41,7 +41,7 @@ function SearchPwd(){
             <div className={style.phrase}> 비밀번호 찾기를 위한 본인확인을 진행해 주세요 </div>
             <img className={style.commonImg} src={require("../static/images/mail.png")}/>
             <div className={style.inputBox}>
-                <input type="text" name="memberName" id="memberName" value={member[1].memberName} onChange={ onChangeHandler } placeholder="이름" required />
+                <input type="text" name="memberId" id="memberId" value={member[1].memberId} onChange={ onChangeHandler } placeholder="아이디" required />
             </div>
             <div className={style.inputBox}>
                 <div className={style.emailBox}>
