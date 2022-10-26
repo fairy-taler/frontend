@@ -9,7 +9,8 @@ import Notice from "./community/pages/Notice";
 import Join from "./member/pages/Join";
 import Login from "./member/pages/Login";
 import ServiceCenter from "./community/pages/ServiceCenter";
-import Search from "./member/pages/Search";
+import SearchId from "./member/pages/SearchId";
+import SearchPwd from "./member/pages/SearchPwd";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
           <Route path="/join" element={<Join />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/serviceCenter" element={<ServiceCenter />}/>
-          <Route path="/idsearch" element={<Search />}/>
+          <Route path="/idsearch" element={<SearchId />}/>
+          <Route path="/pwdsearch" element={<SearchPwd />}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>
