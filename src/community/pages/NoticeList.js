@@ -24,13 +24,22 @@ function NoticeList(){
 
     return (
         <div className={style.noticeBox}>
-            <div>
-            <img className={style.titleImg} src={require("../static/images/communityTitle.png")}/>
+            {/* 공지사항 제목 이미지 */}
+            <div className={style.leftBox}>
+                <img className={style.titleImg} src={require("../static/images/communityTitle.png")}/>
             </div>
-            <img className={style.line} src={require("../static/images/line.png")} />
+            {/* border line */}
+            <img className={style.lineImg} src={require("../static/images/line.png")} />
+            {/* 공지사항 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
-                    {results.map((result, index)=>(<tr><td style={{width : "50px"}}>[{result.tag}]</td><td>{result.title}</td><td>{result.date}</td></tr>))}
+                    {results.map((result, index)=>(
+                        <tr>
+                            <td style={{width : "50px" , textAlign:"left"}}>[{result.tag}]</td>
+                            <td>{result.title}</td>
+                            <td style={{width : "120px", textAlign:"right"}}>{result.date}</td>
+                        </tr>
+                    ))}
                 </table>
             </div>
             <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>

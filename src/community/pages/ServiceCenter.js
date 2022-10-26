@@ -26,7 +26,7 @@ function ServiceCenter(){
 
     return (
         <div className={style.noticeBox}>
-            <div className={style.insertButtonBox}>
+            <div className={style.betweenBox}>
                 {/* 고객센터 타이틀 */}
                 <img className={style.titleImg} src={require("../static/images/service-center-title.png")}/>
                 {/* 검색창 */}
@@ -37,9 +37,9 @@ function ServiceCenter(){
             </div>
             {/* 자주 찾는 도움말 */}
             {/* 자주 찾는 도움말 제목 */}
-            <img className={style.line} src={require("../static/images/line.png")} />
+            <img className={style.lineImg} src={require("../static/images/line.png")} />
             <img className={style.subTitleImg} src={require("../static/images/faq-title.png")}/>
-            <img className={style.line} src={require("../static/images/line.png")} />
+            <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 자주 찾는 도움말 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
@@ -54,9 +54,9 @@ function ServiceCenter(){
                 <img className={style.insertButton} src={require("../static/images/inquiry-btn.png")} />
             </div>
             {/* 나의 문의 목록 제목 */}
-            <img className={style.line} src={require("../static/images/line.png")} />
+            <img className={style.lineImg} src={require("../static/images/line.png")} />
             <img className={style.subTitleImg} src={require("../static/images/my-inquiry-title.png")}/>
-            <img className={style.line} src={require("../static/images/line.png")} />
+            <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 문의 목록 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
