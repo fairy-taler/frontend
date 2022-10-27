@@ -12,6 +12,11 @@ function Navbar() {
   const dispatch = useDispatch();
   const header = useSelector(state => state.headerReducer);
 
+  // 로그인 권한 정보 확인
+  const loginState = useSelector(state => state.loginReducer);
+  console.log(loginState);
+
+
   console.log(header)
   const onClickHandler = (e) => {
       dispatch({ type: ON_CLICK, payload : !header.clicked});
