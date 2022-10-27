@@ -38,7 +38,7 @@ function Navbar() {
       return (
         <>
           <Link to = "/inquirylist"><div className={style.manageNav}>1:1 문의 관리</div></Link>
-          <Link to = "/"><div className={style.manageNav}>공지사항 관리</div></Link>
+          <Link to = "/managementNotices"><div className={style.manageNav}>공지사항 관리</div></Link>
           <Link to = "/"><div className={style.manageNav}>회원 관리 </div></Link>
           <Link to = "/"><div className={style.manageNav}>동화 관리</div></Link>
         </>

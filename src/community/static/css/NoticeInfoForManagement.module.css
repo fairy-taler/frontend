@@ -1,0 +1,104 @@
+.noticeBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10vh;
+}
+.searchBox{
+    width : 250px;
+    height : 30px;
+    border : 1px solid #BBBBBB;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    padding : 5px;
+}
+.searchBox img {
+    height : 80%;
+}
+.searchBox input{
+    height : 100%;
+    border : none;
+    font-weight: bold;
+}
+.titleImg{
+    height : 32px;
+    margin : 1vw;
+}
+.nextContentsBox{
+    padding : 10px 100px 10px 100px;
+    display : flex;   
+}
+.nextContentsBox img{
+    width : 16px;
+}
+.subTitleBox{
+    padding : 10px 100px 10px 100px;
+    display : flex;
+    justify-content: space-between;
+}
+.editButton{
+    margin : 10px;
+    padding : 1px 10px 0px 5px;
+    height: 25px;
+    background : black;
+    color : white;
+}
+.subTitleBox img{
+    height : 24px;
+    margin : 1vw;
+}
+.lineImg{
+    padding : 0px 100px 0px 100px;
+    height : 4px;
+}
+.contentTitleBox{
+    font-size: 24px;
+    font-weight: bold;
+    padding : 0px 100px 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contentDateBox{
+    font-size : 16px;
+    font-weight: bold;
+    padding : 0px 100px 0px 100px;
+    text-align: right;
+}
+.contentContentBox{
+    min-height: 360px;
+    font-size : 16px;
+    padding : 20px 100px 20px 100px;
+}
+.pageListBox{
+    display: flex;
+    justify-content: center;
+    padding : 10px 100px 0px 100px;
+}
+.pageButton {
+    font-size: 16px;
+    padding : 0px 4px 0px 4px;
+    color : #BBBBBB;
+}
+.pageButton:hover{
+    color : black;
+}
+.betweenBox{
+    display: flex;
+    justify-content: space-between;
+    padding : 100px 100px 10px 100px;
+}
+.leftBox{
+    display: flex;
+    justify-content: space-between;
+    padding : 100px 100px 10px 100px;
+}
+.insertButtonBox{
+    display: flex;
+    justify-content: right;
+    padding : 10px 100px 10px 100px;
+}
+.insertButton{
+    width : 100px;
+}
