@@ -27,21 +27,13 @@ function InquiryList(){
 
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
-    // FAQ 리스트 클릭 이벤트
-    const toFAQInfo = (e) =>{
-        navigate(`/faq/${e.target.id}`);
-    }
-    // 나의 문의 목록 리스트 클릭 이벤트
+    // 문의 목록 리스트 클릭 이벤트
     const toInquiryInfo = (e) =>{
-        navigate(`/myInquiry/${e.target.id}`);
+        navigate(`/inquiryresponse/${e.target.id}`);
     }
     // 1대1문의하기 클릭 이벤트
     return (
         <div className={style.noticeBox}>
-            {/* 나의 문의 목록 */}
-
-            {/* 나의 문의 목록 제목 */}
-
             <img className={style.subTitleImg} src={require("../static/images/my-inquiry-title.png")}/>
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 문의 목록 리스트 */}
