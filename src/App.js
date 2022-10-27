@@ -17,6 +17,7 @@ import SearchResultId from "./member/pages/SearchResultId";
 import SearchResultPwd from "./member/pages/SearchResultPwd";
 import Mypage from "./member/pages/Mypage";
 import InsertInquiry from "./community/pages/InsertInquiry";
+import InquiryList from "./community/pages/InquiryList";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/idresult" element={<SearchResultId />}/>
           <Route path="/pwdresult" element={<SearchResultPwd />}/>
           <Route path="/mypage" element={<Mypage />}/>
+          <Route path="/inquirylist" element={<InquiryList />}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>
