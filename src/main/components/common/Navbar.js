@@ -25,7 +25,7 @@ function Navbar() {
 
   const isLogin = null; 
 
-  const memberRole = "admin"; 
+  const memberRole = loginState.role; 
 
   const menuList = (isLogin) => { 
     if (memberRole == '' || memberRole == undefined || memberRole == null) {

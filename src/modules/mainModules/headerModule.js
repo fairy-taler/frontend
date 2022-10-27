@@ -3,7 +3,8 @@ import { createActions, handleActions } from "redux-actions";
 const initialState = 
   {
     color : "white",
-    clicked : false
+    clicked : false,
+    isLogo : true,
   }
 
 export const ON_BLACK = "header/ON_BLACK";
