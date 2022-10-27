@@ -2,7 +2,7 @@ import style from "../static/css/Join.module.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom"
 import {
-    ON_BLACK, ON_WHITE, ON_CLICK
+    ON_BLACK, OFF_LOGO, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import {LOGIN_ADMIN, LOGIN_TEACHER} from '../../modules/memberModules/loginModule';
 import { useEffect, useState } from "react";
@@ -16,6 +16,7 @@ function Login(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
+        dispatch({ type: OFF_LOGO});
     },[])
 
     const onChangeHandler = () => {
