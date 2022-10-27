@@ -22,7 +22,7 @@ function Header(){
         <div>
             { header.clicked ? <Navbar/> : null}
             <div className={style.headerDiv}>
-                <button className={style.btn} onClick={ onClickHandler }>  <img className={style.headerImg} src={!header.clicked? header.color=="black"? require(`../../static/images/menu-btn-black.png`):require(`../../static/images/menu-btn.png`):require(`../../static/images/close-btn.png`)}/> </button>
+                <button className={style.btn} onClick={ onClickHandler }>  <img className={style.headerImg} src={!header.clicked? header.color=="black"? require(`../../static/images/menu-btn-black.png`):require(`../../static/images/menu-btn.png`):require(`../../static/images/close-btn.png`)}/></button>
                 {/* 가운데 미니 로고 */}
                 {header.color=="black" && header.hasLogo? <NavLink to="/"><img className={style.logoImg}  src={require(`../../static/images/logo-mini.png`)}/></NavLink> : null}
                 <img className={style.headerImg}  src={header.color=="black"? require(`../../static/images/login-btn-black.png`):require(`../../static/images/login-btn.png`)}/>
