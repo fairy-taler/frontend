@@ -19,6 +19,7 @@ import SearchResultId from "./member/pages/SearchResultId";
 import SearchResultPwd from "./member/pages/SearchResultPwd";
 import Mypage from "./member/pages/Mypage";
 import InsertInquiry from "./community/pages/InsertInquiry";
+import InsertNotice from "./community/pages/InsertNotice";
 import InquiryList from "./community/pages/InquiryList";
 import InquiryResponse from "./community/pages/InquiryResponse";
 
@@ -29,7 +30,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="/notices" element={<NoticeList />}/>
-          <Route path="/notices" element={<NoticeList />}/>
+          <Route path="/insertNotice" element={<InsertNotice />}/>
           <Route path="/managementNotices" element={<NoticeListForManagement />}/>
           <Route path="/notices/:1" element={<NoticeInfo/>} />
           <Route path="/managementNotices/:1" element={<NoticeInfoForManagement/>} />

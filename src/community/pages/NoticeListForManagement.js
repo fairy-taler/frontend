@@ -4,7 +4,7 @@ import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function NoticeListForManagement(){
     //공지사항 정보 불러오기
@@ -39,7 +39,7 @@ function NoticeListForManagement(){
                 <img className={style.titleImg} src={require("../static/images/notice-title.png")}/>
                 {/* 검색창 */}
                 <div className={style.searchBox}>
-                    <img style={{height : "36px", width : "108px", margin : "5px"}} src={require("../static/images/insert-btn.png")}/>
+                    <NavLink to="/insertNotice"><img style={{height : "36px", width : "108px", margin : "5px"}} src={require("../static/images/insert-btn.png")}/></NavLink>
                     <select className={style.searchSelect}><option>문의</option><option>공지</option></select>
                     <div className={style.searchInputBox}>
                         <input placeholder="검색어를 입력하세요."/>
