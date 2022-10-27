@@ -5,7 +5,9 @@ import Main from "./main/pages/Main";
 import Error from "./error/page/Error";
 import Layout from "./layouts/Layout";
 import NoticeList from "./community/pages/NoticeList";
+import NoticeListForManagement from "./community/pages/NoticeListForManagement";
 import NoticeInfo from "./community/pages/NoticeInfo";
+import NoticeInfoForManagement from "./community/pages/NoticeInfoForManagement";
 import InquiryInfo from "./community/pages/InquiryInfo";
 import FAQInfo from "./community/pages/FAQInfo";
 import Join from "./member/pages/Join";
@@ -28,7 +30,9 @@ function App() {
           <Route index element={<Main />} />
           <Route path="/notices" element={<NoticeList />}/>
           <Route path="/notices" element={<NoticeList />}/>
+          <Route path="/managementNotices" element={<NoticeListForManagement />}/>
           <Route path="/notices/:1" element={<NoticeInfo/>} />
+          <Route path="/managementNotices/:1" element={<NoticeInfoForManagement/>} />
           <Route path="/faq/:1" element={<FAQInfo />} />
           <Route path="/myInquiry/:1" element={<InquiryInfo />} />
           <Route path="/insertInquiry" element={<InsertInquiry />} />
