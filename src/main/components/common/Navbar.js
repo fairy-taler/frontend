@@ -25,7 +25,7 @@ function Navbar() {
 
   const isLogin = null; 
 
-  const memberRole = "admin"; 
+  const memberRole = loginState.role; 
 
   const menuList = (isLogin) => { 
     if (memberRole == '' || memberRole == undefined || memberRole == null) {
@@ -82,7 +82,7 @@ function Navbar() {
                   <div className={style.btnGroup}>
                     {menuList(isLogin)}
                   </div>
-                  { memberRole == "ADMIN" ? <></> : 
+                  { memberRole == "admin" ? <></> : 
                     <div className={style.btnGroup}>
                       <NavLink to="/serviceCenter"><button className={style.btn}><img src={require('../../static/images/commu-btn.png')}/></button></NavLink><br/>
                       <NavLink to="/notices"><button className={style.btn}><img src={require('../../static/images/info-btn.png')}/></button></NavLink>
