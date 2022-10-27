@@ -4,23 +4,36 @@ import { Link } from "react-router-dom"
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
+import {LOGIN_ADMIN, LOGIN_TEACHER} from '../../modules/memberModules/loginModule';
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 function Login(){
-
     const dispatch = useDispatch();
-    const header = useSelector(state => state.headerReducer);
     const member = ""; 
-
+    
+    
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
     },[])
 
     const onChangeHandler = () => {
+    }
+
+    const navigate = useNavigate();
+    // 로그인 버튼 클릭시 이벤트
+    const onClickLoginbutton = () =>{
+        // 로그인 버튼 클릭시 로그인 아이디가 'admin'일 때 로그인리덕스의 role을 admin으로 변경 ,아닌 경우 role을 teacher로 변경
+        const id = document.getElementById("memberId");
+        id.value == "admin"? dispatch({ type: LOGIN_ADMIN}) : 
+                             dispatch({ type: LOGIN_TEACHER});
+        navigate(`/`);
 
     }
+
+
 
     return (
         <div className={style.loginDiv}>
@@ -32,7 +45,7 @@ function Login(){
             <div className={style.inputBox}>
                 <input type="password" name="memberPwd" id="memberPwd" value={member.memberPwd} onChange={ onChangeHandler } placeholder="비밀번호" required />
             </div>
-            <button className={style.submitLogin}><img src={require("../static/images/login-btn.png")} /> </button>
+            <button className={style.submitLogin}><img src={require("../static/images/login-btn.png")}  onClick={onClickLoginbutton} /> </button>
             <div className={style.btnGroup}>
                 <button className={style.phBtn}><img src={require("../static/images/idSearch.png")} /> </button>
                 <button className={style.phBtn}><img src={require("../static/images/pwdSearch.png")} /> </button>
