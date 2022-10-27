@@ -47,3 +47,19 @@ button{
   flex-direction: column;
   justify-content: space-between;
 }
+
+.manageNav{
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  height: 30px;
+  width: 200px;
+  margin : 5px;
+  padding: 10px 20px 10px 10px;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+
+}
