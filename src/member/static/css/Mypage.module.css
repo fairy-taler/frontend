@@ -1,38 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
-.joinDiv{
-    text-align: center;
-    margin-top: 50px;
-}
-
-.loginDiv{
-    text-align: center;
-    display: flex;
-    margin-top: 50px;
-    flex-direction: column;
-    align-items: center;
-}
-
-.joinP, .loginP{
-    height: 35px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.joinLogo, .loginLogo{
-    height: 11vh;
-}
 
 .selectBtn img{
     height: 100px;
     margin-bottom: 30px;
 }
 
-.joinSection{
-    margin-bottom: 50px;
-}
 
-.joinText {
+.mypageText {
     font-family: 'Nanum Gothic', sans-serif;
     font-weight: 700;
     font-size: 20px;
@@ -44,7 +19,7 @@
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-.joinForm{
+.changeForm{
     text-align: -webkit-center;
 }
 
@@ -63,7 +38,7 @@
 .authBtn img{
     height: 52px;
 }
-.emailBox{
+.emailBox, .passwordBox{
     display: flex;
     justify-content: center;
     margin-left: 100px;
@@ -71,21 +46,38 @@
 
 .submitBtn img{
     width: 332px;
-    margin: 50px 0px 300px 0px; 
+    margin: 50px 0px 20px 0px; 
 }
 
-.submitLogin img {
-    width: 332px;
-    margin: 50px 0px 10px 0px; 
-}
-
-.btnGroup{
-    margin-bottom: 150px;
+.title{
+    margin: 100px 0px 0px 100px;
     display: flex;
-    justify-content: space-between;
-    width: 332px;
 }
 
-.phBtn img{
-    height: 20px;
+.title img{
+    height: 32px;
+}
+
+.lineImg{
+    width: 100%;
+}
+
+.lineDiv{
+    padding: 10px 100px 100px 100px;
+}
+
+.ChangeSection{
+    margin-bottom: 50px;
+}
+.unregist{
+    margin-bottom: 100px;
+}
+
+.unregist button{
+    text-decoration: underline;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    width: 300px;
+    text-align: center;
 }
