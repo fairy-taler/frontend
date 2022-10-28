@@ -23,6 +23,7 @@ import InsertInquiry from "./community/pages/InsertInquiry";
 import InsertNotice from "./community/pages/InsertNotice";
 import InquiryList from "./community/pages/InquiryList";
 import InquiryResponse from "./community/pages/InquiryResponse";
+import Forums from "./community/pages/Forums"; 
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="/mypage" element={<Mypage />}/>
           <Route path="/inquirylist" element={<InquiryList />}/>
           <Route path="/inquiryresponse/:1" element={<InquiryResponse/>} />
+          <Route path="/forums" element={<Forums />}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>
