@@ -47,7 +47,7 @@ function Navbar() {
       return (
         <>
           <button className={style.btn}><img src={require('../../static/images/mytale-btn.png')}/></button><br/>
-          <button className={style.btn}><img src={require('../../static/images/community-btn.png')}/></button>
+          <Link to ="/forums"><button className={style.btn}><img src={require('../../static/images/community-btn.png')}/></button></Link>
         </>
       );
     }
