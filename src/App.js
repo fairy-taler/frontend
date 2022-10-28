@@ -24,6 +24,7 @@ import InsertNotice from "./community/pages/InsertNotice";
 import InquiryList from "./community/pages/InquiryList";
 import InquiryResponse from "./community/pages/InquiryResponse";
 import Forums from "./community/pages/Forums"; 
+import InsertForum from "./community/pages/InsertForum";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/forums/:1" element={<ForumDetail />} />'
           <Route path="/myInquiry/:1" element={<InquiryInfo />} />
           <Route path="/insertInquiry" element={<InsertInquiry />} />
+          <Route path="/insertForum" element={<InsertForum />} />
           <Route path="/join" element={<Join />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/serviceCenter" element={<ServiceCenter />}/>
