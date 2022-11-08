@@ -28,6 +28,14 @@ const initialState = [
         phone: '',
         email: '',
         emailAuth: ''
+    },
+    {
+        memberId : '',
+        memberName: '',
+        email: '',
+        phone: '',
+        nickname: '',
+        memberRole: ''
     }
 ]
 

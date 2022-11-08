@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import {
     ON_BLACK, OFF_LOGO, ON_CLICK
 } from '../../modules/mainModules/headerModule';
-import { POST_LOGIN  } from "../../modules/memberModules/loginModule";
+import { POST_LOGIN  } from "../../modules/memberModules/memberAPIModule";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { callLoginAPI } from "../../apis/member/MemberAPICalls"
@@ -14,7 +14,7 @@ function Login(){
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const memberStatus = useSelector(state => state.loginReducer);
+    const memberStatus = useSelector(state => state.memberReducer);
     
     const [member, setMember] = useState({
       memberId: '',
