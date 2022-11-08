@@ -4,7 +4,8 @@ import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
 
 function Forums(){
     //공지사항 정보 불러오기
@@ -49,7 +50,10 @@ function Forums(){
                     <button className={style.categoryBtn}> 동화자랑 </button>
                 </div>
                 <div className={style.insertButtonBox}>
+
                 <img className={style.insertButton} src={require("../static/images/insert-btn.png")}/>
+
+                <NavLink to="/insertForum"><img className={style.insertButton} src={require("../static/images/insert-btn.png")}/></NavLink>
             </div>
             </div>
             <img className={style.lineImg} src={require("../static/images/line.png")} />
