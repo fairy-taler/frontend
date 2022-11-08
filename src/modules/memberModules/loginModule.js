@@ -1,23 +1,21 @@
 import { createActions, handleActions } from "redux-actions";
 
-const initialState =
-    {
-        role : '',
-    }
+const initialState = []
 
-export const LOGIN_ADMIN = "login/LOGIN_ADMIN"
-export const LOGIN_TEACHER = "login/LOGIN_TEACHER"
+export const POST_LOGIN = 'member/POST_LOGIN';
+
+const actions = createActions({
+    [POST_LOGIN]: () => {}
+})
 
 export const loginReducer = handleActions(
     {
-        [LOGIN_ADMIN]: (state, { payload }) => {
-            state = {...state, 'role' : 'admin'};
-            return { ...state };
+        [POST_LOGIN]: (state, { payload }) => {
+            
+            return payload;
         },
-        [LOGIN_TEACHER]: (state, { payload }) => {
-            state = {...state, 'role' : 'teacher'};
-            return { ...state };
-        }
     },
     initialState
 );
+
+export default loginReducer;
