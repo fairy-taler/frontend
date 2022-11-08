@@ -3,6 +3,11 @@ import {
     GET_MEMBER
 } from "../../modules/memberModules/memberAPIModule"; 
 
+import {
+    INIT_INFO
+} from "../../modules/memberModules/memberModule"; 
+
+
 export const callLoginAPI = ({form}) => {
     const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/auth/login`;
     console.log(requestURL);
@@ -54,5 +59,7 @@ export const callGetMemberAPI = () => {
         console.log('[MemberAPICalls] callGetMemberAPI RESULT : ', result);
         
         dispatch({ type: GET_MEMBER,  payload: result.data });
+        dispatch({ type: INIT_INFO,  payload: result.data });
+
     };
 }

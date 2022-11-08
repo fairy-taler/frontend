@@ -22,7 +22,6 @@ function Navbar() {
         dispatch(callGetMemberAPI({
         }));
     },[]
-
   )
   console.log(header)
   console.log(member)
@@ -74,7 +73,7 @@ function Navbar() {
       } else {
         return (
           <>
-            <button className={style.btn}><img className={style.joinBtn} src={require('../../static/images/mypage-btn.png')}/></button>
+            <NavLink to="/mypage"><button className={style.btn}><img className={style.joinBtn} src={require('../../static/images/mypage-btn.png')}/></button></NavLink>
           </>
         );
     }
