@@ -36,7 +36,8 @@ function ForumDetail(){
             {/* 자주 찾는 도움말 제목 이미지 */}
             <div className={style.betweenBox}>
                 {/* 자주 찾는 도움말 타이틀 */}
-                <img className={style.titleImg} src={require("../static/images/faq-title.png")}/>
+                <div className={style.forumTitle}>자유 게시판</div>
+                {/* <img className={style.titleImg} src={require("../static/images/faq-title.png")}/> */}
                 {/* 검색창 */}
                 <div className={style.searchBox}>
                     <input placeholder="검색어를 입력하세요."/>

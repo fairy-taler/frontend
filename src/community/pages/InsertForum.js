@@ -25,10 +25,11 @@ function InsertForum(){
 
     return (
         <div className={style.noticeBox}>
-            {/* 공지사항 제목 이미지 */}
+            {/* 게시판 제목 */}
             <div className={style.betweenBox}>
-                {/* 공지사항 타이틀 */}
-                <img className={style.titleImg} src={require("../static/images/notice-title.png")}/>
+                {/* 게시판 타이틀 */}
+                <div className={style.forumTitle}>게시판 작성하기</div>
+                {/* <img className={style.titleImg} src={require("../static/images/notice-title.png")}/> */}
             </div>
             {/* border line */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
