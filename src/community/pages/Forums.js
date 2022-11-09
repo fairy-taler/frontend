@@ -6,6 +6,7 @@ import {
 import { useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
+
 function Forums(){
     //공지사항 정보 불러오기
     const results = [{"id":"1","tag":"정보공유", "title" : "어제 신간 동화책 리스트 다들 보셨나요?", "author": "test01", "date" :"2022-10-23"},
@@ -49,6 +50,9 @@ function Forums(){
                     <button className={style.categoryBtn}> 동화자랑 </button>
                 </div>
                 <div className={style.insertButtonBox}>
+
+                <img className={style.insertButton} src={require("../static/images/insert-btn.png")}/>
+
                 <NavLink to="/insertForum"><img className={style.insertButton} src={require("../static/images/insert-btn.png")}/></NavLink>
             </div>
             </div>

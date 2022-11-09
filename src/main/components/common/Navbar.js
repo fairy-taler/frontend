@@ -3,29 +3,37 @@ import { NavLink } from "react-router-dom";
 import style from "../../static/css/Navbar.module.css"
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import {
     ON_CLICK
 } from '../../../modules/mainModules/headerModule';
-        
+import { callGetMemberAPI } from  '../../../apis/member/MemberAPICalls'
+
 function Navbar() {
   
+
   const dispatch = useDispatch();
   const header = useSelector(state => state.headerReducer);
+  const member = useSelector(state => state.memberReducer); 
 
   // 로그인 권한 정보 확인
-  const loginState = useSelector(state => state.loginReducer);
-  console.log(loginState);
+  useEffect(
+    ()=>{
+        dispatch(callGetMemberAPI({
+        }));
+    },[]
+  )
   console.log(header)
+  console.log(member)
+
   const onClickHandler = (e) => {
       dispatch({ type: ON_CLICK, payload : !header.clicked});
   }
 
+  const memberRole = member.memberRole;
 
-  const isLogin = null; 
 
-  const memberRole = loginState.role; 
-
-  const menuList = (isLogin) => { 
+  const menuList = () => { 
     if (memberRole == '' || memberRole == undefined || memberRole == null) {
       return (
         <>
@@ -53,7 +61,7 @@ function Navbar() {
     }
   };
   
-    const menuLogin = (isLogin) =>{
+    const menuLogin = () =>{
       if (memberRole == '' || memberRole == undefined || memberRole == null) {
         return (
           <>
@@ -65,7 +73,7 @@ function Navbar() {
       } else {
         return (
           <>
-            <button className={style.btn}><img className={style.joinBtn} src={require('../../static/images/mypage-btn.png')}/></button>
+            <NavLink to="/mypage"><button className={style.btn}><img className={style.joinBtn} src={require('../../static/images/mypage-btn.png')}/></button></NavLink>
           </>
         );
     }
@@ -75,10 +83,10 @@ function Navbar() {
       <div className={style.navbarDiv}>
         <div className={style.flexDiv}>
             <div className={style.menus}>
-                {menuLogin(isLogin)}
+                {menuLogin()}
                 <div className={style.btnsDiv}>
                   <div className={style.btnGroup}>
-                    {menuList(isLogin)}
+                    {menuList()}
                   </div>
                   { memberRole == "admin" ? <></> : 
                     <div className={style.btnGroup}>

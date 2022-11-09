@@ -5,18 +5,21 @@ import { CHANGE_INFO, CHANGE_PWD } from "../../modules/memberModules/memberModul
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
+import { callGetMemberAPI } from '../../apis/member/MemberAPICalls'
 
 function Mypage(){
 
     const dispatch = useDispatch();
     const member = useSelector(state => state.changeReducer); 
     const header = useSelector(state => state.headerReducer);
+    const originMember = useSelector(state => state.memberReducer); 
 
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
+        dispatch(callGetMemberAPI());
     },[])
-
+    console.log(originMember)
     const onChangeHandler = (e) => {
     
         console.log(member);
@@ -48,10 +51,13 @@ function Mypage(){
             <div className={style.ChangeSection}>
                 <div className={style.mypageText}> 로그인 정보 </div>
                 <div className={style.inputBox}>
-                    <input type="text" name="memberId" id="memberId" value={member[3].memberId} onChange={ onChangeHandler } placeholder="아이디" disabled />
+                    <input type="text" name="memberId" id="memberId" value={originMember.memberId} />
                 </div>
                 <div className={style.inputBox}>
-                    <input type="password" name="memberPwd" id="memberPwd" value={member[2].memberPwd} onChange={ onChangePwd } placeholder="비밀번호" required />
+                    <input type="password" name="originPwd" id="originPwd" value={member[2].originPwd} onChange={ onChangePwd } placeholder="이전 비밀번호" required />
+                </div>
+                <div className={style.inputBox}>
+                    <input type="password" name="memberPwd" id="memberPwd" value={member[2].memberPwd} onChange={ onChangePwd } placeholder="새 비밀번호" required />
                 </div>
                 <div className={style.passwordBox}>
                     <input type="password" name="confirmPwd" id="confirmPwd" value={member[2].confirmPwd} onChange={ onChangePwd } placeholder="비밀번호 확인" required />
@@ -73,7 +79,7 @@ function Mypage(){
                 </div>
             </div>
             <div className={style.inputBox}>
-                <input type="text" name="mailAuth" id="mailAuth" value={member[3].mailAuth} onChange={ onChangeHandler } placeholder="인증번호" required/>
+                <input type="text" name="emailAuth" id="emailAuth" value={member[3].emailAuth} onChange={ onChangeHandler } placeholder="인증번호" required/>
                 <br />
             </div>
             <button className={style.submitBtn}><img src={require("../static/images/change-btn.png")} /> </button>
