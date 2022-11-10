@@ -20,8 +20,8 @@ function SelectRole(){
     console.log(member)
     return (
         <div className="join-form">
-            <button className={ style.selectBtn } onClick={ onClickHandler }><img id="teacher" src={require('../static/images/teacher-btn.png')}></img></button> <br/>
-            <button className={ style.selectBtn } onClick={ onClickHandler }><img id= "student" src={require('../static/images/stud-btn.png')}></img></button>
+            <button className={ style.selectBtn } onClick={ onClickHandler }><img id="TEACHER" src={require('../static/images/teacher-btn.png')}></img></button> <br/>
+            <button className={ style.selectBtn } onClick={ onClickHandler }><img id= "STUDENT" src={require('../static/images/stud-btn.png')}></img></button>
         </div>
     )
 }

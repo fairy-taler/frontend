@@ -5,10 +5,11 @@ const initialState = [
         memberRole: '',
         memberId : '',
         memberPwd: '',
+        memberPwd2: '',
         memberName: '',
         phone: '',
         email: '',
-        emailAuth: ''
+        nickname: ''
     },
     {
         searchOption: '',
