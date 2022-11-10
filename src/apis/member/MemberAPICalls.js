@@ -1,6 +1,7 @@
 import {
     POST_LOGIN,
-    GET_MEMBER
+    GET_MEMBER,
+    POST_REGISTER
 } from "../../modules/memberModules/memberAPIModule"; 
 
 import {
@@ -61,5 +62,40 @@ export const callGetMemberAPI = () => {
         dispatch({ type: GET_MEMBER,  payload: result.data });
         dispatch({ type: INIT_INFO,  payload: result.data });
 
+    };
+}
+
+export const callRegisterAPI = ({form}) => {
+
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/auth/join`;
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Access-Control-Allow-Origin": "*"    
+            },
+            body: JSON.stringify({
+                memberId: form.memberId,
+                memberPwd: form.memberPwd,
+                memberName: form.memberName,
+                email: form.email,
+                phone: form.phone,
+                nickname: form.nickname,
+                memberRole: form.memberRole        
+            })
+        })
+        .then(response => response.json());
+
+        console.log('[MemberAPICalls] callRegisterAPI RESULT : ', result);        
+        
+        if(result.status === 500){
+            alert(result.message);
+        }
+        if(result.status === 201){
+            dispatch({ type: POST_REGISTER,  payload: result });
+        }        
     };
 }
