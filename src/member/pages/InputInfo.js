@@ -16,6 +16,7 @@ function InputInfo(){
         if(member1.status == 201){
           console.log("[Login] Register SUCCESS {}", member1);
           alert("회원가입에 성공하였습니다 !")
+          member1.status =""; 
           navigate("/joinResult", { replace: true })
         }
     },
