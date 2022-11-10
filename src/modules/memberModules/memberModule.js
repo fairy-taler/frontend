@@ -28,7 +28,6 @@ const initialState = [
         memberId : '',
         memberName: '',
         email: '',
-        emailAuth: '',
         phone: '',
         nickname: '',
         memberRole: ''
