@@ -21,10 +21,12 @@ function ForumDetail(){
                                 "date" :"2022-10-13"
                         }
     const onClickdata = (e) =>{
-        console.log(commentContent);
-        const func = callInsertCommentAPI(params[1], commentContent);
+        const commentInput = document.getElementById("commentInput");
+        console.log("commnetInput value : ", commentInput.value);
+        const func = callInsertCommentAPI(params[1], commentInput.value);
         func();
-        setCommentContent("");
+        commentInput.value ="";
+        setCommentContent({...commentContent});
     }
     console.log(commentContent);
     // 헤더 설정 변경
@@ -74,7 +76,7 @@ function ForumDetail(){
                 {/* 댓글 작성 */}
                 <div className={style.commentInputBox}>
                         <div>{member?.nickname}</div>
-                        <input className={style.commentInput} placeholder="댓글 추가..." onChange={(e)=>{setCommentContent(e.target.value)}}/>
+                        <input id="commentInput" className={style.commentInput} placeholder="댓글 추가..."/>
                         <button onClick={onClickdata}>댓글</button>
                 </div>
                 {/* 댓글 목록 */}

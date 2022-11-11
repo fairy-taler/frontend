@@ -117,3 +117,30 @@ export const callInsertCommentAPI = (forumCode, content) => {
 
     };
 }
+export const callInsertForumAPI = (forumData) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/forums`;
+    console.log(requestURL);
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Access-Control-Allow-Origin": "*"   , 
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+            },
+            body: JSON.stringify({
+                "title" :forumData.title,
+                "category" : forumData.category,
+                "content" : forumData.content
+            })
+        })
+        .then(response => response.json());
+
+        console.log('[MemberAPICalls] callRegisterAPI RESULT : ', result);   
+
+    };
+}
+
