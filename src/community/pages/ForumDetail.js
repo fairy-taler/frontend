@@ -4,14 +4,18 @@ import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
-
+import { callGetDetailForumAPI} from "../../apis/community/ForumAPICalls"
 function ForumDetail(){
+    
+    const result= useSelector(state => state.forumReducer);
+    const forum = result?.forum;
+    console.log(forum)
     //공지사항 정보 불러오기
-    const result = {"tag" :"자유",
-                    "title" :"안녕하세요~", 
-                    "content" :"안녕하세요.오늘 처음 접속해봐요 다들 반갑습니다~",
-                    "date" :"2022-10-23"
-                    }
+    // const result = {"tag" :"자유",
+    //                 "title" :"안녕하세요~", 
+    //                 "content" :"안녕하세요.오늘 처음 접속해봐요 다들 반갑습니다~",
+    //                 "date" :"2022-10-23"
+    //                 }
     const nextResult = {"tag" :"자유",
                         "title" :"게임 제작할 때 팁", 
                                 "content" :"안녕하세요. " 
@@ -29,6 +33,7 @@ function ForumDetail(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
+        dispatch(callGetDetailForumAPI(7));
     },[])
 
     return (
@@ -51,15 +56,15 @@ function ForumDetail(){
             </div>
             {/* FAQ 제목 */}
             <div className={style.contentTitleBox}> 
-                {result.title}
+                {forum?.title}
             </div>
             {/* FAQ 날짜 */}
             <div className={style.contentDateBox}>
-                {result.date}
+                {forum?.createDate.substr(0,10)}
             </div>
             {/* FAQ 내용 */}
             <div className={style.contentContentBox}>
-                {result.content}
+                {forum?.content}
             </div>
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 댓글창 */}
@@ -73,9 +78,10 @@ function ForumDetail(){
                 </div>
                 {/* 댓글 목록 */}
                 <div>
-                    {comments.map((comment, index)=>(<div className={style.commentsBox}>
-                                                        <div className={style.id}>{comment.id}</div>
-                                                        <div className={style.contents}>{comment.contents}</div>
+                    {forum?.comments?.map((comment, index)=>(<div className={style.commentsBox}>
+                                                        <div className={style.id}>{comment.nickname}</div>
+                                                        <div className={style.contents}>{comment.content}</div>
+                                                        <div className={style.createDate}>{comment.createDate.substr(0,10)}</div>
                                                     </div>))}
                 </div>
             </div>
