@@ -42,7 +42,7 @@ function Navbar() {
           <Link to = "/pwdsearch"><button className={style.btn}><img src={require('../../static/images/pwd-search-btn.png')}/></button></Link>
         </>
       );
-    } else if( memberRole == "admin"){
+    } else if( memberRole == "ADMIN"){
       return (
         <>
           <Link to = "/inquirylist"><div className={style.manageNav}>1:1 문의 관리</div></Link>
