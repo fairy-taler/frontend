@@ -1,11 +1,11 @@
 import style from "../static/css/Mypage.module.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from "react";
-import { CHANGE_INFO, CHANGE_PWD } from "../../modules/memberModules/memberModule";
+import { CHANGE_INFO, CHANGE_PWD, CHANGE_PROFILE } from "../../modules/memberModules/memberModule";
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
-import { callGetMemberAPI } from '../../apis/member/MemberAPICalls'
+import { callGetMemberAPI, callGetProfileAPI, callUpdatePwdAPI, callUpdateMemberAPI } from '../../apis/member/MemberAPICalls'
 
 function Mypage(){
 
@@ -13,13 +13,28 @@ function Mypage(){
     const member = useSelector(state => state.changeReducer); 
     const header = useSelector(state => state.headerReducer);
     const originMember = useSelector(state => state.memberReducer); 
+    const originProfile = useSelector(state => state.profileReducer); 
 
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
         dispatch(callGetMemberAPI());
+        dispatch(callGetProfileAPI());
     },[])
     console.log(originMember)
+    console.log(originProfile);
+
+    const onChangeProfile = (e) => {
+        console.log(member);
+        dispatch({
+          type: CHANGE_PROFILE,
+          payload: {
+            name: e.target.name,
+            value: e.target.value
+          }
+        });
+    }
+
     const onChangeHandler = (e) => {
     
         console.log(member);
@@ -43,6 +58,27 @@ function Mypage(){
         });
     }
 
+    const onClickUpdatePwd = () => { 
+        let body = {
+            originalPwd: member[2].originPwd,
+            newPwd: member[2].memberPwd
+        }
+        dispatch(callUpdatePwdAPI({
+        form: body
+        }));
+    }
+
+    const onClickUpdateMember = () => { 
+        let body = {
+            memberName: member[3].memberName,
+            phone: member[3].phone,
+            nickname: member[3].nickname  
+        }
+        dispatch(callUpdateMemberAPI({
+        form: body
+        }));
+    }
+
     console.log(member)
     return (
         <div className={style.changeForm}>
@@ -51,12 +87,15 @@ function Mypage(){
             
             <div className={style.ChangeSection}>
                 <div className={style.profile}>
-                    <img className={style.profileImg} src={require("../static/images/profile-img.png")}></img>
+                    { originProfile.profile != null && originProfile.profile.imgUrl != null ? 
+                        <img className={style.profileImg} src={originProfile.profile.imgUrl}></img> : 
+                        <img className={style.profileImg} src={require("../static/images/profile-img.png")}></img> 
+                    }
                     <div className={style.profileInfo}>
-                        <div className={style.profileName} > 한지수<span> 선생님 </span> </div>  
-                        <div className={style.profileTale}> 제작한 동화책 수 : <span> 0 </span> </div>  
+                        <div className={style.profileName}> {originMember.memberName} <span> 선생님 </span> </div>  
+                        <div className={style.profileTale}> 제작한 동화책 수 : <span> {originProfile.taleCount} </span> </div>  
                         <div className={style.profileIntro}> 소개글: </div>
-                        <textarea></textarea><br/>
+                        <textarea value={member[4].intro} name="intro" onChange={ onChangeProfile }></textarea><br/> 
                         <img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img>
                         <img className={style.mypageBtn} src={require("../static/images/edit-profile.png")}></img>
                     </div>
@@ -75,7 +114,7 @@ function Mypage(){
                 </div>
                 <div className={style.passwordBox}>
                     <input type="password" name="confirmPwd" id="confirmPwd" value={member[2].confirmPwd} onChange={ onChangePwd } placeholder="비밀번호 확인" required />
-                    <button className={style.authBtn}> <img src={require("../static/images/small-change-btn.png")}></img></button>
+                    <button className={style.authBtn} onClick={ onClickUpdatePwd }> <img src={require("../static/images/small-change-btn.png")}></img></button>
                 </div>
 
             <div className={style.mypageText2}> 회원 정보 </div>
@@ -87,14 +126,14 @@ function Mypage(){
                 <br />
             </div>
             <div className={style.inputBox}>
-                <input type="text" name="email" id="email" value={member[3].email} onChange={ onChangeHandler } placeholder="이메일" required />
+                <input type="text" name="email" id="email" value={originMember.email} placeholder="이메일" required />
 
             </div>
             <div className={style.inputBox}>
                 <input type="text" name="nickname" id="nickname" value={member[3].nickname} onChange={ onChangeHandler } placeholder="닉네임" required/>
                 <br />
             </div>
-            <button className={style.submitBtn}><img src={require("../static/images/change-btn.png")} /> </button>
+            <button className={style.submitBtn} onClick={onClickUpdateMember}><img src={require("../static/images/change-btn.png")} /> </button>
             <div className={style.unregist}><button> 회원 탈퇴 </button></div>
 
             </div>
