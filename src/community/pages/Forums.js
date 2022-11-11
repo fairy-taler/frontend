@@ -32,6 +32,7 @@ function Forums(){
         navigate(
             `/forums/${e.target.id}`
           );
+        
     }
     const onClickPageButton = (e) =>{  
         setCurrentPage(e.target.id)
@@ -87,11 +88,11 @@ function Forums(){
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
                     {forums==null? null:forums.map((forum, index)=>(
-                            <tr onClick={toNoticesInfo} id={index}>
-                                    <td id={index} style={{width : "100px" , textAlign:"left"}}>[{forum.category}]</td>
-                                    <td id={index}>{forum.title}</td>
-                                    <td id={index} style={{width : "120px", textAlign:"right"}}>{forum.nickname}</td>
-                                    <td id={index} style={{width : "120px", textAlign:"right"}}>{forum.createDate.substr(0,10)}</td>
+                            <tr onClick={toNoticesInfo} id={forum.forumCode}>
+                                    <td id={forum.forumCode} style={{width : "100px" , textAlign:"left"}}>[{forum.category}]</td>
+                                    <td id={forum.forumCode}>{forum.title}</td>
+                                    <td id={forum.forumCode} style={{width : "120px", textAlign:"right"}}>{forum.nickname}</td>
+                                    <td id={forum.forumCode} style={{width : "120px", textAlign:"right"}}>{forum.createDate.substr(0,10)}</td>
                             </tr>
                     ))}
                 </table>

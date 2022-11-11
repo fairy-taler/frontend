@@ -3,29 +3,30 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
-import { useEffect } from "react";
-import { callGetDetailForumAPI} from "../../apis/community/ForumAPICalls"
+import { useEffect, useState } from "react";
+import { callGetDetailForumAPI, callInsertCommentAPI} from "../../apis/community/ForumAPICalls"
+import { NavLink, useParams } from "react-router-dom"
+
 function ForumDetail(){
-    
+    const  params = useParams();
+    const [commentContent, setCommentContent] = useState("");
     const result= useSelector(state => state.forumReducer);
+    const member= useSelector(state => state.memberReducer);
     const forum = result?.forum;
-    console.log(forum)
-    //공지사항 정보 불러오기
-    // const result = {"tag" :"자유",
-    //                 "title" :"안녕하세요~", 
-    //                 "content" :"안녕하세요.오늘 처음 접속해봐요 다들 반갑습니다~",
-    //                 "date" :"2022-10-23"
-    //                 }
+    console.log("params", params[1])
     const nextResult = {"tag" :"자유",
                         "title" :"게임 제작할 때 팁", 
                                 "content" :"안녕하세요. " 
                                             + " \n ID 보호 모드를 해제하고 싶어요.",
                                 "date" :"2022-10-13"
                         }
-                     
-    const comments =[ {"id" : "yuri" , "contents" : "안녕하세요~"},
-                      {"id" : "jihi" , "contents" : "반갑습니다!"} ]
-   
+    const onClickdata = (e) =>{
+        console.log(commentContent);
+        const func = callInsertCommentAPI(params[1], commentContent);
+        func();
+        setCommentContent("");
+    }
+    console.log(commentContent);
     // 헤더 설정 변경
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerReducer);
@@ -33,8 +34,8 @@ function ForumDetail(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
-        dispatch(callGetDetailForumAPI(7));
-    },[])
+        dispatch(callGetDetailForumAPI(params[1]));
+    },[,commentContent])
 
     return (
         <div className={style.noticeBox}>
@@ -51,30 +52,30 @@ function ForumDetail(){
             {/* border line */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 목록 / 이전으로 버튼 */}
-            <div className={style.subTitleBox}>
+            <NavLink to="/forums"><div className={style.subTitleBox}>
                 <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
-            </div>
-            {/* FAQ 제목 */}
+            </div></NavLink>
+            {/* 게시글 제목 */}
             <div className={style.contentTitleBox}> 
                 {forum?.title}
             </div>
-            {/* FAQ 날짜 */}
+            {/* 게시글 날짜 */}
             <div className={style.contentDateBox}>
                 {forum?.createDate.substr(0,10)}
             </div>
-            {/* FAQ 내용 */}
+            {/* 게시글 내용 */}
             <div className={style.contentContentBox}>
                 {forum?.content}
             </div>
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 댓글창 */}
             <div className={style.commentBox}>
-                <div className={style.commentTitle}>댓글 총 2개</div>
+                <div className={style.commentTitle}>댓글 총 {forum?.comments?.length}개</div>
                 {/* 댓글 작성 */}
                 <div className={style.commentInputBox}>
-                        <div>fairytaler</div>
-                        <input className={style.commentInput} placeholder="댓글 추가..."/>
-                        <button>댓글</button>
+                        <div>{member?.nickname}</div>
+                        <input className={style.commentInput} placeholder="댓글 추가..." onChange={(e)=>{setCommentContent(e.target.value)}}/>
+                        <button onClick={onClickdata}>댓글</button>
                 </div>
                 {/* 댓글 목록 */}
                 <div>
@@ -85,7 +86,7 @@ function ForumDetail(){
                                                     </div>))}
                 </div>
             </div>
-            {/* 다음 FAQ */}
+            {/* 다음 게시글 */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             <div className={style.nextContentsBox}>
                 <span style={{width : "5%"}}><img src={require("../static/images/under-arrow-btn.png")}/></span>
