@@ -42,6 +42,11 @@ function Forums(){
             page:0, size:10}
         ));
     }
+    const onClickMyPost = () => {
+        dispatch(callGetForumsByMemberCodeAPI({	
+            page:0, size:10}
+        ));
+    }
     
     // 헤더 설정 변경
     const dispatch = useDispatch();
@@ -73,8 +78,7 @@ function Forums(){
                 </div>
                 <div className={style.insertButtonBox}>
 
-                <img className={style.insertButton} src={require("../static/images/insert-btn.png")}/>
-
+                <div><img className={style.insertButton} src={require("../static/images/insert-btn.png")} onClick={onClickMyPost}/></div>
                 <NavLink to="/insertForum"><img className={style.insertButton} src={require("../static/images/insert-btn.png")}/></NavLink>
             </div>
             </div>
