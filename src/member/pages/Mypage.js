@@ -7,6 +7,7 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { callGetMemberAPI, callGetProfileAPI, callUpdatePwdAPI, callUpdateMemberAPI, callUpdateProfileAPI } from '../../apis/member/MemberAPICalls'
 import React from "react";
+import defaultImg from "../static/images/profile-img.png";
 
 function Mypage(){
 
@@ -118,7 +119,11 @@ function Mypage(){
             form: body
         }));
     }
-    
+
+    const handleImgError = (e) => {
+        e.target.src = defaultImg;
+    }
+
 
     console.log(member)
     return (
@@ -131,10 +136,9 @@ function Mypage(){
                 
                 <React.Fragment>
                     <button className={style.imgUploadBtn} onClick={handleButtonClick}>
-                    { originProfile.profile != null && member[4].imgUrl != null ? 
-                        <img className={style.profileImg} src={member[4].imgUrl}></img> : 
-                        <img className={style.profileImg} src={require("../static/images/profile-img.png")}></img> 
-                    }
+
+                        <img className={style.profileImg} src={member[4].imgUrl} onError={handleImgError}></img> 
+
                     </button>
                     <input type="file"
                            ref={fileInput}
