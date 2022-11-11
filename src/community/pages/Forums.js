@@ -4,16 +4,26 @@ import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { callGetForumsAPI, callGetForumsByCategoryAPI, callGetForumsByMemberCodeAPI } from "../../apis/community/ForumAPICalls"
 
 
 function Forums(){
     //공지사항 정보 불러오기
-    const results = [{"id":"1","tag":"정보공유", "title" : "어제 신간 동화책 리스트 다들 보셨나요?", "author": "test01", "date" :"2022-10-23"},
-                     {"id":"1","tag":"잡담", "title" : "학생들이 많이 안 모여요 ㅠㅠ", "author": "test01", "date" :"2022-10-23"},
-                     {"id":"1","tag":"잡담", "title" : "점심 추천해주세용ㅎㅎ ", "author": "test01", "date" :"2022-10-23"}];
+    // api로 게시판 정보 조회 후 데이터 저장
+    const result = useSelector(state => state.forumReducer);
+    // const forums = null;
+    
+    const forums = result?.forumList?.content;
 
-    const pages = Array(10).fill()
+    // 총 페이지 설정
+    const totalPages = result?.forumList?.totalPages
+    const pages = Array(totalPages).fill()
+
+    // 페이지 버튼 설정 
+    const [currentPage, setCurrentPage] = useState(1);
+
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
     const toNoticesInfo = (e) =>{
@@ -23,6 +33,15 @@ function Forums(){
             `/forums/${e.target.id}`
           );
     }
+    const onClickPageButton = (e) =>{  
+        setCurrentPage(e.target.id)
+    }
+    const onClickCategory = (e) => {
+        console.log(e.target.textContent)
+        dispatch(callGetForumsByCategoryAPI(e.target.textContent,{	
+            page:0, size:10}
+        ));
+    }
     
     // 헤더 설정 변경
     const dispatch = useDispatch();
@@ -30,6 +49,9 @@ function Forums(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
+        dispatch(callGetForumsAPI({	
+            page:0, size:10}
+        ));
     },[])
 
     return (
@@ -45,9 +67,9 @@ function Forums(){
             </div>
             <div className={style.buttonGroup}>
                 <div>
-                    <button className={style.categoryBtn}> 잡담 </button>
-                    <button className={style.categoryBtn}> 정보공유</button>
-                    <button className={style.categoryBtn}> 동화자랑 </button>
+                    <button className={style.categoryBtn} onClick={onClickCategory}>자유</button>
+                    <button className={style.categoryBtn} onClick={onClickCategory}>정보공유</button>
+                    <button className={style.categoryBtn} onClick={onClickCategory}>동화</button>
                 </div>
                 <div className={style.insertButtonBox}>
 
@@ -60,17 +82,17 @@ function Forums(){
             {/* 게시글 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
-                    {results.map((result, index)=>(
+                    {forums==null? null:forums.map((forum, index)=>(
                             <tr onClick={toNoticesInfo} id={index}>
-                                    <td id={index} style={{width : "100px" , textAlign:"left"}}>[{result.tag}]</td>
-                                    <td id={index}>{result.title}</td>
-                                    <td id={index} style={{width : "120px", textAlign:"right"}}>{result.author}</td>
-                                    <td id={index} style={{width : "120px", textAlign:"right"}}>{result.date}</td>
+                                    <td id={index} style={{width : "100px" , textAlign:"left"}}>[{forum.category}]</td>
+                                    <td id={index}>{forum.title}</td>
+                                    <td id={index} style={{width : "120px", textAlign:"right"}}>{forum.nickname}</td>
+                                    <td id={index} style={{width : "120px", textAlign:"right"}}>{forum.createDate.substr(0,10)}</td>
                             </tr>
                     ))}
                 </table>
             </div>
-            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
+            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton} onClick={onClickPageButton} style={currentPage==index+1? {fontWeight:"bold", color:"black"}:null}id={index+1}>{index+1}</span>))}</div>
         </div>
     )
 }
