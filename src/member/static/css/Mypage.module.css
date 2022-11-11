@@ -150,3 +150,7 @@ textarea {
     margin: 30px 10px 0px 0px;
     width: 130px;
 }
+
+.imgUploadBtn{
+    height: 0px;
+}

@@ -5,7 +5,8 @@ import { CHANGE_INFO, CHANGE_PWD, CHANGE_PROFILE } from "../../modules/memberMod
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
-import { callGetMemberAPI, callGetProfileAPI, callUpdatePwdAPI, callUpdateMemberAPI } from '../../apis/member/MemberAPICalls'
+import { callGetMemberAPI, callGetProfileAPI, callUpdatePwdAPI, callUpdateMemberAPI, callUpdateProfileAPI } from '../../apis/member/MemberAPICalls'
+import React from "react";
 
 function Mypage(){
 
@@ -79,6 +80,46 @@ function Mypage(){
         }));
     }
 
+    /* 이미지 업로드  */
+
+    const fileInput = React.useRef(null);
+
+    const handleButtonClick = e => {
+        fileInput.current.click();
+    };
+
+    const handleChange = e => {
+
+        dispatch({
+            type: CHANGE_PROFILE,
+            payload: {
+              name: "imgUrl",
+              value: URL.createObjectURL(e.target.files[0])
+            }
+          });
+
+        dispatch({
+            type: CHANGE_PROFILE,
+            payload: {
+              name: "uploadFile",
+              value: e.target.files[0]
+            }
+          });
+
+        console.log(e.target.files[0]);
+    };
+
+    const onClickUpdateProfile = () => { 
+        let body = {
+            profileImg: member[4].uploadFile,
+            intro: member[4].intro
+        }
+        dispatch(callUpdateProfileAPI({
+            form: body
+        }));
+    }
+    
+
     console.log(member)
     return (
         <div className={style.changeForm}>
@@ -87,17 +128,28 @@ function Mypage(){
             
             <div className={style.ChangeSection}>
                 <div className={style.profile}>
-                    { originProfile.profile != null && originProfile.profile.imgUrl != null ? 
-                        <img className={style.profileImg} src={originProfile.profile.imgUrl}></img> : 
+                
+                <React.Fragment>
+                    <button className={style.imgUploadBtn} onClick={handleButtonClick}>
+                    { originProfile.profile != null && member[4].imgUrl != null ? 
+                        <img className={style.profileImg} src={member[4].imgUrl}></img> : 
                         <img className={style.profileImg} src={require("../static/images/profile-img.png")}></img> 
                     }
+                    </button>
+                    <input type="file"
+                           ref={fileInput}
+                           onChange={handleChange}
+                           style={{ display: "none" }} />
+                </React.Fragment> 
+                      
+                   
                     <div className={style.profileInfo}>
                         <div className={style.profileName}> {originMember.memberName} <span> 선생님 </span> </div>  
                         <div className={style.profileTale}> 제작한 동화책 수 : <span> {originProfile.taleCount} </span> </div>  
                         <div className={style.profileIntro}> 소개글: </div>
                         <textarea value={member[4].intro} name="intro" onChange={ onChangeProfile }></textarea><br/> 
                         <img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img>
-                        <img className={style.mypageBtn} src={require("../static/images/edit-profile.png")}></img>
+                        <button onClick={onClickUpdateProfile}><img className={style.mypageBtn} src={require("../static/images/edit-profile.png")}></img></button> 
                     </div>
                 </div>
                 

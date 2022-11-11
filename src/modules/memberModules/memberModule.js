@@ -34,7 +34,8 @@ const initialState = [
     },
     {
         imgUrl: '',
-        intro:''
+        intro:'',
+        uploadFile: ''
     }
 ]
 

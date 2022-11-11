@@ -3,7 +3,8 @@ import {
     GET_MEMBER,
     POST_REGISTER,
     PUT_PWD,
-    PUT_MEMBER
+    PUT_MEMBER,
+    PUT_PROFILE
 } from "../../modules/memberModules/memberAPIModule"; 
 
 import {
@@ -14,6 +15,8 @@ import {
 import {
     GET_PROFILE
 } from "../../modules/memberModules/profileAPIModule"
+
+import axios from 'axios';
 
 
 export const callLoginAPI = ({form}) => {
@@ -199,5 +202,42 @@ export const callUpdateMemberAPI = ({form}) => {
             window.location.href="/"
         }
         dispatch({ type: PUT_MEMBER,  payload: result });   
+    };
+}
+
+export const callUpdateProfileAPI = ({form}) => {
+    //const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/profile`;
+    const requestURL = `http://localhost:8080/members/profile`;
+    console.log(requestURL);
+    return async (dispatch, getState) => {
+        const formData = new FormData();
+
+        formData.append("profileImg", form.profileImg)
+        formData.append("intro", form.intro)
+
+        const result = await axios(requestURL, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "multipart/form-data; boundary=<calculated when request is sent>",
+                "Accept": "*/*",  
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*"    
+            },
+            data: formData
+        })
+
+
+        console.log('[MemberAPICalls] callUpdateProfileAPI RESULT : ', result);   
+
+        if(result.status === 500){
+            console.log(result);
+            alert(result.message);
+        }
+        if(result.status === 200){
+            alert("회원 프로필 변경이 완료 되었습니다. ")     
+            window.location.href="/mypage"
+        }
+        dispatch({ type: PUT_PROFILE,  payload: result });   
     };
 }
