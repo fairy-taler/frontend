@@ -8,6 +8,7 @@ export const POST_REGISTER = 'member/POST_REGISTER'
 export const PUT_PWD = 'member/PUT_PWD'; 
 export const PUT_MEMBER = 'member/PUT_MEMBER'; 
 export const PUT_PROFILE = "profile/PUT_PROFILE"; 
+export const DELETE_MEMBER = "member/DELTE_MEMBER";
 
 const actions = createActions({
     [POST_LOGIN]: () => {},
@@ -15,7 +16,8 @@ const actions = createActions({
     [POST_REGISTER]: () => {},
     [PUT_PWD]: () => {},
     [PUT_MEMBER]: () => {},
-    [PUT_PROFILE]: () => {}
+    [PUT_PROFILE]: () => {},
+    [DELETE_MEMBER]: () => {}
 })
 
 export const memberReducer = handleActions(
@@ -41,6 +43,10 @@ export const memberReducer = handleActions(
             return payload;
         },
         [PUT_PROFILE]: (state, { payload }) => {
+            
+            return payload;
+        },
+        [DELETE_MEMBER]: (state, { payload }) => {
             
             return payload;
         }

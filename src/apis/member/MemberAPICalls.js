@@ -4,7 +4,8 @@ import {
     POST_REGISTER,
     PUT_PWD,
     PUT_MEMBER,
-    PUT_PROFILE
+    PUT_PROFILE,
+    DELETE_MEMBER
 } from "../../modules/memberModules/memberAPIModule"; 
 
 import {
@@ -239,5 +240,37 @@ export const callUpdateProfileAPI = ({form}) => {
             window.location.href="/mypage"
         }
         dispatch({ type: PUT_PROFILE,  payload: result });   
+    };
+}
+
+export const callDeleteAPI = () => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/auth/delete`;
+    console.log(requestURL);
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",  
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*"    
+            }
+        })
+        .then(response => response.json());
+
+        console.log('[MemberAPICalls] callDeleteAPI RESULT : ', result);   
+
+        if(result.status === 500){
+            console.log(result);
+            alert(result.message);
+        }
+        if(result.status === 200){
+            alert("회원 탈퇴가 완료 되었습니다. ")    
+            window.localStorage.setItem('accessToken', null);        
+            window.location.href="/"
+        }
+        dispatch({ type: DELETE_MEMBER,  payload: result });   
     };
 }

@@ -5,7 +5,7 @@ import { CHANGE_INFO, CHANGE_PWD, CHANGE_PROFILE } from "../../modules/memberMod
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
-import { callGetMemberAPI, callGetProfileAPI, callUpdatePwdAPI, callUpdateMemberAPI, callUpdateProfileAPI } from '../../apis/member/MemberAPICalls'
+import { callGetMemberAPI, callGetProfileAPI, callUpdatePwdAPI, callUpdateMemberAPI, callUpdateProfileAPI, callDeleteAPI } from '../../apis/member/MemberAPICalls'
 import React from "react";
 import defaultImg from "../static/images/profile-img.png";
 
@@ -124,6 +124,12 @@ function Mypage(){
         e.target.src = defaultImg;
     }
 
+    const onClickDelete = () => { 
+        let userInput = prompt("회원 탈퇴를 진행하시려면 아이디 정보를 입력하세요. ");
+        if(userInput == originMember.memberId){
+            dispatch(callDeleteAPI());
+        }
+    }
 
     console.log(member)
     return (
@@ -190,7 +196,7 @@ function Mypage(){
                 <br />
             </div>
             <button className={style.submitBtn} onClick={onClickUpdateMember}><img src={require("../static/images/change-btn.png")} /> </button>
-            <div className={style.unregist}><button> 회원 탈퇴 </button></div>
+            <div> <button onClick={onClickDelete}> <div className={style.unregist}><button> 회원 탈퇴 </button></div></button></div>
 
             </div>
             </div>
