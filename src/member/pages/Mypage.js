@@ -8,6 +8,7 @@ import {
 import { callGetMemberAPI, callGetProfileAPI, callUpdatePwdAPI, callUpdateMemberAPI, callUpdateProfileAPI, callDeleteAPI } from '../../apis/member/MemberAPICalls'
 import React from "react";
 import defaultImg from "../static/images/profile-img.png";
+import Profile from "./Profile"; 
 
 function Mypage(){
 
@@ -200,6 +201,7 @@ function Mypage(){
 
             </div>
             </div>
+            <Profile value="admin"/>
         </div>
     )
 }
