@@ -8,8 +8,7 @@ import { useNavigate } from "react-router-dom";
 import {callGetNoticesAPI } from "../../apis/community/NoticeAPICalls"
 
 function NoticeList(){
-    // 공지사항 정보 불러오기
-    // api로 공지사항 정보 조회 후 데이터 저장
+    // api로 1대1 정보 조회 후 데이터 저장
     const result = useSelector(state => state.noticeReducer);
     const notices = result?.noticeList?.content;
     console.log("data", notices);

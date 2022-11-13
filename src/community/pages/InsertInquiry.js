@@ -5,9 +5,11 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
 import { callInsertInquiryAPI } from "../../apis/community/InquiryAPICalls"
+import { useNavigate } from "react-router-dom";
 function InsertInquiry(){
     // 헤더 설정 세팅
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
@@ -23,6 +25,7 @@ function InsertInquiry(){
         });
         func();
         alert("문의를 등록했습니다.")
+        navigate("/serviceCenter");
     }
     return (
         <div className={style.noticeBox}>
