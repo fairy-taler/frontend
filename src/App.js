@@ -8,6 +8,7 @@ import NoticeList from "./community/pages/NoticeList";
 import NoticeListForManagement from "./community/pages/NoticeListForManagement";
 import NoticeInfo from "./community/pages/NoticeInfo";
 import NoticeInfoForManagement from "./community/pages/NoticeInfoForManagement";
+import FaqInfoForManagement from "./community/pages/FaqInfoForManagement";
 import ForumDetail from "./community/pages/ForumDetail";
 import InquiryInfo from "./community/pages/InquiryInfo";
 import FAQInfo from "./community/pages/FAQInfo";
@@ -27,7 +28,6 @@ import Forums from "./community/pages/Forums";
 import InsertForum from "./community/pages/InsertForum";
 import JoinResult from "./member/pages/JoinResult"; 
 import ManageMember from "./member/pages/ManageMember";
-
 function App() {
   return (
     <BrowserRouter>
@@ -39,6 +39,7 @@ function App() {
           <Route path="/managementNotices" element={<NoticeListForManagement />}/>
           <Route path="/notices/:1" element={<NoticeInfo/>} />
           <Route path="/managementNotices/:1" element={<NoticeInfoForManagement/>} />
+          <Route path="/managementFaqs/:1" element={<FaqInfoForManagement/>} />
           <Route path="/faq/:1" element={<FAQInfo />} />'
           <Route path="/forums/:1" element={<ForumDetail />} />'
           <Route path="/myInquiry/:1" element={<InquiryInfo />} />

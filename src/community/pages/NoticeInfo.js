@@ -3,18 +3,28 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
-import { useEffect } from "react";
+import { useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+import {callGetDetailNoticeAPI } from "../../apis/community/NoticeAPICalls"
+import { NavLink, useParams } from "react-router-dom"
+function NoticeInfo(){       
+    const  params = useParams();                 
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-function NoticeInfo(){
+    useEffect(()=>{
+        dispatch({ type: ON_CLICK, payload : false});
+        dispatch({ type: ON_BLACK});
+        dispatch(callGetDetailNoticeAPI(params[1]));
+    },[])
+
     //공지사항 정보 불러오기
-    const result = {"tag" :"공지",
-                    "title" :"10월 정기 점검 안내", 
-                    "content" :"안녕하세요. " 
-                                + " \n 10월 정기점검 안내합니다. 오후 11시부터 오전 1시까지 서비스 점검을 진행합니다."
-                                + "\n 너그러운 양해 부탁드립니다."
-                                + "\n 갑사합니다.",
-                    "date" :"2022-10-23"
-                    }
+    const result= useSelector(state => state.noticeReducer);
+    const notice = result?.notice;
+
+    console.log(result)
+    console.log(notice)
+
     const nextResult = {"tag" :"공지",
                         "title" :"10월 정기 점검 안내", 
                                 "content" :"안녕하세요. " 
@@ -24,15 +34,8 @@ function NoticeInfo(){
                                 "date" :"2022-10-23"
                         }
                      
-   
     // 헤더 설정 변경
-    const dispatch = useDispatch();
     const header = useSelector(state => state.headerReducer);
-
-    useEffect(()=>{
-        dispatch({ type: ON_CLICK, payload : false});
-        dispatch({ type: ON_BLACK});
-    },[])
 
     return (
         <div className={style.noticeBox}>
@@ -49,20 +52,20 @@ function NoticeInfo(){
             {/* border line */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 목록 / 이전으로 버튼 */}
-            <div className={style.subTitleBox}>
+            <div className={style.subTitleBox} onClick={()=>{ navigate(`/notices`)}}>
                 <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
             </div>
             {/* 공지사항 제목 */}
             <div className={style.contentTitleBox}> 
-                {result.title}
+                {notice?.title}
             </div>
             {/* 공지사항 날짜 */}
             <div className={style.contentDateBox}>
-                {result.date}
+                {notice?.createDate.substr(0,10)}
             </div>
             {/* 공지사항 내용 */}
             <div className={style.contentContentBox}>
-                {result.content}
+                {notice?.content}
             </div>
             {/* 다음 공지사항 */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />

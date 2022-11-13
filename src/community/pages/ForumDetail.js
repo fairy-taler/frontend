@@ -9,12 +9,19 @@ import { NavLink, useParams } from "react-router-dom"
 import Profile from "../../member/pages/Profile"
 
 function ForumDetail(){
+    const dispatch = useDispatch();
     const  params = useParams();
     const [commentContent, setCommentContent] = useState("");
     const result= useSelector(state => state.forumReducer);
     const member= useSelector(state => state.memberReducer);
     const forum = result?.forum;
     const [clickProfile, setClickProfile] = useState(null); 
+
+    useEffect(()=>{
+        dispatch({ type: ON_CLICK, payload : false});
+        dispatch({ type: ON_BLACK});
+        dispatch(callGetDetailForumAPI(params[1]));
+    },[,commentContent])
 
     // 회원 아이디 보여주기 
     const profile = null; 
@@ -24,7 +31,10 @@ function ForumDetail(){
             console.log("memberId" , memberId)
         }
     }
-    console.log("params", params[1])
+    
+    // 헤더 설정 변경
+    const header = useSelector(state => state.headerReducer);
+    
     const nextResult = {"tag" :"자유",
                         "title" :"게임 제작할 때 팁", 
                                 "content" :"안녕하세요. " 
@@ -40,15 +50,6 @@ function ForumDetail(){
         setCommentContent({...commentContent});
     }
     console.log(commentContent);
-    // 헤더 설정 변경
-    const dispatch = useDispatch();
-    const header = useSelector(state => state.headerReducer);
-
-    useEffect(()=>{
-        dispatch({ type: ON_CLICK, payload : false});
-        dispatch({ type: ON_BLACK});
-        dispatch(callGetDetailForumAPI(params[1]));
-    },[,commentContent])
 
     return (
         <div className={style.noticeBox}>

@@ -5,15 +5,20 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { callGetFaqAPI } from "../../apis/community/FaqAPICalls"
+import { callGetForumsByMemberCodeAPI } from "../../apis/community/InquiryAPICalls"
 
 
 function ServiceCenter(){
     //공지사항 정보 불러오기
-    const results = [{"tag":"공지", "title" : "10월 정기점검 안내", "date" :"2022-10-23"},
-                     {"tag":"공지", "title" : "9월 정기점검 안내", "date" :"2022-9-23"},
-                     {"tag":"공지", "title" : "8월 정기점검 안내", "date" :"2022-8-23"}];
-
+    const result = useSelector(state => state.faqReducer);
+    const faqs = result?.faqList?.content;
+    console.log(faqs);
+    // 나의 문의 정보 불러오기
+    const result2 = useSelector(state => state.inquiryReducer);
+    const myInquirys = result2?.inquiryList?.content;
+    console.log(myInquirys);
+    
     const pages = Array(10).fill()
     
     // 헤더 설정 변경
@@ -23,6 +28,12 @@ function ServiceCenter(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
+        dispatch(callGetFaqAPI({	
+            page:0, size:5}
+        ));
+        dispatch(callGetForumsByMemberCodeAPI({	
+            page:0, size:5}
+        ));
     },[])
 
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
@@ -39,7 +50,6 @@ function ServiceCenter(){
     const toInsertInquiry = (e) =>{
         navigate(`/insertInquiry`);
     }
-
 
     return (
         <div className={style.noticeBox}>
@@ -60,11 +70,11 @@ function ServiceCenter(){
             {/* 자주 찾는 도움말 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
-                    {results.map((result, index)=>(
-                        <tr onClick={toFAQInfo} key={index} id={index}>
-                            <td  id={index} style={{width : "100px"}}>[{result.tag}]</td>
-                            <td  id={index}>{result.title}</td>
-                            <td  id={index}>{result.date}</td>
+                    {faqs?.map((faq, index)=>(
+                        <tr onClick={toFAQInfo} key={faq.faqCode} id={index}>
+                            <td  id={faq.faqCode} style={{width : "100px"}}>[FAQ]</td>
+                            <td  id={faq.faqCode}>{faq.title}</td>
+                            <td  id={faq.faqCode}>{faq.createDate.substr(0,10)}</td>
                         </tr>))}
                 </table>
             </div>
@@ -82,11 +92,12 @@ function ServiceCenter(){
             {/* 문의 목록 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
-                    {results.map((result, index)=>(
-                        <tr onClick={toInquiryInfo} key={index} id={index}>
-                            <td  key={index} id={index} style={{width : "100px"}}>[{result.tag}]</td>
-                            <td  key={index} id={index} >{result.title}</td>
-                            <td  key={index} id={index} >{result.date}</td>
+                    {myInquirys?.map((inquiry, index)=>(
+                        <tr onClick={toInquiryInfo} key={inquiry.inquiryCode} id={index}>
+                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} style={{width : "100px"}}>[내 문의]</td>
+                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} >{inquiry?.title}</td>
+                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} >{inquiry?.answer == null? "답변 미완료" : "답변 완료" }</td>
+                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} >{inquiry?.createDate.substr(0,10)}</td>
                         </tr>))}
                 </table>
             </div>

@@ -32,6 +32,7 @@ function Forums(){
 
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
+    
     const toNoticesInfo = (e) =>{
         console.log(
             "url", e.target)

@@ -4,18 +4,12 @@ import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
-
+import {callGetDetailNoticeAPI, callDeleteNoticeAPI } from "../../apis/community/NoticeAPICalls"
+import { NavLink, useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 function NoticeInfo(){
-    //공지사항 정보 불러오기
-    const result = {"tag" :"공지",
-                    "title" :"10월 정기 점검 안내", 
-                    "content" :"안녕하세요. " 
-                                + " \n 10월 정기점검 안내합니다. 오후 11시부터 오전 1시까지 서비스 점검을 진행합니다."
-                                + "\n 너그러운 양해 부탁드립니다."
-                                + "\n 감사합니다.",
-                    "date" :"2022-10-23",
-                    "state" : "public"
-                    }
+    const  params = useParams();  
+    const navigate = useNavigate();   
     const nextResult = {"tag" :"공지",
                         "title" :"10월 정기 점검 안내", 
                                 "content" :"안녕하세요. " 
@@ -34,8 +28,16 @@ function NoticeInfo(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
+        dispatch(callGetDetailNoticeAPI(params[1]));
     },[])
-
+    //공지사항 정보 불러오기
+    const result= useSelector(state => state.noticeReducer);
+    const notice = result?.notice;
+    const onClickDelteNotice = () => {
+        dispatch(callDeleteNoticeAPI(params[1]));
+        alert("삭제되었습니다.")
+        navigate(`/managementNotices`);
+    }
     return (
         <div className={style.noticeBox}>
             {/* 공지사항 제목 이미지 */}
@@ -55,22 +57,22 @@ function NoticeInfo(){
                 <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
                 <div>
                 <span className={style.editButton} style={{background : "#6666FF"}}>수정</span>
-                <span className={style.editButton} style={{background : "#FF6666"}}>삭제</span>
+                <span className={style.editButton} style={{background : "#FF6666"}} onClick={onClickDelteNotice}>삭제</span>
                 <span className={style.editButton}>비공개로 변경</span>
                 </div>
             </div>
             {/* 공지사항 제목 */}
             <div className={style.contentTitleBox}> 
-                [{result.tag}] {result.title}
-                <div>{result.state == "public" ? "공개": "비공개"}</div>
+                [공지] {notice?.title}
+                <div>{notice?.public? "공개": "비공개"}</div>
             </div>
             {/* 공지사항 날짜 */}
             <div className={style.contentDateBox}>
-                {result.date}
+                {notice?.createDate?.substr(0,10)}
             </div>
             {/* 공지사항 내용 */}
             <div className={style.contentContentBox}>
-                {result.content}
+                {notice?.content}
             </div>
             {/* 다음 공지사항 */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />

@@ -4,22 +4,24 @@ import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
+import { NavLink, useParams } from "react-router-dom"
+import { callGetDetailInquiryAPI } from "../../apis/community/InquiryAPICalls"
 
 function InquiryInfo(){
+    const  params = useParams();
+    //문의 상세 정보 불러오기
+    
+    const result= useSelector(state => state.inquiryReducer);
+    const inquiry = result?.inquiry;
+    console.log(inquiry)
     //공지사항 정보 불러오기
-    const result = {"tag" :"문의",
-                    "title" :"구매한 동화책이 보이지 않아요.", 
-                    "content" :"안녕하세요. " 
-                                + " \n 구매한 동화책이 보이지 않아요. 어디서 확인할 수 있나요?",
-                    "date" :"2022-10-23"
-                    }
+   
     const nextResult = {"tag" :"문의",
                         "title" :"게임 오류 목록 확인", 
                                 "content" :"안녕하세요. " 
                                             + " \n ID 보호 모드를 해제하고 싶어요.",
                                 "date" :"2022-10-13"
                         }
-                     
    
     // 헤더 설정 변경
     const dispatch = useDispatch();
@@ -28,6 +30,7 @@ function InquiryInfo(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
+        dispatch(callGetDetailInquiryAPI(params[1]));
     },[])
 
     return (
@@ -48,18 +51,39 @@ function InquiryInfo(){
             <div className={style.subTitleBox}>
                 <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
             </div>
-            {/* FAQ 제목 */}
+            {/* 문의 제목 */}
             <div className={style.contentTitleBox}> 
-                {result.title}
+                {inquiry?.title}
             </div>
-            {/* FAQ 날짜 */}
+            {/* 문의 날짜 */}
             <div className={style.contentDateBox}>
-                {result.date}
+                {inquiry?.createDate.substr(0,10)}
             </div>
-            {/* FAQ 내용 */}
+            {/* 문의 내용 */}
             <div className={style.contentContentBox}>
-                {result.content}
+                {inquiry?.content}
             </div>
+            <img className={style.lineImg} src={require("../static/images/line.png")} />
+            <div className={style.contentTitleBox} style={{paddingTop:"20px"}}> 
+                답변
+            </div>
+            {inquiry?.answer == null? 
+                <div className={style.contentContentBox}>
+                        답변이 아직 등록되지 않았습니다.
+                    </div>
+            :
+                <div>
+                    {/* 문의 날짜 */}
+                    <div className={style.contentDateBox}>
+                        {inquiry?.answerDate.substr(0,10)}
+                    </div>
+                    {/* 문의 내용 */}
+                    <div className={style.contentContentBox}>
+                        {inquiry?.answer}
+                    </div>
+                </div>
+            }
+            
             {/* 다음 FAQ */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             <div className={style.nextContentsBox}>

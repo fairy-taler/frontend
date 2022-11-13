@@ -8,8 +8,7 @@ import { useNavigate } from "react-router-dom";
 import {callGetNoticesAPI } from "../../apis/community/NoticeAPICalls"
 
 function NoticeList(){
-    // 공지사항 정보 불러오기
-    // api로 공지사항 정보 조회 후 데이터 저장
+    // api로 1대1 정보 조회 후 데이터 저장
     const result = useSelector(state => state.noticeReducer);
     const notices = result?.noticeList?.content;
     console.log("data", notices);
@@ -17,7 +16,6 @@ function NoticeList(){
     //  페이징 처리
     const [currentPage, setCurrentPage] = useState(0);
     const pages = Array(result?.forumList?.totalPages).fill()
-
 
     const onClickPageButton = (e) =>{  
         dispatch(callGetNoticesAPI({	
@@ -61,10 +59,10 @@ function NoticeList(){
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
                     {notices?.map((notice, index)=>(
-                            <tr onClick={toNoticesInfo} id={index}>
-                                    <td id={index} style={{width : "50px" , textAlign:"left"}}>[공지]</td>
-                                    <td id={index}>{notice.title}</td>
-                                    <td id={index} style={{width : "120px", textAlign:"right"}}>{notice.createDate.substr(0,10)}</td>
+                            <tr onClick={toNoticesInfo} id={notice?.noticeCode}>
+                                    <td id={notice?.noticeCode} style={{width : "50px" , textAlign:"left"}}>[공지]</td>
+                                    <td id={notice?.noticeCode}>{notice?.title}</td>
+                                    <td id={notice?.noticeCode} style={{width : "120px", textAlign:"right"}}>{notice?.createDate.substr(0,10)}</td>
                             </tr>
                     ))}
                 </table>
