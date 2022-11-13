@@ -77,3 +77,24 @@ export const callInsertFaqAPI = (faqData) => {
 
     };
 }
+
+export const callDeleteFaqAPI = (faqCode) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/faq/${faqCode}`;
+
+    return async (dispatch, getState) => {
+        const result = await fetch(requestURL,{
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*" 
+            }
+        })
+        .then(res => res.json());
+        
+        console.log('[FaqAPICalls] callDeleteFaqAPI RESULT : ', result);
+
+    };
+}

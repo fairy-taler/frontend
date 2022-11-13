@@ -73,3 +73,24 @@ export const callInsertNoticeAPI = (noticeData) => {
 
     };
 }
+
+export const callDeleteNoticeAPI = (noticeCode) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/notices/${noticeCode}`;
+
+    return async (dispatch, getState) => {
+        const result = await fetch(requestURL,{
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*" 
+            }
+        })
+        .then(res => res.json());
+        
+        console.log('[NoticeAPICalls] callDeleteNoticeAPI RESULT : ', result);
+
+    };
+}

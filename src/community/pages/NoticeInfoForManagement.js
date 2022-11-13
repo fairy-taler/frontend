@@ -4,10 +4,12 @@ import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
-import {callGetDetailNoticeAPI } from "../../apis/community/NoticeAPICalls"
+import {callGetDetailNoticeAPI, callDeleteNoticeAPI } from "../../apis/community/NoticeAPICalls"
 import { NavLink, useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 function NoticeInfo(){
-    const  params = useParams();     
+    const  params = useParams();  
+    const navigate = useNavigate();   
     const nextResult = {"tag" :"공지",
                         "title" :"10월 정기 점검 안내", 
                                 "content" :"안녕하세요. " 
@@ -31,7 +33,11 @@ function NoticeInfo(){
     //공지사항 정보 불러오기
     const result= useSelector(state => state.noticeReducer);
     const notice = result?.notice;
-
+    const onClickDelteNotice = () => {
+        dispatch(callDeleteNoticeAPI(params[1]));
+        alert("삭제되었습니다.")
+        navigate(`/managementNotices`);
+    }
     return (
         <div className={style.noticeBox}>
             {/* 공지사항 제목 이미지 */}
@@ -51,7 +57,7 @@ function NoticeInfo(){
                 <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
                 <div>
                 <span className={style.editButton} style={{background : "#6666FF"}}>수정</span>
-                <span className={style.editButton} style={{background : "#FF6666"}}>삭제</span>
+                <span className={style.editButton} style={{background : "#FF6666"}} onClick={onClickDelteNotice}>삭제</span>
                 <span className={style.editButton}>비공개로 변경</span>
                 </div>
             </div>

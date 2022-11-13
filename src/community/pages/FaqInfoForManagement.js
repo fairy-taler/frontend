@@ -4,12 +4,14 @@ import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
-import { callGetDetailFaqAPI } from "../../apis/community/FaqAPICalls"
+import { callGetDetailFaqAPI,callDeleteFaqAPI } from "../../apis/community/FaqAPICalls"
 import { NavLink, useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 function FaqInfo(){
     const  params = useParams();      
     const result= useSelector(state => state.faqReducer);
+    const navigate = useNavigate();
     const faq = result?.faq;
     //공지사항 정보 불러오기
     const nextResult = {"tag" :"FAQ",
@@ -32,6 +34,11 @@ function FaqInfo(){
         dispatch({ type: ON_BLACK});
         dispatch(callGetDetailFaqAPI(params[1]));
     },[])
+    const onClickDelteFaq = () => {
+        dispatch(callDeleteFaqAPI(params[1]));
+        alert("삭제되었습니다.")
+        navigate(`/managementNotices`);
+    }
 
     return (
         <div className={style.noticeBox}>
@@ -52,7 +59,7 @@ function FaqInfo(){
                 <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
                 <div>
                 <span className={style.editButton} style={{background : "#6666FF"}}>수정</span>
-                <span className={style.editButton} style={{background : "#FF6666"}}>삭제</span>
+                <span className={style.editButton} style={{background : "#FF6666"}} onClick={onClickDelteFaq}>삭제</span>
                 <span className={style.editButton}>비공개로 변경</span>
                 </div>
             </div>
