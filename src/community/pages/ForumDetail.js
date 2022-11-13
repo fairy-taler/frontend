@@ -13,6 +13,13 @@ function ForumDetail(){
     const result= useSelector(state => state.forumReducer);
     const member= useSelector(state => state.memberReducer);
     const forum = result?.forum;
+
+    // 회원 아이디 보여주기 
+    const onClickNickname = (memberId) =>{
+        return ()=>{
+            console.log("memberId" , memberId)
+        }
+    }
     console.log("params", params[1])
     const nextResult = {"tag" :"자유",
                         "title" :"게임 제작할 때 팁", 
@@ -62,7 +69,7 @@ function ForumDetail(){
                 <div className={style.contentitle}> 
                     {forum?.title}
                 </div>
-                <div className={style.contentNickname}>작성자 : {forum?.nickname}</div>
+                <div className={style.contentNickname} onClick={onClickNickname(forum?.memberId)}>작성자 : {forum?.nickname}</div>
             </div>
             
             {/* 게시글 날짜 */}
