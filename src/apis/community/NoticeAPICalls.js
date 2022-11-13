@@ -44,7 +44,7 @@ export const callGetDetailNoticeAPI = (noticeCode) => {
         
         console.log('[NoticeAPICalls] callGetNoticeDetailAPI RESULT : ', result);
         
-        dispatch({ type:SET_NOTICE_LIST,  payload: result.data});
+        dispatch({ type:SET_NOTICE,  payload: result.data});
 
     };
 }

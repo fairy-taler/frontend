@@ -20,7 +20,11 @@ function NoticeInfo(){
 
     //공지사항 정보 불러오기
     const result= useSelector(state => state.noticeReducer);
-    const notice = result.notice;
+    const notice = result?.notice;
+
+    console.log(result)
+    console.log(notice)
+
     const nextResult = {"tag" :"공지",
                         "title" :"10월 정기 점검 안내", 
                                 "content" :"안녕하세요. " 
@@ -53,15 +57,15 @@ function NoticeInfo(){
             </div>
             {/* 공지사항 제목 */}
             <div className={style.contentTitleBox}> 
-                {notice.title}
+                {notice?.title}
             </div>
             {/* 공지사항 날짜 */}
             <div className={style.contentDateBox}>
-                {notice.createDate.substr(0,10)}
+                {notice?.createDate.substr(0,10)}
             </div>
             {/* 공지사항 내용 */}
             <div className={style.contentContentBox}>
-                {notice.content}
+                {notice?.content}
             </div>
             {/* 다음 공지사항 */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
