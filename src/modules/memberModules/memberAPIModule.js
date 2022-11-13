@@ -9,6 +9,7 @@ export const PUT_PWD = 'member/PUT_PWD';
 export const PUT_MEMBER = 'member/PUT_MEMBER'; 
 export const PUT_PROFILE = "profile/PUT_PROFILE"; 
 export const DELETE_MEMBER = "member/DELTE_MEMBER";
+export const GET_MEMBER_LIST = "memeber/GET_MEMBER_LIST"; 
 
 const actions = createActions({
     [POST_LOGIN]: () => {},
@@ -17,7 +18,8 @@ const actions = createActions({
     [PUT_PWD]: () => {},
     [PUT_MEMBER]: () => {},
     [PUT_PROFILE]: () => {},
-    [DELETE_MEMBER]: () => {}
+    [DELETE_MEMBER]: () => {},
+    [GET_MEMBER_LIST]: () => {} 
 })
 
 export const memberReducer = handleActions(
@@ -47,6 +49,10 @@ export const memberReducer = handleActions(
             return payload;
         },
         [DELETE_MEMBER]: (state, { payload }) => {
+            
+            return payload;
+        },
+        [GET_MEMBER_LIST]: (state, { payload }) => {
             
             return payload;
         }

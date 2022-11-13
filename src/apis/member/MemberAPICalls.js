@@ -5,7 +5,8 @@ import {
     PUT_PWD,
     PUT_MEMBER,
     PUT_PROFILE,
-    DELETE_MEMBER
+    DELETE_MEMBER,
+    GET_MEMBER_LIST
 } from "../../modules/memberModules/memberAPIModule"; 
 
 import {
@@ -272,5 +273,29 @@ export const callDeleteAPI = () => {
             window.location.href="/"
         }
         dispatch({ type: DELETE_MEMBER,  payload: result });   
+    };
+}
+
+
+export const callGetMemberListAPI = () => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/all`;
+
+    return async (dispatch, getState) => {
+        const result = await fetch(requestURL,{
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*" 
+            }
+        })
+        .then(res => res.json());
+        
+        console.log('[MemberAPICalls] callGetMemberAPI RESULT : ', result);
+        
+        dispatch({ type: GET_MEMBER_LIST,  payload: result.data });
+
     };
 }
