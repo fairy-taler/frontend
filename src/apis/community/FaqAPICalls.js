@@ -48,3 +48,32 @@ export const callGetDetailFaqAPI = (faqCode) => {
 
     };
 }
+
+export const callInsertFaqAPI = (faqData) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/faq`;
+    console.log(requestURL);
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Access-Control-Allow-Origin": "*"   , 
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+            },
+            body: JSON.stringify(
+                {
+                    "title" : faqData.title,
+                    "content" : faqData.content,
+                    "answer" : faqData.content
+                }
+            )
+        })
+        .then(response => response.json());
+
+        console.log('[MemberAPICalls] callRegisterAPI RESULT : ', result);   
+
+    };
+}
