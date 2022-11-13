@@ -2,7 +2,7 @@ import { createActions, handleActions } from "redux-actions";
 
 const initialState = []
 
-export const GET_PROFILE     = 'member/GET_PROFILE';
+export const GET_PROFILE = 'member/GET_PROFILE';
 
 const actions = createActions({
     [GET_PROFILE]: () => {}
