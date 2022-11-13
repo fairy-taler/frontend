@@ -61,10 +61,10 @@ function NoticeList(){
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
                     {notices?.map((notice, index)=>(
-                            <tr onClick={toNoticesInfo} id={index}>
-                                    <td id={index} style={{width : "50px" , textAlign:"left"}}>[공지]</td>
-                                    <td id={index}>{notice.title}</td>
-                                    <td id={index} style={{width : "120px", textAlign:"right"}}>{notice.createDate.substr(0,10)}</td>
+                            <tr onClick={toNoticesInfo} id={notice.noticeCode}>
+                                    <td id={notice.noticeCode} style={{width : "50px" , textAlign:"left"}}>[공지]</td>
+                                    <td id={notice.noticeCode}>{notice.title}</td>
+                                    <td id={notice.noticeCode} style={{width : "120px", textAlign:"right"}}>{notice.createDate.substr(0,10)}</td>
                             </tr>
                     ))}
                 </table>
