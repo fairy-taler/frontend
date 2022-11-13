@@ -22,7 +22,7 @@ function Forums(){
 
     // 페이지 버튼 설정 
     const [currentPage, setCurrentPage] = useState(1);
-
+    const [category, setCategory] = useState("all");
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
     const toNoticesInfo = (e) =>{
@@ -35,15 +35,40 @@ function Forums(){
     }
     const onClickPageButton = (e) =>{  
         setCurrentPage(e.target.id)
+        switch(category){
+            case "all":
+                dispatch(callGetForumsAPI({	
+                    page:e.target.id-1, size:10}
+                ));
+                break;
+            case "my": 
+                dispatch(callGetForumsByMemberCodeAPI({	
+                    page:e.target.id-1, size:10}
+                ));
+                break;
+            default:
+                dispatch(callGetForumsByCategoryAPI(category,{	
+                    page:e.target.id-1, size:10}
+                ));
+                break;
+        }
     }
     const onClickCategory = (e) => {
-        console.log(e.target.textContent)
+        setCategory(e.target.textContent)
         dispatch(callGetForumsByCategoryAPI(e.target.textContent,{	
             page:0, size:10}
         ));
+        setCurrentPage(0)
     }
     const onClickMyPost = () => {
+        setCategory("my")
         dispatch(callGetForumsByMemberCodeAPI({	
+            page:0, size:10}
+        ));
+    }
+    const onClickAllPost = () => {
+        setCategory("all")
+        dispatch(callGetForumsAPI({	
             page:0, size:10}
         ));
     }
@@ -54,7 +79,7 @@ function Forums(){
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
         dispatch(callGetForumsAPI({	
-            page:0, size:10}
+            page:currentPage-1, size:10}
         ));
     },[])
 
@@ -71,13 +96,15 @@ function Forums(){
             </div>
             <div className={style.buttonGroup}>
                 <div>
+                
+                    <button className={style.categoryBtn} onClick={onClickAllPost}>전체</button>
                     <button className={style.categoryBtn} onClick={onClickCategory}>자유</button>
                     <button className={style.categoryBtn} onClick={onClickCategory}>정보공유</button>
                     <button className={style.categoryBtn} onClick={onClickCategory}>동화</button>
+                    <button className={style.categoryBtnGray} onClick={onClickMyPost}>내 글</button>
                 </div>
                 <div className={style.insertButtonBox}>
 
-                <div><img className={style.insertButton} src={require("../static/images/insert-btn.png")} onClick={onClickMyPost}/></div>
                 <NavLink to="/insertForum"><img className={style.insertButton} src={require("../static/images/insert-btn.png")}/></NavLink>
             </div>
             </div>
