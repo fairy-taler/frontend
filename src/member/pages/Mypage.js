@@ -201,7 +201,6 @@ function Mypage(){
 
             </div>
             </div>
-            <Profile value="admin"/>
         </div>
     )
 }
