@@ -26,7 +26,7 @@ export const callGetInquirysAPI = (pageable) => {
 
     };
 }
-export const callGetDetailForumAPI = (inquiryCode) => {
+export const callGetDetailInquiryAPI = (inquiryCode) => {
     const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/inquirys/${inquiryCode}`;
 
     return async (dispatch, getState) => {

@@ -94,9 +94,9 @@ function ServiceCenter(){
                 <table className={style.communityTable}>
                     {myInquirys?.map((inquiry, index)=>(
                         <tr onClick={toInquiryInfo} key={inquiry.inquiryCode} id={index}>
-                            <td  key={inquiry.inquiryCode} id={index} style={{width : "100px"}}>[내 문의]</td>
-                            <td  key={inquiry.inquiryCode} id={index} >{inquiry.title}</td>
-                            <td  key={inquiry.inquiryCode} id={index} >{inquiry.createDate.substr(0,10)}</td>
+                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} style={{width : "100px"}}>[내 문의]</td>
+                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} >{inquiry.title}</td>
+                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} >{inquiry.createDate.substr(0,10)}</td>
                         </tr>))}
                 </table>
             </div>

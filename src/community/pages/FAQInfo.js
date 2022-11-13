@@ -9,7 +9,7 @@ import { callGetDetailFaqAPI } from "../../apis/community/FaqAPICalls"
 
 function FAQInfo(){
     const  params = useParams();
-    //공지사항 정보 불러오기
+    //FAQ 정보 불러오기
     
     const result= useSelector(state => state.faqReducer);
     const faq = result?.faq;
@@ -60,7 +60,7 @@ function FAQInfo(){
             </div>
             {/* FAQ 내용 */}
             <div className={style.contentContentBox}>
-                {faq.content}
+                {faq?.content}
             </div>
             {/* 다음 FAQ */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />

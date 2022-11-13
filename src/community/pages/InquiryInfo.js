@@ -4,15 +4,18 @@ import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
+import { NavLink, useParams } from "react-router-dom"
+import { callGetDetailInquiryAPI } from "../../apis/community/InquiryAPICalls"
 
 function InquiryInfo(){
+    const  params = useParams();
+    //문의 상세 정보 불러오기
+    
+    const result= useSelector(state => state.inquiryReducer);
+    const inquiry = result?.inquiry;
+    console.log(inquiry)
     //공지사항 정보 불러오기
-    const result = {"tag" :"문의",
-                    "title" :"구매한 동화책이 보이지 않아요.", 
-                    "content" :"안녕하세요. " 
-                                + " \n 구매한 동화책이 보이지 않아요. 어디서 확인할 수 있나요?",
-                    "date" :"2022-10-23"
-                    }
+   
     const nextResult = {"tag" :"문의",
                         "title" :"게임 오류 목록 확인", 
                                 "content" :"안녕하세요. " 
@@ -28,6 +31,7 @@ function InquiryInfo(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
+        dispatch(callGetDetailInquiryAPI(params[1]));
     },[])
 
     return (
@@ -50,15 +54,15 @@ function InquiryInfo(){
             </div>
             {/* FAQ 제목 */}
             <div className={style.contentTitleBox}> 
-                {result.title}
+                {inquiry?.title}
             </div>
             {/* FAQ 날짜 */}
             <div className={style.contentDateBox}>
-                {result.date}
+                {inquiry?.createDate.substr(0,10)}
             </div>
             {/* FAQ 내용 */}
             <div className={style.contentContentBox}>
-                {result.content}
+                {inquiry?.content}
             </div>
             {/* 다음 FAQ */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
