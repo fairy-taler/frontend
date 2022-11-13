@@ -3,16 +3,27 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {callGetNoticesAPI } from "../../apis/community/NoticeAPICalls"
 
 function NoticeList(){
-    //공지사항 정보 불러오기
-    const results = [{"id":"1","tag":"공지", "title" : "10월 정기점검 안내", "date" :"2022-10-23"},
-                     {"id":"1","tag":"공지", "title" : "10월 정기점검 안내", "date" :"2022-10-23"},
-                     {"id":"1","tag":"공지", "title" : "10월 정기점검 안내", "date" :"2022-10-23"}];
+    // 공지사항 정보 불러오기
+    // api로 공지사항 정보 조회 후 데이터 저장
+    const result = useSelector(state => state.noticeReducer);
+    const notices = result?.noticeList?.content;
+    console.log("data", notices);
+    
+    //  페이징 처리
+    const [currentPage, setCurrentPage] = useState(0);
+    const pages = Array(result?.forumList?.totalPages).fill()
 
-    const pages = Array(10).fill()
+
+    const onClickPageButton = (e) =>{  
+        dispatch(callGetNoticesAPI({	
+            page:e.target.id-1, size:10}
+        ));
+    }
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
     const toNoticesInfo = (e) =>{
@@ -29,6 +40,9 @@ function NoticeList(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
+        dispatch(callGetNoticesAPI({	
+            page:0, size:10}
+        ));
     },[])
 
     return (
@@ -46,16 +60,16 @@ function NoticeList(){
             {/* 공지사항 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
-                    {results.map((result, index)=>(
+                    {notices?.map((notice, index)=>(
                             <tr onClick={toNoticesInfo} id={index}>
-                                    <td id={index} style={{width : "50px" , textAlign:"left"}}>[{result.tag}]</td>
-                                    <td id={index}>{result.title}</td>
-                                    <td id={index} style={{width : "120px", textAlign:"right"}}>{result.date}</td>
+                                    <td id={index} style={{width : "50px" , textAlign:"left"}}>[공지]</td>
+                                    <td id={index}>{notice.title}</td>
+                                    <td id={index} style={{width : "120px", textAlign:"right"}}>{notice.createDate.substr(0,10)}</td>
                             </tr>
                     ))}
                 </table>
             </div>
-            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
+            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton} style={currentPage==index+1? {fontWeight:"bold", color:"black"}:null}  onClick={onClickPageButton}>{index+1}</span>))}</div>
         </div>
     )
 }

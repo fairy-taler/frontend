@@ -9,12 +9,17 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { callGetForumsAPI, callGetForumsByCategoryAPI, callGetForumsByMemberCodeAPI } from "../../apis/community/ForumAPICalls"
 
 function Forums(){
-    //공지사항 정보 불러오기
+    //게시판 정보 불러오기
     // api로 게시판 정보 조회 후 데이터 저장
     const result = useSelector(state => state.forumReducer);
     // const forums = null;
-    
     const forums = result?.forumList?.content;
+
+    const onClickNickname = (memberId) =>{
+        return ()=>{
+            console.log("memberId" , memberId)
+        }
+    }
 
     // 총 페이지 설정
     const totalPages = result?.forumList?.totalPages
@@ -23,6 +28,8 @@ function Forums(){
     // 페이지 버튼 설정 
     const [currentPage, setCurrentPage] = useState(1);
     const [category, setCategory] = useState("all");
+
+
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
     const toNoticesInfo = (e) =>{
@@ -79,7 +86,7 @@ function Forums(){
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
         dispatch(callGetForumsAPI({	
-            page:currentPage-1, size:10}
+            page:0, size:10}
         ));
     },[])
 
@@ -113,10 +120,10 @@ function Forums(){
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
                     {forums==null? null:forums.map((forum, index)=>(
-                            <tr onClick={toNoticesInfo} id={forum.forumCode}>
+                            <tr id={forum.forumCode}>
                                     <td id={forum.forumCode} style={{width : "100px" , textAlign:"left"}}>[{forum.category}]</td>
-                                    <td id={forum.forumCode}>{forum.title}</td>
-                                    <td id={forum.forumCode} style={{width : "120px", textAlign:"right"}}>{forum.nickname}</td>
+                                    <td id={forum.forumCode}  onClick={toNoticesInfo} >{forum.title}</td>
+                                    <td id={forum.forumCode} style={{width : "120px", textAlign:"right"}} onClick={onClickNickname(forum.memberId)}>{forum.nickname}</td>
                                     <td id={forum.forumCode} style={{width : "120px", textAlign:"right"}}>{forum.createDate.substr(0,10)}</td>
                             </tr>
                     ))}
