@@ -8,7 +8,6 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { callGetForumsAPI, callGetForumsByCategoryAPI, callGetForumsByMemberCodeAPI } from "../../apis/community/ForumAPICalls"
 
-
 function Forums(){
     //공지사항 정보 불러오기
     // api로 게시판 정보 조회 후 데이터 저장
@@ -48,7 +47,6 @@ function Forums(){
             page:0, size:10}
         ));
     }
-    
     // 헤더 설정 변경
     const dispatch = useDispatch();
 
