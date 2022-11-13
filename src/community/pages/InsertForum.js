@@ -36,7 +36,7 @@ function InsertForum(){
             {/* 공지사항 제목 이미지 */}
             <div className={style.betweenBox}>
                 {/* 공지사항 타이틀 */}
-                <img className={style.titleImg} src={require("../static/images/notice-title.png")}/>
+                <div className={style.forumTitle}> 게시판 작성 </div>
             </div>
             {/* border line */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
