@@ -22,7 +22,6 @@ function InquiryInfo(){
                                             + " \n ID 보호 모드를 해제하고 싶어요.",
                                 "date" :"2022-10-13"
                         }
-                     
    
     // 헤더 설정 변경
     const dispatch = useDispatch();

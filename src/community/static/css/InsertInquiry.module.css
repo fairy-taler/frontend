@@ -102,3 +102,10 @@
 .contentInputBox{
     padding : 0px 100px 0px 100px;
 }
+.inquiryTitle{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    margin : 5px;
+    padding: 0px 20px 10px 10px;
+}

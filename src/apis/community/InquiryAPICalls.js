@@ -96,3 +96,30 @@ export const callInsertInquiryAPI = (inquiryData) => {
 
     };
 }
+
+export const callInsertInquiryAnswerAPI = (inquiryData) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/inquiry/answer`;
+    console.log(requestURL);
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Access-Control-Allow-Origin": "*"   , 
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+            },
+            body: JSON.stringify({
+                "inquiryCode" :inquiryData.inquiryCode,
+                "answer" : inquiryData.answer
+            })
+        })
+        .then(response => response.json());
+
+        console.log('[MemberAPICalls] callRegisterAPI RESULT : ', result);   
+
+    };
+}
+
