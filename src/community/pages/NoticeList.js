@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {callGetNoticesAPI } from "../../apis/community/NoticeAPICalls"
 
@@ -14,7 +14,16 @@ function NoticeList(){
     const notices = result?.noticeList?.content;
     console.log("data", notices);
     
-    const pages = Array(10).fill()
+    //  페이징 처리
+    const [currentPage, setCurrentPage] = useState(0);
+    const pages = Array(result?.forumList?.totalPages).fill()
+
+
+    const onClickPageButton = (e) =>{  
+        dispatch(callGetNoticesAPI({	
+            page:e.target.id-1, size:10}
+        ));
+    }
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
     const toNoticesInfo = (e) =>{
@@ -60,7 +69,7 @@ function NoticeList(){
                     ))}
                 </table>
             </div>
-            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
+            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton} style={currentPage==index+1? {fontWeight:"bold", color:"black"}:null}  onClick={onClickPageButton}>{index+1}</span>))}</div>
         </div>
     )
 }
