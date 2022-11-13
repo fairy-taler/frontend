@@ -55,6 +55,7 @@ function NoticeListForManagement(){
         navigate(
             `/managementNotices/${e.target.id}`
           );
+        else
         navigate(
             `/managementFaqs/${e.target.id}`
           );
