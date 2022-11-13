@@ -38,9 +38,35 @@ function Main() {
 
   //프로그램 다운로드 이벤트
   const onDownload= () => {
-    alert("프로그램을 설치합니다.")
+    alert("프로그램을 설치합니다.");
+    fetch('/%EC%B1%85%EC%9E%A5%EC%86%8D%EA%B3%A0%EC%96%91%EC%9D%B4.zip', {
+      method: 'GET',
+      // content-type은 따로 지정하지 않았습니다. 
+    })
+    .then((response) => response.blob())
+    .then((blob) => {
+  
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      
+      link.setAttribute(
+        'href',
+        url,
+      );
+      link.setAttribute(
+        'download',
+        '책장속고양이.zip',
+      );
+  
+      document.body.appendChild(link);
+  
+      link.click();
+  
+      link.parentNode.removeChild(link);
+      
+      window.URL.revokeObjectURL(url)
+    });
   }
-
   //슬라이더 배너 설정
   const settings = {
     //dots : 슬라이더 아래 점

@@ -47,4 +47,5 @@
       "last 1 safari version"
     ]
   }
+  ,"proxy":"https://fairytaler-bucket.s3.ap-northeast-2.amazonaws.com"
 }
