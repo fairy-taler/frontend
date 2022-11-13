@@ -26,6 +26,7 @@ import InquiryResponse from "./community/pages/InquiryResponse";
 import Forums from "./community/pages/Forums"; 
 import InsertForum from "./community/pages/InsertForum";
 import JoinResult from "./member/pages/JoinResult"; 
+import ManageMember from "./member/pages/ManageMember";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           <Route path="/inquirylist" element={<InquiryList />}/>
           <Route path="/inquiryresponse/:1" element={<InquiryResponse/>} />
           <Route path="/forums" element={<Forums />}/>
+          <Route path="/manageMember" element={<ManageMember/>}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>

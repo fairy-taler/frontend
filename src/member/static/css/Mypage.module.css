@@ -154,3 +154,24 @@ textarea {
 .imgUploadBtn{
     height: 0px;
 }
+
+.profileComponent{
+    z-index: 10000;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+}
+
+.ProfileSection{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    background: white;
+    border: 1px solid;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.xBtn{
+    text-align:right;
+}

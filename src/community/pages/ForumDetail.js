@@ -6,6 +6,7 @@ import {
 import { useEffect, useState } from "react";
 import { callGetDetailForumAPI, callInsertCommentAPI} from "../../apis/community/ForumAPICalls"
 import { NavLink, useParams } from "react-router-dom"
+import Profile from "../../member/pages/Profile"
 
 function ForumDetail(){
     const dispatch = useDispatch();
@@ -14,6 +15,7 @@ function ForumDetail(){
     const result= useSelector(state => state.forumReducer);
     const member= useSelector(state => state.memberReducer);
     const forum = result?.forum;
+    const [clickProfile, setClickProfile] = useState(null); 
 
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
@@ -22,8 +24,10 @@ function ForumDetail(){
     },[,commentContent])
 
     // 회원 아이디 보여주기 
+    const profile = null; 
     const onClickNickname = (memberId) =>{
         return ()=>{
+            setClickProfile(memberId)
             console.log("memberId" , memberId)
         }
     }
@@ -70,7 +74,9 @@ function ForumDetail(){
                 <div className={style.contentitle}> 
                     {forum?.title}
                 </div>
-                <div className={style.contentNickname} onClick={onClickNickname(forum?.memberId)}>작성자 : {forum?.nickname}</div>
+                <div className={style.contentNickname} onClick={onClickNickname(forum?.memberId)}>작성자 : {forum?.nickname}
+                {clickProfile == null ? null : <Profile value={clickProfile} /> }
+                </div>
             </div>
             
             {/* 게시글 날짜 */}
