@@ -7,9 +7,8 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-
 function InquiryList(){
-    //공지사항 정보 불러오기
+    //FAQ 정보 불러오기
     const results = [{"tag":"공지", "title" : "10월 정기점검 안내", "author": "test01", "status": "Y", "date" :"2022-10-23"},
                      {"tag":"공지", "title" : "9월 정기점검 안내", "author": "test01", "status": "Y", "date" :"2022-9-23"},
                      {"tag":"공지", "title" : "8월 정기점검 안내", "author": "test01", "status": "N", "date" :"2022-8-23"}];

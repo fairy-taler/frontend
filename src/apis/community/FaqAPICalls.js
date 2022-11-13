@@ -1,11 +1,11 @@
 
 import {
-    SET_NOTICE_LIST, SET_NOTICE
-} from "../../modules/communityModules/noticeModule";
+    SET_FAQ_LIST, SET_FAQ
+} from "../../modules/communityModules/faqModule";
 
 
-export const callGetNoticesAPI = (pageable) => {
-    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/notices?page=${pageable.page}&size=${pageable.size}`;
+export const callGetFaqAPI = (pageable) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/faq?page=${pageable.page}&size=${pageable.size}`;
 
     return async (dispatch, getState) => {
         const result = await fetch(requestURL,{
@@ -20,14 +20,14 @@ export const callGetNoticesAPI = (pageable) => {
         })
         .then(res => res.json());
         
-        console.log('[ForumAPICalls] callGetNoticeAPI RESULT : ', result);
+        console.log('[FaqAPICalls] callGetFaqAPI RESULT : ', result);
         
-        dispatch({ type:SET_NOTICE_LIST,  payload: result.data});
+        dispatch({ type:SET_FAQ_LIST,  payload: result.data});
 
     };
 }
-export const callGetDetailNoticeAPI = (noticeCode) => {
-    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/notices/${noticeCode}`;
+export const callGetDetailFaqAPI = (faqCode) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/faq/${faqCode}`;
 
     return async (dispatch, getState) => {
         const result = await fetch(requestURL,{
@@ -42,9 +42,9 @@ export const callGetDetailNoticeAPI = (noticeCode) => {
         })
         .then(res => res.json());
         
-        console.log('[NoticeAPICalls] callGetNoticeDetailAPI RESULT : ', result);
+        console.log('[FaqAPICalls] callGetFfaqAPI RESULT : ', result);
         
-        dispatch({ type:SET_NOTICE_LIST,  payload: result.data});
+        dispatch({ type:SET_FAQ,  payload: result.data});
 
     };
 }

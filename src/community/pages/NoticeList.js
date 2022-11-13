@@ -18,7 +18,6 @@ function NoticeList(){
     const [currentPage, setCurrentPage] = useState(0);
     const pages = Array(result?.forumList?.totalPages).fill()
 
-
     const onClickPageButton = (e) =>{  
         dispatch(callGetNoticesAPI({	
             page:e.target.id-1, size:10}

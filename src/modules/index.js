@@ -5,6 +5,8 @@ import { memberReducer } from "./memberModules/memberAPIModule";
 import { forumReducer } from "./communityModules/forumModule";
 import { profileReducer } from "./memberModules/profileAPIModule";
 import { noticeReducer } from "./communityModules/noticeModule";
+import { inquiryReducer } from "./communityModules/inquiryModule";
+import { faqReducer } from "./communityModules/faqModule";
 const rootReducer = combineReducers({
   headerReducer,
   joinReducer,
@@ -14,6 +16,8 @@ const rootReducer = combineReducers({
   forumReducer,
   profileReducer,
   noticeReducer,
+  inquiryReducer,
+  faqReducer,
 });
 
 export default rootReducer;
