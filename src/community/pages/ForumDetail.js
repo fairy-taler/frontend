@@ -58,9 +58,13 @@ function ForumDetail(){
                 <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
             </div></NavLink>
             {/* 게시글 제목 */}
-            <div className={style.contentTitleBox}> 
-                {forum?.title}
+            <div className={style.contentTitleBox}>
+                <div className={style.contentitle}> 
+                    {forum?.title}
+                </div>
+                <div className={style.contentNickname}>작성자 : {forum?.nickname}</div>
             </div>
+            
             {/* 게시글 날짜 */}
             <div className={style.contentDateBox}>
                 {forum?.createDate.substr(0,10)}

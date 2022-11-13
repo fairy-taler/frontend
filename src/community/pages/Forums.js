@@ -9,7 +9,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { callGetForumsAPI, callGetForumsByCategoryAPI, callGetForumsByMemberCodeAPI } from "../../apis/community/ForumAPICalls"
 
 function Forums(){
-    //공지사항 정보 불러오기
+    //게시판 정보 불러오기
     // api로 게시판 정보 조회 후 데이터 저장
     const result = useSelector(state => state.forumReducer);
     // const forums = null;
@@ -79,7 +79,7 @@ function Forums(){
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
         dispatch(callGetForumsAPI({	
-            page:currentPage-1, size:10}
+            page:0, size:10}
         ));
     },[])
 
