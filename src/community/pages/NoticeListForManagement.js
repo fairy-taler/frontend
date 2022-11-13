@@ -51,8 +51,12 @@ function NoticeListForManagement(){
     const toNoticesInfo = (e) =>{
         console.log(
             "url", e.target)
+        if(noticeCategory=="공지")
         navigate(
             `/managementNotices/${e.target.id}`
+          );
+        navigate(
+            `/managementFaqs/${e.target.id}`
           );
     }
     
