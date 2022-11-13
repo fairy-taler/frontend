@@ -51,18 +51,39 @@ function InquiryInfo(){
             <div className={style.subTitleBox}>
                 <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
             </div>
-            {/* FAQ 제목 */}
+            {/* 문의 제목 */}
             <div className={style.contentTitleBox}> 
                 {inquiry?.title}
             </div>
-            {/* FAQ 날짜 */}
+            {/* 문의 날짜 */}
             <div className={style.contentDateBox}>
                 {inquiry?.createDate.substr(0,10)}
             </div>
-            {/* FAQ 내용 */}
+            {/* 문의 내용 */}
             <div className={style.contentContentBox}>
                 {inquiry?.content}
             </div>
+            <img className={style.lineImg} src={require("../static/images/line.png")} />
+            <div className={style.contentTitleBox} style={{paddingTop:"20px"}}> 
+                답변
+            </div>
+            {inquiry?.answer == null? 
+                <div className={style.contentContentBox}>
+                        답변이 아직 등록되지 않았습니다.
+                    </div>
+            :
+                <div>
+                    {/* 문의 날짜 */}
+                    <div className={style.contentDateBox}>
+                        {inquiry?.answerDate.substr(0,10)}
+                    </div>
+                    {/* 문의 내용 */}
+                    <div className={style.contentContentBox}>
+                        {inquiry?.answer}
+                    </div>
+                </div>
+            }
+            
             {/* 다음 FAQ */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             <div className={style.nextContentsBox}>
