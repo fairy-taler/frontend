@@ -54,17 +54,17 @@ function ManageMember(){
             {/* 회원 정보 */}
             <div className={style.memberList}>
             <table className={style.memberTable} >
-            {memberList.map((member, index)=>(
+            { memberList?.map((member, index)=>(
                 <tr id={index}>
-                <td id={index} >[{member.memberCode}]</td>
+                <td id={index} >[{member?.memberCode}]</td>
                 <td id={index}>
-                    [{ member.memberRole == "ADMIN" ? "관리자" : member.memberRole == "TEACHER" ? "선생님":"학생"}]
+                    [{ member?.memberRole == "ADMIN" ? "관리자" : member?.memberRole == "TEACHER" ? "선생님":"학생"}]
                 </td>                        
-                <td id={index}>{member.memberName}</td>
-                <td id={index}>{member.memberId}</td>
-                <td id={index}>{member.nickname}</td>
-                <td id={index}>{member.email}</td>
-                <td id={index}>{member.phone}</td>
+                <td id={index}>{member?.memberName}</td>
+                <td id={index}>{member?.memberId}</td>
+                <td id={index}>{member?.nickname}</td>
+                <td id={index}>{member?.email}</td>
+                <td id={index}>{member?.phone}</td>
             
             </tr>
             ))}  
@@ -73,7 +73,7 @@ function ManageMember(){
             </div>
 
             <img className={style.lineImg} src={require("../static/images/line.png")} />
-            <div className={style.memberCount}> 총 회원 수 : <span>{memberList.length} </span> </div>
+            <div className={style.memberCount}> 총 회원 수 : <span>{memberList?.length} </span> </div>
             <img className={style.lineImg} src={require("../static/images/line.png")} />
         </div>
     )
