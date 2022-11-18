@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+
+.selectBtn img{
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+
+}
+
+.mypageText, .mypageText2{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    width: 300px;
+    text-align: left;
+
+}
+
+.mypageText2{
+    margin-top: 50px
+}
+
+.changeForm{
+    text-align: -webkit-center;
+}
+
+.inputBox input[type="text"], input[type="password"]  {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    width: 300px;
+    height: 30px;
+    margin : 5px;
+    border : 1px solid #888888;
+    border-radius: 30px;
+    padding: 10px 20px 10px 10px;
+}
+
+textarea {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    width: 400px;
+    height: 100px;
+    margin : 5px;
+    border : 1px solid #888888;
+    border-radius: 30px;
+    padding: 10px 20px 10px 10px;
+    resize: none;
+}
+
+.authBtn img{
+    height: 52px;
+}
+.emailBox, .passwordBox{
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.submitBtn img{
+    width: 332px;
+    margin: 50px 0px 20px 0px; 
+}
+
+.title{
+    margin: 100px 0px 0px 100px;
+    display: flex;
+}
+
+.title img{
+    height: 32px;
+}
+
+.lineImg{
+    width: 70%;
+}
+
+.lineDiv{
+    padding: 10px 100px 100px 100px;
+}
+
+.ChangeSection{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.unregist{
+    margin-bottom: 100px;
+}
+
+.unregist button{
+    text-decoration: underline;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    width: 300px;
+    text-align: center;
+}
+
+.changeInfo{
+    font-size: large;
+}
+
+.profileImg{
+    width: 200px;
+    height: 200px;
+    border: #000000 solid 2px;
+    border-radius: 100%;
+    margin-top: 40px;
+}
+
+.profile{
+    display: flex;
+}
+
+.profileInfo{
+    margin: 0px 0px 0px 100px;
+    text-align: left;
+}
+
+.profileInfo div {
+    margin-bottom: 20px;
+}
+
+.profileName{
+    font-size: 40px;
+}
+
+.profileName span {
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.profileTale, .profileIntro{
+    font-size : 18px
+}
+
+.profileTale span, .profileIntro span {
+    font-weight: 300;
+}
+
+.mypageBtn{
+    margin: 30px 10px 0px 0px;
+    width: 130px;
+}
+
+.imgUploadBtn{
+    height: 0px;
+}
+
+.profileComponent{
+    z-index: 10000;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+}
+
+.ProfileSection{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    background: white;
+    border: 1px solid;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.xBtn{
+    text-align:right;
+}
