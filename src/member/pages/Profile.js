@@ -7,6 +7,7 @@ import {
 import { callGetMemberProfileAPI } from '../../apis/member/MemberAPICalls'
 import React from "react";
 import defaultImg from "../static/images/profile-img.png";
+import { Link } from "react-router-dom"
 
 function Profile(memberId){
 
@@ -45,7 +46,7 @@ function Profile(memberId){
                         <div className={style.profileTale}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
                         <div className={style.profileIntro}> 소개글: </div>
                         <div> {profile.intro}</div><br/> 
-                        <img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img>
+                        <Link to="/tale" state={{ value: memberId }}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
                         <button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button> 
                     </div>
                 </div>

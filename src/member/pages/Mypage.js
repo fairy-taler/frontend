@@ -9,6 +9,7 @@ import { callGetMemberAPI, callGetProfileAPI, callUpdatePwdAPI, callUpdateMember
 import React from "react";
 import defaultImg from "../static/images/profile-img.png";
 import Profile from "./Profile"; 
+import { Link } from "react-router-dom"
 
 function Mypage(){
 
@@ -159,7 +160,7 @@ function Mypage(){
                         <div className={style.profileTale}> 제작한 동화책 수 : <span> {originProfile.taleCount} </span> </div>  
                         <div className={style.profileIntro}> 소개글: </div>
                         <textarea value={member[4].intro} name="intro" onChange={ onChangeProfile }></textarea><br/> 
-                        <img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img>
+                        <Link to="/tale" state={{ value: member[3].memberId }}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
                         <button onClick={onClickUpdateProfile}><img className={style.mypageBtn} src={require("../static/images/edit-profile.png")}></img></button> 
                     </div>
                 </div>

@@ -159,7 +159,9 @@ textarea {
     z-index: 10000;
     position: absolute;
     top: 50%;
-    left: 35%;
+    left: 50%;
+    margin-left: -352px;
+    margin-top: -350px;
 }
 
 .ProfileSection{

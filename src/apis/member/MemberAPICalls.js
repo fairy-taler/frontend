@@ -306,6 +306,7 @@ export const callGetMemberListAPI = () => {
 }
 
 export const callGetMemberProfileAPI = (e) => {
+
     const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/profile/${e.value}`;
 
     return async (dispatch, getState) => {

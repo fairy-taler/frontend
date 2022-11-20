@@ -82,13 +82,12 @@ textarea {
 }
 
 .lineDiv{
-    padding: 10px 100px 100px 100px;
+    padding: 10px 100px;
 }
 
 .ChangeSection{
-    margin-bottom: 50px;
+    margin: 50px 600px;
     display: flex;
-    justify-content: space-evenly;
 }
 .unregist{
     margin-bottom: 100px;
@@ -174,4 +173,23 @@ textarea {
 
 .xBtn{
     text-align:right;
+}
+
+.taleList{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 450px 100px 400px;
+}
+
+.taleImg{
+    padding: 50px;
+}
+
+.taleTitle{
+    font-size: 28px;
+}
+
+.reportImg{
+    height: 60px;
+    margin-top: 20px;
 }
