@@ -7,6 +7,7 @@ import {
 import { callGetMemberProfileAPI } from '../../apis/member/MemberAPICalls'
 import React from "react";
 import defaultImg from "../static/images/profile-img.png";
+import { NavLink } from "react-router-dom";
 
 function Profile(memberId){
 
@@ -46,7 +47,7 @@ function Profile(memberId){
                         <div className={style.profileIntro}> 소개글: </div>
                         <div> {profile.intro}</div><br/> 
                         <img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img>
-                        <button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button> 
+                        <NavLink to="/report"><button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button></NavLink>
                     </div>
                 </div>
               
