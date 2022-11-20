@@ -7,17 +7,17 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { callInsertForumAPI } from "../../apis/community/ForumAPICalls"
 
-function InsertForum(){
+function InsertForum({props}){
     // 헤더 설정 세팅
     const dispatch = useDispatch();
-
+    console.log("data", props);
+    
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
     },[])
 
     //등록하기 버튼 클릭 이벤트 
-    
     const navigate = useNavigate();
     const onClickInsertButton = () => {
         const title = document.getElementById("titleInput").value;

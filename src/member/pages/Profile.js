@@ -47,7 +47,7 @@ function Profile(memberId){
                         <div className={style.profileIntro}> 소개글: </div>
                         <div> {profile.intro}</div><br/> 
                         <img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img>
-                        <NavLink to="/report"><button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button></NavLink>
+                        <NavLink to="/insertReport" props="data"><button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button></NavLink>
                     </div>
                 </div>
               
