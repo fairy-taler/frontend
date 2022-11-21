@@ -47,9 +47,9 @@ function Profile(memberId){
                         <div className={style.profileTale}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
                         <div className={style.profileIntro}> 소개글: </div>
                         <div> {profile.intro}</div><br/> 
-
                         <Link to="/tale" state={memberId}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
                         <NavLink to="/insertReport" props="data"><button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button></NavLink>
+
                     </div>
                 </div>
               
