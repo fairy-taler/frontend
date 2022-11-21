@@ -9,6 +9,7 @@ import { noticeReducer } from "./communityModules/noticeModule";
 import { inquiryReducer } from "./communityModules/inquiryModule";
 import { faqReducer } from "./communityModules/faqModule";
 import { taleManageReducer } from "./taleModules/taleManageModule";
+import { reportManageReducer } from "./reportModules/reportManageModule";
 const rootReducer = combineReducers({
   headerReducer,
   joinReducer,
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   inquiryReducer,
   faqReducer,
   taleManageReducer,
+  reportManageReducer,
 });
 
 export default rootReducer;
