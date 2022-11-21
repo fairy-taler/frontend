@@ -5,7 +5,7 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { callGetTalesAPI,callGetTalesByTitleAPI } from "../../apis/tale/TaleAPICalls"
+import { callGetTalesAPI,callGetTalesByTitleAPI } from "../../apis/tale/ManageTaleAPICalls"
 
 function TaleListForManagement(){
     // 카테고리 설정 초기화
