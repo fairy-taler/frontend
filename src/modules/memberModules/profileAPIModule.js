@@ -1,6 +1,12 @@
 import { createActions, handleActions } from "redux-actions";
 
-const initialState = []
+const initialState = {
+    
+    imgUrl: '',
+    intro:'',
+    uploadFile: ''
+
+}
 
 export const GET_PROFILE = 'member/GET_PROFILE';
 

@@ -19,7 +19,7 @@ function Profile(memberId){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
-        dispatch(callGetMemberProfileAPI(memberId));
+        dispatch(callGetMemberProfileAPI(memberId.value));
     },[])
 
     const handleImgError = (e) => {
@@ -31,7 +31,7 @@ function Profile(memberId){
         console.log(close)
     }
 
-    console.log(profile)
+    console.log(memberId)
     return (
         <div className={style.profileComponent}>
             { close == true ? null : 
@@ -46,7 +46,7 @@ function Profile(memberId){
                         <div className={style.profileTale}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
                         <div className={style.profileIntro}> 소개글: </div>
                         <div> {profile.intro}</div><br/> 
-                        <Link to="/tale" state={{ value: memberId }}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
+                        <Link to="/tale" state={memberId}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
                         <button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button> 
                     </div>
                 </div>
