@@ -307,7 +307,7 @@ export const callGetMemberListAPI = () => {
 
 export const callGetMemberProfileAPI = (e) => {
 
-    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/profile/${e.value}`;
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/profile/${e}`;
 
     return async (dispatch, getState) => {
         const result = await fetch(requestURL,{
@@ -324,7 +324,10 @@ export const callGetMemberProfileAPI = (e) => {
         
         console.log('[MemberAPICalls] callGetMemberProfileAPI RESULT : ', result);
         
-        dispatch({ type: GET_MEMBER_PROFILE,  payload: result.data });
-
+        if(result == null ) {
+            
+        } else{
+            dispatch({ type: GET_MEMBER_PROFILE,  payload: result.data });
+        }
     };
 }

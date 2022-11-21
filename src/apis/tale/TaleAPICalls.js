@@ -4,10 +4,11 @@ import {
 
 import axios from 'axios';
 
-export const callGetTaleAPI = (memberId) => {
-   // const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/tale/list/${memberId}`;
-   const requestURL = `http://localhost:8080/tale/list/kimyj111`;
+export const callGetTaleAPI = (e) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/tale/list/${e}`;
+   //const requestURL = `http://localhost:8080/tale/list/kimyj111`;
 
+   console.log(requestURL);
     return async (dispatch, getState) => {
         const result = await fetch(requestURL,{
             method: 'GET',

@@ -24,7 +24,7 @@ function Tale(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
-        const memberId = location.state;
+        const memberId = location.state.value;
         console.log(memberId)
         dispatch(callGetMemberProfileAPI(memberId));
         dispatch(callGetTaleAPI(memberId)); 
@@ -60,7 +60,7 @@ function Tale(){
             <div className={style.taleList}>
                 {taleList == null ? null : taleList.map((tale, index)=>(
                 <div>
-                    <div> <img className={style.taleImg} src={tale.taleInfo.thumbNail}/> </div>
+                    <div> <img className={style.taleImg} src={tale.taleInfo.thumbNail} onError={handleImgError} /> </div>
                     <div className={style.taleTitle}> {tale.taleList.title}</div>
                     <button> <img className={style.reportImg} src={require("../static/images/report.png")} /> </button>
                 </div>
