@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
-import {callGetMemberListAPI } from '../../apis/member/MemberAPICalls'
+import {callGetMemberListAPI, callPutMemberBlockAPI, callPutMemberUnblockAPI } from '../../apis/member/MemberAPICalls'
 import { useEffect, useState } from "react";
 
 function ManageMember(){
@@ -27,6 +27,16 @@ function ManageMember(){
         console.log(option)
     };
 
+    const onClickBlock = (e) => {
+        console.log(e);
+        dispatch(callPutMemberBlockAPI(e)); 
+    }
+
+    const onClickUnblock = (e) => {
+        console.log(e);
+        dispatch(callPutMemberUnblockAPI(e)); 
+    }
+
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
@@ -38,6 +48,8 @@ function ManageMember(){
     })
 
     console.log(memberList);
+
+    
     
     return (
         <div className={style.noticeBox}>
@@ -60,7 +72,7 @@ function ManageMember(){
             {/* 회원 정보 */}
             <div className={style.memberList}>
             <table className={style.memberTable} id="memberListTable" >
-                
+                <th>순번</th><th>역할</th><th>이름</th><th>아이디</th><th>닉네임</th><th>이메일</th><th>전화번호</th><th>차단 여부</th>
             { memberList?.map((member, index)=>(
                 member.memberRole == option || option == "ALL"? 
                     <tr id={index}>
@@ -73,6 +85,12 @@ function ManageMember(){
                     <td id={index}>{member?.nickname}</td>
                     <td id={index}>{member?.email}</td>
                     <td id={index}>{member?.phone}</td> 
+                    <td id={index}>{member?.blockStatus}
+                    {
+                        member?.blockStatus == "N" ? <button className={style.blockBtn} onClick={()=> {onClickBlock(member?.memberCode)}} > 차단 </button> : 
+                        <button className={style.blockBtn} onClick={()=> {onClickUnblock(member?.memberCode)}} > 차단해제 </button>
+                    }
+                    </td> 
             </tr>
             : ""
             ))

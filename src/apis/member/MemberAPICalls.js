@@ -328,3 +328,71 @@ export const callGetMemberProfileAPI = (e) => {
 
     };
 }
+
+export const callPutMemberBlockAPI = (memberCode) => {
+
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/block`;
+
+    return async (dispatch, getState) => {
+        const result = await fetch(requestURL,{
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*" 
+            },
+            body: memberCode
+        })
+        .then(res => res.json());
+
+        console.log(result); 
+        console.log(memberCode);
+        
+        console.log('[MemberAPICalls] callGetMemberProfileAPI RESULT : ', result);
+    
+        if(result.status === 500){
+            console.log(result);
+            alert(result.message);
+        }
+        if(result.status === 200){
+            alert("회원 차단이 완료 되었습니다. ")     
+            window.location.href="/manageMember"
+        }
+    };
+}
+
+export const callPutMemberUnblockAPI = (memberCode) => {
+
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/unblock`;
+
+    return async (dispatch, getState) => {
+        const result = await fetch(requestURL,{
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*" 
+            },
+            body: memberCode
+        })
+        .then(res => res.json());
+
+        console.log(result); 
+        console.log(memberCode);
+        
+        console.log('[MemberAPICalls] callGetMemberProfileAPI RESULT : ', result);
+    
+        if(result.status === 500){
+            console.log(result);
+            alert(result.message);
+        }
+        if(result.status === 200){
+            alert("회원 차단해제가 완료 되었습니다. ")     
+            window.location.href="/manageMember"
+        }
+    };
+}
