@@ -10,7 +10,8 @@ function ManageMember(){
 
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerReducer);
-    const memberList = useSelector(state => state.memberReducer); 
+    const memberList = useSelector(state => state.memberListReducer); 
+    const [memberCnt, setMemberCnt] = useState(0); 
 
     const [option, setOption] = useState('ALL');
     const result = null; 
@@ -20,7 +21,6 @@ function ManageMember(){
     };
     const onClickTeacher = () => {
         setOption("TEACHER");
-        console.log(option)
     };
     const onClickStudent = () => {
         setOption("STUDENT");
@@ -32,7 +32,13 @@ function ManageMember(){
         dispatch({ type: ON_BLACK});
         dispatch(callGetMemberListAPI());
     },[])
+
+    useEffect(()=>{
+        setMemberCnt(document.getElementById('memberListTable').rows.length);
+    })
+
     console.log(memberList);
+    
     return (
         <div className={style.noticeBox}>
             <div className={style.betweenBox}>
@@ -53,21 +59,22 @@ function ManageMember(){
             </div>
             {/* 회원 정보 */}
             <div className={style.memberList}>
-            <table className={style.memberTable} >
+            <table className={style.memberTable} id="memberListTable" >
                 
             { memberList?.map((member, index)=>(
-                <tr id={index}>
-                <td id={index} >[{member?.memberCode}]</td>
-                <td id={index}>
-                    [{ member?.memberRole == "ADMIN" ? "관리자" : member?.memberRole == "TEACHER" ? "선생님":"학생"}]
-                </td>                        
-                <td id={index}>{member?.memberName}</td>
-                <td id={index}>{member?.memberId}</td>
-                <td id={index}>{member?.nickname}</td>
-                <td id={index}>{member?.email}</td>
-                <td id={index}>{member?.phone}</td>
-            
+                member.memberRole == option || option == "ALL"? 
+                    <tr id={index}>
+                    <td id={index} >[{member?.memberCode}]</td>
+                    <td id={index}>
+                        [{ member?.memberRole == "ADMIN" ? "관리자" : member?.memberRole == "TEACHER" ? "선생님":"학생"}]
+                    </td>                        
+                    <td id={index}>{member?.memberName}</td>
+                    <td id={index}>{member?.memberId}</td>
+                    <td id={index}>{member?.nickname}</td>
+                    <td id={index}>{member?.email}</td>
+                    <td id={index}>{member?.phone}</td> 
             </tr>
+            : ""
             ))
             }  
             </table>
@@ -75,7 +82,8 @@ function ManageMember(){
             </div>
 
             <img className={style.lineImg} src={require("../static/images/line.png")} />
-            <div className={style.memberCount}> 총 회원 수 : <span>{memberList?.length} </span> </div>
+            <div className={style.memberCount}> 총 회원 수 : <span> {memberCnt} </span> </div>
+
             <img className={style.lineImg} src={require("../static/images/line.png")} />
         </div>
     )

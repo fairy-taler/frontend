@@ -323,11 +323,8 @@ export const callGetMemberProfileAPI = (e) => {
         .then(res => res.json());
         
         console.log('[MemberAPICalls] callGetMemberProfileAPI RESULT : ', result);
-        
-        if(result == null ) {
-            
-        } else{
+    
             dispatch({ type: GET_MEMBER_PROFILE,  payload: result.data });
-        }
+
     };
 }
