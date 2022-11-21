@@ -28,6 +28,9 @@ import Forums from "./community/pages/Forums";
 import InsertForum from "./community/pages/InsertForum";
 import JoinResult from "./member/pages/JoinResult"; 
 import ManageMember from "./member/pages/ManageMember";
+import InsertReport from "./community/pages/InsertReport";
+import ReportListForManagement from "./community/pages/ReportListForManagement";
+import TaleListForManagement from "./tale/pages/TaleListForManagement";
 function App() {
   return (
     <BrowserRouter>
@@ -58,6 +61,9 @@ function App() {
           <Route path="/inquiryresponse/:1" element={<InquiryResponse/>} />
           <Route path="/forums" element={<Forums />}/>
           <Route path="/manageMember" element={<ManageMember/>}/>
+          <Route path="/insertReport" element={<InsertReport/>}/>
+          <Route path="/manageReport" element={<ReportListForManagement/>}/>
+          <Route path="/manageTale" element={<TaleListForManagement/>}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>
