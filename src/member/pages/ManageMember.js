@@ -54,10 +54,8 @@ function ManageMember(){
             {/* 회원 정보 */}
             <div className={style.memberList}>
             <table className={style.memberTable} >
-
-        
+                
             { memberList?.map((member, index)=>(
-
                 <tr id={index}>
                 <td id={index} >[{member?.memberCode}]</td>
                 <td id={index}>

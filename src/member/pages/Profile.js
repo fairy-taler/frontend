@@ -9,6 +9,7 @@ import React from "react";
 import defaultImg from "../static/images/profile-img.png";
 import { Link } from "react-router-dom"
 import { NavLink } from "react-router-dom";
+
 function Profile(memberId){
 
     const dispatch = useDispatch();
@@ -48,8 +49,6 @@ function Profile(memberId){
                         <div> {profile.intro}</div><br/> 
 
                         <Link to="/tale" state={memberId}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
-                        <button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button> 
-                        <img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img>
                         <NavLink to="/insertReport" props="data"><button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button></NavLink>
                     </div>
                 </div>

@@ -24,7 +24,6 @@ export const profileMemberReducer = handleActions(
                     intro: ""
                 }
             }
-
             return payload;
             
         },
