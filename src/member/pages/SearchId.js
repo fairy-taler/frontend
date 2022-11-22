@@ -53,7 +53,7 @@ function SearchId(){
                 <button ><img src={require("../static/images/active-id-btn.png")}/> </button>
                 <Link to="/pwdsearch"> <button ><img src={require("../static/images/pwd-btn.png")}/> </button></Link>
             </div>
-            {result.length != 0 ?
+            {result.length != 0 && result.status == 200 ?
             <div>
             <img className={style.openMailImg} src={require("../static/images/open-mail.png")}/>
             <div className={style.phrase}>  회원님의 아이디는 <span className={style.colorOrg}> {result.data} </span> 입니다.</div>
