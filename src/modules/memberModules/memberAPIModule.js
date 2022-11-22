@@ -51,7 +51,13 @@ export const memberReducer = handleActions(
         [DELETE_MEMBER]: (state, { payload }) => {
             
             return payload;
-        },
+        }
+    },
+    initialState
+);
+
+export const memberListReducer = handleActions(
+    {
         [GET_MEMBER_LIST]: (state, { payload }) => {
             
             return payload;
@@ -60,4 +66,4 @@ export const memberReducer = handleActions(
     initialState
 );
 
-export default memberReducer;
+// export default memberReducer;
