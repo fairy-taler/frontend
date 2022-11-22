@@ -430,3 +430,37 @@ export const callSearchIdAPI = ({form}) => {
         dispatch({ type: SEARCH_ID,  payload: result });   
     };
 }
+
+export const callSearchPwdAPI = ({form}) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/search-pwd`;
+    console.log(requestURL);
+    console.log(form)
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Access-Control-Allow-Origin": "*"    
+            },
+            body: JSON.stringify({
+                memberName: form.memberName,
+                memberId: form.memberId,
+                newPwd: form.newPwd
+            })
+        })
+        .then(response => response.json());
+
+        console.log('[MemberAPICalls] callSearchPwdAPI RESULT : ', result);   
+
+        if(result.status === 500){
+            console.log(result);
+            alert(result.message);
+        }
+        if(result.status === 200){ 
+            alert("비밀번호 재설정이 완료 되었습니다. ")     
+            window.location.href="/login"
+        }
+    };
+}
