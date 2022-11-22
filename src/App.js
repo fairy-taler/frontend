@@ -33,6 +33,7 @@ import InsertReport from "./report/pages/InsertReport";
 import ReportListForManagement from "./report/pages/ReportListForManagement";
 import TaleListForManagement from "./tale/pages/TaleListForManagement";
 import ReportInfo from "./report/pages/RepotInfoForManagement";
+
 function App() {
   return (
     <BrowserRouter>

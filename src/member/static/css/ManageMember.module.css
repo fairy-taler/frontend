@@ -121,3 +121,17 @@
     font-size: 24px;
     padding: 100px;
 }
+
+th{
+  font-size : 24px;  
+  text-align: left;
+  border-bottom: #000000 solid 2px;
+}
+
+.blockBtn{
+    font-size: 16px;
+    margin-left: 10px;
+    border: #000000 solid 1px;
+    align-items: center;
+    min-width: 80px;
+}

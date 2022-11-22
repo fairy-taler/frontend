@@ -86,8 +86,8 @@ textarea {
 }
 
 .ChangeSection{
-    margin: 50px 600px;
-    display: flex;
+    margin: 50px 0px;
+    width: 60%; 
 }
 .unregist{
     margin-bottom: 100px;
