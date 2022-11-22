@@ -5,7 +5,7 @@ import {
 
 
 export const callGetForumsAPI = (pageable) => {
-    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/forums?page=${pageable.page}&size=${pageable.size}`;
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/forums?page=${pageable.page}&size=${pageable.size}&sort=createDate,desc`;
 
     return async (dispatch, getState) => {
         const result = await fetch(requestURL,{
@@ -27,7 +27,7 @@ export const callGetForumsAPI = (pageable) => {
     };
 }
 export const callGetForumsByMemberCodeAPI = (pageable) => {
-    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/forums/my?page=${pageable.page}&size=${pageable.size}`;
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/forums/my?page=${pageable.page}&size=${pageable.size}&sort=createDate,desc`;
 
     return async (dispatch, getState) => {
         const result = await fetch(requestURL,{
@@ -49,7 +49,7 @@ export const callGetForumsByMemberCodeAPI = (pageable) => {
     };
 }
 export const callGetForumsByCategoryAPI = (category,pageable) => {
-    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/forums/category?category=${category}&page=${pageable.page}&size=${pageable.size}`;
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/forums/category?category=${category}&page=${pageable.page}&size=${pageable.size}&sort=createDate,desc`;
 
     return async (dispatch, getState) => {
         const result = await fetch(requestURL,{

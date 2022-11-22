@@ -30,8 +30,8 @@ function InsertReport(){
         formData.append("targetTaleCode", queryData?.targetTaleCode);
         formData.append("content", content);
         const file = document.getElementById("fileInput").files[0]
-        formData.append("attachment", file);
-        
+        if(file!=undefined)
+        {formData.append("attachment",  file)}
         const func = callInsertReportAPI(formData);
         func();
         alert("신고가 등록되었습니다.")
