@@ -32,7 +32,6 @@ function InsertReport(){
         const file = document.getElementById("fileInput").files[0]
         if(file!=undefined)
         {formData.append("attachment",  file)}
-        
         const func = callInsertReportAPI(formData);
         func();
         alert("신고가 등록되었습니다.")

@@ -10,14 +10,14 @@ import defaultImg from "../static/images/profile-img.png";
 import { callGetMemberProfileAPI } from '../../apis/member/MemberAPICalls'
 import { useLocation } from "react-router-dom";
 import { callGetTaleAPI } from "../../apis/tale/TaleAPICalls"; 
-
+import { NavLink } from "react-router-dom";
 function Tale(){
 
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerReducer);
     const profile = useSelector(state => state.profileMemberReducer); 
     const taleList = useSelector(state => state.taleReducer); 
-
+    
     const location = useLocation();
 
 
@@ -62,7 +62,7 @@ function Tale(){
                 <div>
                     <div> <img className={style.taleImg} src={tale.taleInfo.thumbNail} onError={handleImgError} /> </div>
                     <div className={style.taleTitle}> {tale.taleList.title}</div>
-                    <button> <img className={style.reportImg} src={require("../static/images/report.png")} /> </button>
+                    <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}&targetTaleCode=${tale.taleInfo.id}`}><button> <img className={style.reportImg} src={require("../static/images/report.png")} /> </button></NavLink>
                 </div>
                 ))
                 }  
