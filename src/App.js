@@ -28,18 +28,12 @@ import Forums from "./community/pages/Forums";
 import InsertForum from "./community/pages/InsertForum";
 import JoinResult from "./member/pages/JoinResult"; 
 import ManageMember from "./member/pages/ManageMember";
-<<<<<<< HEAD
 import Tale from "./tale/pages/Tale"; 
-import InsertReport from "./community/pages/InsertReport";
-import ReportListForManagement from "./community/pages/ReportListForManagement";
-import TaleListForManagement from "./tale/pages/TaleListForManagement";
-
-=======
 import InsertReport from "./report/pages/InsertReport";
 import ReportListForManagement from "./report/pages/ReportListForManagement";
 import TaleListForManagement from "./tale/pages/TaleListForManagement";
 import ReportInfo from "./report/pages/RepotInfoForManagement";
->>>>>>> 6c392eab84c699697d4c6a7c11ae212716914200
+
 function App() {
   return (
     <BrowserRouter>
