@@ -399,8 +399,9 @@ export const callPutMemberUnblockAPI = (memberCode) => {
 }
 
 export const callSearchIdAPI = ({form}) => {
-    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/searchId`;
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/search-id`;
     console.log(requestURL);
+    console.log(form)
     return async (dispatch, getState) => {
 
         const result = await fetch(requestURL, {
@@ -424,7 +425,7 @@ export const callSearchIdAPI = ({form}) => {
             alert(result.message);
         }
         if(result.status === 200){ 
-            window.location.href="/idresult"      
+            // window.location.href="/idresult"      
         }
         dispatch({ type: SEARCH_ID,  payload: result });   
     };

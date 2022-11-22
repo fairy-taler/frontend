@@ -13,25 +13,14 @@ function SearchResultId(){
     const dispatch = useDispatch();
  
     const header = useSelector(state => state.headerReducer);
-    const member = useSelector(state => state.searchReducer); 
+    const result = useSelector(state => state.memberReducer); 
 
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
     },[])
 
-    const onChangeHandler = (e) => {
-        console.log(member)
-        dispatch({
-            type: SEARCH_INFO,
-            payload: {
-              name: e.target.name,
-              value: e.target.value
-            }
-          });
-    }
-
-    // console.log(userInfo)
+    console.log(result)
     return (
         <div className={style.searchDiv}>
             <div className={style.selectOption}>
