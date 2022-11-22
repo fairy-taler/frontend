@@ -8,7 +8,9 @@ import { profileMemberReducer } from "./memberModules/profileMemberAPIModule";
 import { noticeReducer } from "./communityModules/noticeModule";
 import { inquiryReducer } from "./communityModules/inquiryModule";
 import { faqReducer } from "./communityModules/faqModule";
+import { taleReducer } from "./taleModules/taleAPIModule";
 import { taleManageReducer } from "./taleModules/taleManageModule";
+import { memberListReducer } from "./memberModules/memberAPIModule"; 
 import { reportManageReducer } from "./reportModules/reportManageModule";
 const rootReducer = combineReducers({
   headerReducer,
@@ -22,7 +24,9 @@ const rootReducer = combineReducers({
   noticeReducer,
   inquiryReducer,
   faqReducer,
+  taleReducer,
   taleManageReducer,
+  memberListReducer,
   reportManageReducer,
 });
 

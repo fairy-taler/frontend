@@ -7,6 +7,7 @@ import {
 import { callGetMemberProfileAPI } from '../../apis/member/MemberAPICalls'
 import React from "react";
 import defaultImg from "../static/images/profile-img.png";
+import { Link } from "react-router-dom"
 import { NavLink } from "react-router-dom";
 
 function Profile(memberId){
@@ -20,7 +21,7 @@ function Profile(memberId){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
-        dispatch(callGetMemberProfileAPI(memberId));
+        dispatch(callGetMemberProfileAPI(memberId.value));
     },[])
 
     const handleImgError = (e) => {
@@ -32,7 +33,7 @@ function Profile(memberId){
         console.log(close)
     }
 
-    console.log(profile)
+    console.log(memberId)
     return (
         <div className={style.profileComponent}>
             { close == true ? null : 
@@ -47,8 +48,9 @@ function Profile(memberId){
                         <div className={style.profileTale}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
                         <div className={style.profileIntro}> 소개글: </div>
                         <div> {profile.intro}</div><br/> 
-                        <img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img>
+                        <Link to="/tale" state={memberId}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
                         <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}`}><button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button></NavLink>
+
                     </div>
                 </div>
               

@@ -55,7 +55,7 @@ function Navbar() {
     } else {
       return (
         <>
-          <button className={style.btn}><img src={require('../../static/images/mytale-btn.png')}/></button><br/>
+        <Link to="/tale" state={{ value: member.memberId}}><button className={style.btn}><img src={require("../../static/images/mytale-btn.png")}></img></button></Link>
           <Link to ="/forums"><button className={style.btn}><img src={require('../../static/images/community-btn.png')}/></button></Link>
         </>
       );
