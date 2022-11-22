@@ -7,6 +7,7 @@ import {
 
 import { SEARCH_INFO } from "../../modules/memberModules/memberModule"; 
 import { useEffect, useState } from "react";
+import { callSearchIdAPI } from "../../apis/member/MemberAPICalls"
 
 function SearchId(){
 
@@ -31,6 +32,16 @@ function SearchId(){
           });
     }
 
+    const onClickSearch = () => {
+        let body = {
+            memberName: member[1].memberName,
+            email: member[1].eamil 
+        }
+        dispatch(callSearchIdAPI({
+            form: body
+        }));
+    }
+
     // console.log(userInfo)
     return (
         <div className={style.searchDiv}>
@@ -47,7 +58,7 @@ function SearchId(){
                 <input type="text" name="email" id="email" value={member[1].email} onChange={ onChangeHandler } placeholder="이메일" required />
                 <br />
             </div>
-            <Link to="/idresult"><button className={style.submitBtn}><img src={require("../static/images/id-search-btn.png")} /> </button></Link>
+            <Link to="/idresult"><button className={style.submitBtn} onClick={onClickSearch}><img src={require("../static/images/id-search-btn.png")} /> </button></Link>
         </div>
     )
 }
