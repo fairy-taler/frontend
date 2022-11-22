@@ -15,6 +15,7 @@ function Profile(memberId){
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerReducer);
     const profile = useSelector(state => state.profileMemberReducer); 
+    console.log("data", profile?.profile?.memberCode);
     const [close, setClose] = useState(false);
 
     useEffect(()=>{
@@ -48,7 +49,7 @@ function Profile(memberId){
                         <div className={style.profileIntro}> 소개글: </div>
                         <div> {profile.intro}</div><br/> 
                         <Link to="/tale" state={memberId}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
-                        <NavLink to="/insertReport" props="data"><button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button></NavLink>
+                        <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}`}><button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button></NavLink>
 
                     </div>
                 </div>

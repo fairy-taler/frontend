@@ -32,7 +32,10 @@ import Tale from "./tale/pages/Tale";
 import InsertReport from "./community/pages/InsertReport";
 import ReportListForManagement from "./community/pages/ReportListForManagement";
 import TaleListForManagement from "./tale/pages/TaleListForManagement";
-
+import InsertReport from "./report/pages/InsertReport";
+import ReportListForManagement from "./report/pages/ReportListForManagement";
+import TaleListForManagement from "./tale/pages/TaleListForManagement";
+import ReportInfo from "./report/pages/RepotInfoForManagement";
 function App() {
   return (
     <BrowserRouter>
@@ -65,7 +68,8 @@ function App() {
           <Route path="/manageMember" element={<ManageMember/>}/>
           <Route path="/tale" element={<Tale/>}/>
           <Route path="/insertReport" element={<InsertReport/>}/>
-          <Route path="/manageReport" element={<ReportListForManagement/>}/>
+          <Route path="/manageReports" element={<ReportListForManagement/>}/>
+          <Route path="/manageReports/:1" element={<ReportInfo/>}/>
           <Route path="/manageTale" element={<TaleListForManagement/>}/>
           <Route path="/*" element={<Error />} exact />
         </Route>

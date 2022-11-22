@@ -1,4 +1,4 @@
-import style from "../static/css/NoticeListForManagement.module.css";
+import style from "../static/css/ReportListForManagement.module.css";
 import { useSelector, useDispatch } from 'react-redux';
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
@@ -6,21 +6,17 @@ import {
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {callGetNoticesAPI } from "../../apis/community/NoticeAPICalls"
-import { callGetFaqAPI } from "../../apis/community/FaqAPICalls"
+import { callGetReportsAPI } from "../../apis/report/ManageReportAPICalls"
 
 function NoticeListForManagement(){
     // 카테고리 설정 초기화
     const [noticeCategory, setNoticeCategory] = useState("공지");
     // 신고 정보 불어오기
-    const result = useSelector(state => state.noticeReducer);
-    const result2 = useSelector(state => state.faqReducer);
-    const notices = result?.noticeList?.content;
-    const faqs = result2?.faqList?.content;
-    let datas  = null;
-    if(noticeCategory == "공지") datas = notices;
-    else  datas  = faqs;
+    const result = useSelector(state => state.reportManageReducer);
+    const datas  =  result?.reportList?.content;
+    console.log(result);
 
-    const pages = Array(10).fill()
+    const pages = Array(result?.reportList?.totalPages).fill()
     
     // 헤더 설정 변경
     const dispatch = useDispatch();
@@ -28,36 +24,19 @@ function NoticeListForManagement(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
-        dispatch(callGetNoticesAPI({	
+        dispatch(callGetReportsAPI({	
             page:0, size:10}
         ));
     },[])
 
-    const onChangeSelectCategory = (e) =>{
-        setNoticeCategory(e.target.value);
-        if(e.target.value == "공지"){
-            dispatch(callGetNoticesAPI({	
-                page:0, size:10}
-            ));
-        }else{
-            dispatch(callGetFaqAPI({	
-                page:0, size:10}
-            ));
-        }
-    }
 
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
     const toNoticesInfo = (e) =>{
         console.log(
             "url", e.target)
-        if(noticeCategory=="공지")
-        navigate(
-            `/managementNotices/${e.target.id}`
-          );
-        else
-        navigate(
-            `/managementFaqs/${e.target.id}`
+         navigate(
+            `/manageReports/${e.target.id}`
           );
     }
     
@@ -77,13 +56,17 @@ function NoticeListForManagement(){
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 공지사항 리스트 */}
             <div className={style.tableBox}>
+                
                 <table className={style.communityTable}>
+                    <tr styleName><th>번호</th><th>카테고리</th><th>신고자ID</th><th>대상자ID</th><th>동화 제목</th><th>신고 일자</th></tr>
                     {datas?.map((data, index)=>(
-                            <tr onClick={toNoticesInfo} id={index}>
-                                    <td id={noticeCategory=="공지"? data?.noticeCode : data?.faqCode} style={{width : "10%" , textAlign:"left"}}>[{noticeCategory}]</td>
-                                    <td id={noticeCategory=="공지"? data?.noticeCode : data?.faqCode} style={{width : "60%" , textAlign:"left"}}>{data?.title}</td>
-                                    <td id={noticeCategory=="공지"? data?.noticeCode : data?.faqCode} style={{width : "10%" , textAlign:"left"}}>{data?.public ? "공개" : "비공개"}</td>
-                                    <td id={noticeCategory=="공지"? data?.noticeCode : data?.faqCode} style={{width : "10%", textAlign:"right"}}>{data?.createDate?.substr(0,10)}</td>
+                            <tr className={style.communityTableHover} onClick={toNoticesInfo} id={data.reportCode}>
+                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"center"}}>{data?.reportCode}</td>
+                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"center"}}>{data?.category}</td>
+                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"center"}}>{data?.reporterId}</td>
+                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"center"}}>{data?.targetId}</td>
+                                    <td id={data.reportCode} style={{width : "40%" , textAlign:"center"}}>{data?.targetTaleTitle? data?.targetTaleTitle:"지정된 동화가 없습니다."}</td>
+                                    <td id={data.reportCode} sityle={{width : "10%", textAlign:"center"}}>{data?.createDate?.substr(0,10)}</td>
                             </tr>
                     ))}
                 </table>
