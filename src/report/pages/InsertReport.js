@@ -1,16 +1,18 @@
-import style from "../static/css/InsertForum.module.css";
+import style from "../static/css/InsertReport.module.css";
+import QueryString from "qs";
 import { useSelector, useDispatch } from 'react-redux';
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { callInsertForumAPI } from "../../apis/community/ForumAPICalls"
-
-function InsertForum({props}){
+import { useLocation, useParams } from 'react-router';
+import { callInsertReportAPI } from "../../apis/report/ManageReportAPICalls"
+function InsertReport(){
     // 헤더 설정 세팅
-    const dispatch = useDispatch();
-    console.log("data", props);
+    const dispatch = useDispatch();const location = useLocation();
+    const queryData = QueryString.parse(location.search, { ignoreQueryPrefix: true });
+    console.log(queryData);
     
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
@@ -20,35 +22,34 @@ function InsertForum({props}){
     //등록하기 버튼 클릭 이벤트 
     const navigate = useNavigate();
     const onClickInsertButton = () => {
-        const title = document.getElementById("titleInput").value;
-        const category = document.getElementById("categoryInput").value;
+        const formData = new FormData();
         const content = document.getElementById("contentInput").value;
+        const category = document.getElementById("categoryInput").value;
+        formData.append("category", category);
+        formData.append("targetCode", queryData?.targetCode);
+        formData.append("targetTaleCode", queryData?.targetTaleCode);
+        formData.append("content", content);
+        const file = document.getElementById("fileInput").files[0]
+        formData.append("attachment", file);
         
-        const func = callInsertForumAPI({"title":title, "category":category,"content":content});
-        console.log("title : " + title +  "category : " + category + " content : " + content);
+        const func = callInsertReportAPI(formData);
         func();
         alert("신고가 등록되었습니다.")
-        navigate(`/forums`);
+        navigate(`/`);
     }
 
     return (
         <div className={style.noticeBox}>
-            {/* 공지사항 제목 이미지 */}
+            {/* 제목 이미지 */}
             <div className={style.betweenBox}>
-                {/* 공지사항 타이틀 */}
-                <div className={style.forumTitle}> 신고 작성 </div>
+                {/*타이틀 */}
+                <div className={style.reportTitle}> 신고 작성 </div>
             </div>
             {/* border line */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 제목 입력란 */}
             <div className={style.subTitleBox}>
-                <div>
-                    <img className={style.titleImg} src={require("../static/images/title-text.png")}/>
-                </div>
-                <div className={style.titleInputBox}>
-                    <input id="titleInput" className={style.titleInput}  placeholder="신고 제목을 입력해주세요." />
-                </div>
-                <select id="categoryInput">
+                <select id="categoryInput" style={{fontSize:"16px",width:"100%", padding:"10px"}}>
                     <option>언어 폭력 및 성희롱적인 게시글 또는 댓글</option>
                     <option>부적절한 컨텐츠 제작</option>
                     <option>기타</option>
@@ -57,12 +58,12 @@ function InsertForum({props}){
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 내용 입력란 */}
             <div className={style.contentInputBox}> 
-                <textarea id="contentInput" className={style.contentInput} placeholder="자세한 내용을 입력해주세요."/>
+                <textarea id="contentInput" className={style.contentInput} placeholder="자세한 내용을 입력해주세요. 첨부할 파일이 있다면 첨부해주세요."/>
             </div>
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 첨부파일 입력란 */}
             <div className={style.insertFileBox}> 
-                <input className={style.insertFileInput} type="file"/>
+                <input id="fileInput" className={style.insertFileInput} type="file"/>
             </div>
             {/* 등록하기 버튼 */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
@@ -73,4 +74,4 @@ function InsertForum({props}){
     )
 }
 
-export default InsertForum;
+export default InsertReport;
