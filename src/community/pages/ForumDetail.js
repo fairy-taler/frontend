@@ -66,17 +66,21 @@ function ForumDetail(){
             </div></NavLink>
             {/* 게시글 제목 */}
             <div className={style.contentTitleBox}>
-                <div className={style.contentitle}> 
-                    {forum?.title}
+                <div className={style.contentTitle}> 
+                        {forum?.title}
+                    </div>
+                <div className={style.titleProfile}  onClick={onClickNickname(forum?.memberId)}>
+                    <img className={style.profileImg} src={forum?.profileUrl}></img> 
+                    <div >
+                        <div className={style.contentNickname} onClick={onClickNickname(forum?.memberId)}>{forum?.nickname}
+                        <div>
+                            {forum?.createDate.substr(0,10)}
+                        </div>      
+                    </div>
                 </div>
-                <div className={style.contentNickname} onClick={onClickNickname(forum?.memberId)}>작성자 : {forum?.nickname}
+                
                 {clickProfile == null ? null : <Profile value={clickProfile} /> }
                 </div>
-            </div>
-            
-            {/* 게시글 날짜 */}
-            <div className={style.contentDateBox}>
-                {forum?.createDate.substr(0,10)}
             </div>
             {/* 게시글 내용 */}
             <div className={style.contentContentBox}>
@@ -95,6 +99,7 @@ function ForumDetail(){
                 {/* 댓글 목록 */}
                 <div>
                     {forum?.comments?.map((comment, index)=>(<div className={style.commentsBox} onClick={onClickNickname(comment.memberId)}>
+                                                        <img className={style.profileImg} src={comment?.profileUrl}></img> 
                                                         <div className={style.id}>{comment.nickname}</div>
                                                         <div className={style.contents}>{comment.content}</div>
                                                         <div className={style.createDate}>{comment.createDate.substr(0,10)}</div>
