@@ -13,19 +13,15 @@
     z-index: 1;
     align-items: baseline;
 }
-
 .headerImg{
     height: 4vh;
 }
-
 .headerImgMenu{
     height: 25px;
 }
-
 .logoImg{
     height : 80px;
 }
-
 .btn{
     text-decoration: none;
     border: none;

@@ -7,7 +7,8 @@
 .searchBox{
     display : flex;
     justify-content: space-between;
-    align-items: center;
+    align-content: bottom;
+    padding : auto;
 }
 .searchSelect{
     width : 150px;
@@ -22,7 +23,7 @@
     display : flex;
     justify-content: space-between;
     align-items: center;
-    padding : 5px;
+    padding : 4px;
 }
 .searchBox img {
     height : 80%;
@@ -81,7 +82,7 @@
 .betweenBox{
     display: flex;
     justify-content: space-between;
-    padding : 100px 100px 10px 100px;
+    padding : 100px 100px 0px 100px;
 }
 .leftBox{
     display: flex;

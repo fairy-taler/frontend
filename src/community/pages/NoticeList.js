@@ -5,7 +5,7 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {callGetNoticesAPI } from "../../apis/community/NoticeAPICalls"
+import {callGetNoticesAPI, callGetSearchNoticesAPI } from "../../apis/community/NoticeAPICalls"
 
 function NoticeList(){
     // api로 1대1 정보 조회 후 데이터 저장
@@ -31,6 +31,14 @@ function NoticeList(){
             `/notices/${e.target.id}`
           );
     }
+    // 검색 이벤트
+    const onClickSearchButton = () => {
+        const title = document.getElementById("searchInput").value;
+        dispatch(callGetSearchNoticesAPI({ 
+              "title" : title	
+            , "pageable": {page:0, size:10}}
+        ));
+    }
     
     // 헤더 설정 변경
     const dispatch = useDispatch();
@@ -50,8 +58,8 @@ function NoticeList(){
                 <img className={style.titleImg} src={require("../static/images/notice-title.png")}/>
                 {/* 검색창 */}
                 <div className={style.searchBox}>
-                    <input placeholder="검색어를 입력하세요."/>
-                    <img src={require("../static/images/search-btn.png")}/>
+                    <input id="searchInput" placeholder="검색어를 입력하세요."/>
+                    <img src={require("../static/images/search-btn.png")} onClick={onClickSearchButton}/>
                 </div>
             </div>
             <img className={style.lineImg} src={require("../static/images/line.png")} />
