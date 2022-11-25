@@ -135,3 +135,7 @@ th{
     align-items: center;
     min-width: 80px;
 }
+
+.searchImg{
+    width: 70%;
+}

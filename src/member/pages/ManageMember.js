@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
     ON_BLACK, ON_WHITE, ON_CLICK
 } from '../../modules/mainModules/headerModule';
-import {callGetMemberListAPI, callPutMemberBlockAPI, callPutMemberUnblockAPI } from '../../apis/member/MemberAPICalls'
+import {callGetMemberListAPI, callPutMemberBlockAPI, callPutMemberUnblockAPI, callGetSearchMemberAPI } from '../../apis/member/MemberAPICalls'
 import { useEffect, useState } from "react";
 
 function ManageMember(){
@@ -12,6 +12,7 @@ function ManageMember(){
     const header = useSelector(state => state.headerReducer);
     const memberList = useSelector(state => state.memberListReducer); 
     const [memberCnt, setMemberCnt] = useState(0); 
+    const [keyword, setKeyword ] = useState("");
 
     const [option, setOption] = useState('ALL');
     const result = null; 
@@ -37,6 +38,10 @@ function ManageMember(){
         dispatch(callPutMemberUnblockAPI(e)); 
     }
 
+    const onClickSearch = (e) => {
+        dispatch(callGetSearchMemberAPI(keyword)); 
+    }
+
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
@@ -46,6 +51,11 @@ function ManageMember(){
     useEffect(()=>{
         setMemberCnt(document.getElementById('memberListTable').rows.length);
     })
+    
+    const onChangeKeyword= (e) => {
+        setKeyword(e.target.value);
+        console.log(keyword)
+    };
 
     console.log(memberList);
 
@@ -57,8 +67,8 @@ function ManageMember(){
                 <img className={style.titleImg} src={require("../static/images/manage-member-title.png")}/>
                 {/* 검색창 */}
                 <div className={style.searchBox}>
-                    <input placeholder="검색어를 입력하세요."/>
-                    <img src={require("../static/images/search-btn.png")}/>
+                    <input placeholder="검색어를 입력하세요." onChange={onChangeKeyword}/>
+                    <button onClick={onClickSearch}> <img className={style.searchImg} src={require("../static/images/search-btn.png")}/></button>
                 </div>
             </div>
             {/* border line */}

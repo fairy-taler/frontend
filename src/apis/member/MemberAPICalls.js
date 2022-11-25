@@ -464,3 +464,27 @@ export const callSearchPwdAPI = ({form}) => {
         }
     };
 }
+
+export const callGetSearchMemberAPI = (keyword) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/member-search/${keyword}`;
+
+    return async (dispatch, getState) => {
+        const result = await fetch(requestURL,{
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*" 
+            }
+        })
+        .then(res => res.json());
+        
+        console.log('[MemberAPICalls] callGetMemberAPI RESULT : ', result);
+        
+        dispatch({ type: GET_MEMBER_LIST,  payload: result.data });
+
+    };
+}
+
