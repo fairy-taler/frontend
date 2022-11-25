@@ -6,7 +6,7 @@ import {
 import { useEffect } from "react";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { callGetForumsAPI, callGetForumsByCategoryAPI, callGetForumsByMemberCodeAPI } from "../../apis/community/ForumAPICalls"
+import { callGetForumsAPI, callGetForumsByCategoryAPI, callGetForumsByMemberCodeAPI, callGetSearchForums } from "../../apis/community/ForumAPICalls"
 
 function Forums(){
     //게시판 정보 불러오기
@@ -74,9 +74,16 @@ function Forums(){
             page:0, size:10}
         ));
     }
-    const onClickAllPost = () => {
+    const onClickAllPost = (e) => {
         setCategory("all")
         dispatch(callGetForumsAPI({	
+            page:e.target.id-1, size:10}
+        ));
+    }
+    // 검색 이벤트 
+    const onClickSearchButton = () => {
+        const title = document.getElementById("searchInput").value;
+        dispatch(callGetSearchForums(title,{	
             page:0, size:10}
         ));
     }
@@ -98,8 +105,8 @@ function Forums(){
                 <div className={style.forumTitle}> 자유 게시판 </div>
                 {/* 검색창 */}
                 <div className={style.searchBox}>
-                    <input placeholder="검색어를 입력하세요."/>
-                    <img src={require("../static/images/search-btn.png")}/>
+                    <input placeholder="검색어를 입력하세요." id="searchInput"/>
+                    <img src={require("../static/images/search-btn.png")} onClick={onClickSearchButton} />
                 </div>
             </div>
             <div className={style.buttonGroup}>

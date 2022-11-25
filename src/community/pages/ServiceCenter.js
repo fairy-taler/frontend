@@ -5,7 +5,7 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { callGetFaqAPI } from "../../apis/community/FaqAPICalls"
+import { callGetFaqAPI, callGetSearchFaqAPI } from "../../apis/community/FaqAPICalls"
 import { callGetForumsByMemberCodeAPI } from "../../apis/community/InquiryAPICalls"
 
 
@@ -19,11 +19,22 @@ function ServiceCenter(){
     const myInquirys = result2?.inquiryList?.content;
     console.log(myInquirys);
     
-    const pages = Array(10).fill()
+    const faqPages = Array(result?.faqList?.totalPages).fill()
+    const inquiryPages = Array(result2?.inquiryList?.totalPages).fill()
     
+    const pages = Array(10).fill()
     // 헤더 설정 변경
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerReducer);
+    // 검색 이벤트
+    const onClickSearchButton = () => {
+        const title = document.getElementById("searchInput").value;
+        dispatch(callGetSearchFaqAPI({ 
+            "title" : title	
+            , "pageable": {page:0, size:10}}
+        ));
+    }
+
 
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
@@ -58,8 +69,8 @@ function ServiceCenter(){
                 <img className={style.titleImg} src={require("../static/images/service-center-title.png")}/>
                 {/* 검색창 */}
                 <div className={style.searchBox}>
-                    <input placeholder="검색어를 입력하세요."/>
-                    <img src={require("../static/images/search-btn.png")}/>
+                    <input placeholder="검색어를 입력하세요." id="searchInput"/>
+                    <img src={require("../static/images/search-btn.png")} onClick={onClickSearchButton}/>
                 </div>
             </div>
             {/* 자주 찾는 도움말 */}
@@ -79,7 +90,7 @@ function ServiceCenter(){
                 </table>
             </div>
             {/* 페이지 버튼 */}
-            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
+            <div className={style.pageListBox}>{faqPages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
             {/* 나의 문의 목록 */}
             {/* 1대1 문의하기 버튼 */}
             <div className={style.insertButtonBox} onClick={toInsertInquiry}>
@@ -96,13 +107,13 @@ function ServiceCenter(){
                         <tr onClick={toInquiryInfo} key={inquiry.inquiryCode} id={index}>
                             <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} style={{width : "100px"}}>[내 문의]</td>
                             <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} >{inquiry?.title}</td>
-                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} >{inquiry?.answer == null? "답변 미완료" : "답변 완료" }</td>
+                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} style={inquiry?.answer == null? {color:"gray"}:null}>{inquiry?.answer == null? "답변 미완료" : "답변 완료" }</td>
                             <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} >{inquiry?.createDate.substr(0,10)}</td>
                         </tr>))}
                 </table>
             </div>
             {/* 페이지 버튼 */}
-            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
+            <div className={style.pageListBox}>{inquiryPages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
         </div>
     )
 }

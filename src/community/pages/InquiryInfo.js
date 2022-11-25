@@ -39,17 +39,12 @@ function InquiryInfo(){
             <div className={style.betweenBox}>
                 {/* 자주 찾는 도움말 타이틀 */}
                 <img className={style.titleImg} src={require("../static/images/my-inquiry-title.png")}/>
-                {/* 검색창 */}
-                <div className={style.searchBox}>
-                    <input placeholder="검색어를 입력하세요."/>
-                    <img src={require("../static/images/search-btn.png")}/>
-                </div>
             </div>
             {/* border line */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 목록 / 이전으로 버튼 */}
             <div className={style.subTitleBox}>
-                <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
+                <NavLink to="/serviceCenter"><img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/></NavLink>
             </div>
             {/* 문의 제목 */}
             <div className={style.contentTitleBox}> 

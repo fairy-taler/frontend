@@ -12,19 +12,15 @@
     margin: 20px 30px 0px;
     z-index: 1;
 }
-
 .headerImg{
     height: 4vh;
 }
-
 .headerImgMenu{
     height: 3.3vh;
 }
-
 .logoImg{
     height : 80px;
 }
-
 .btn{
     text-decoration: none;
     border: none;

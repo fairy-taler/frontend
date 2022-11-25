@@ -142,3 +142,26 @@ export const callInsertForumAPI = (forumData) => {
     };
 }
 
+
+export const callGetSearchForums = (title,pageable) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/forums/title?title=${title}&page=${pageable.page}&size=${pageable.size}&sort=createDate,desc`;
+
+    return async (dispatch, getState) => {
+        const result = await fetch(requestURL,{
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*" 
+            }
+        })
+        .then(res => res.json());
+        
+        console.log('[ForumAPICalls] callGetSearchForumAPI RESULT : ', result);
+        
+        dispatch({ type:SET_FORUM_LIST,  payload: result.data});
+
+    };
+}
