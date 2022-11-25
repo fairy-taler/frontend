@@ -58,9 +58,7 @@ function NoticeListForManagement(){
             "title" : title	
           , "pageable": {page:0, size:10}}
       ));
-         
     }
-
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
     const toNoticesInfo = (e) =>{
@@ -88,7 +86,7 @@ function NoticeListForManagement(){
                         <img src={require("../static/images/search-btn.png")} onClick={onClickSearchButton}/>
                     </div>
                     <select className={style.searchSelect} onChange={onChangeSelectCategory}><option value="공지">공지</option><option value="FAQ">FAQ</option></select>
-                    <NavLink to="/insertNotice"><img style={{margin : "0", height : "40px", width : "120px", margin : "5px"}} src={require("../static/images/insert-btn.png")}/></NavLink>
+                    <NavLink to="/insertNotice" style={{margin : "0px", height : "40px", width : "120px"}} ><img style={{margin : "0px", height : "40px", width : "120px"}} src={require("../static/images/insert-btn.png")}/></NavLink>
                 </div>
             </div>
             <img className={style.lineImg} src={require("../static/images/line.png")} />

@@ -7,8 +7,7 @@
 .searchBox{
     display : flex;
     justify-content: space-between;
-    align-content: bottom;
-    padding : auto;
+    align-items: center;
 }
 .searchSelect{
     width : 150px;

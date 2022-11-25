@@ -94,7 +94,7 @@ function ForumDetail(){
                 </div>
                 {/* 댓글 목록 */}
                 <div>
-                    {forum?.comments?.map((comment, index)=>(<div className={style.commentsBox}>
+                    {forum?.comments?.map((comment, index)=>(<div className={style.commentsBox} onClick={onClickNickname(comment.memberId)}>
                                                         <div className={style.id}>{comment.nickname}</div>
                                                         <div className={style.contents}>{comment.content}</div>
                                                         <div className={style.createDate}>{comment.createDate.substr(0,10)}</div>
