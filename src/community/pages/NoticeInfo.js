@@ -43,11 +43,7 @@ function NoticeInfo(){
             <div className={style.betweenBox}>
                 {/* 공지사항 타이틀 */}
                 <img className={style.titleImg} src={require("../static/images/notice-title.png")}/>
-                {/* 검색창 */}
-                <div className={style.searchBox}>
-                    <input placeholder="검색어를 입력하세요."/>
-                    <img src={require("../static/images/search-btn.png")}/>
-                </div>
+                
             </div>
             {/* border line */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
