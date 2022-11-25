@@ -5,15 +5,41 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector, useDispatch } from 'react-redux';
-import { ON_WHITE, ON_CLICK } from '../../modules/mainModules/headerModule';
+import { ON_WHITE, ON_BLACK,  ON_CLICK , OFF_LOGO} from '../../modules/mainModules/headerModule';
 // 스타일 모듈 추가
 import style from "../static/css/Main.module.css"
 
 function Main() {
+  // 스크롤 설정
+  const [ScrollY, setScrollY] = useState(0);  // 스크롤값을 저장하기 위한 상태
+  const handleFollow = () => {
+    setScrollY(window.pageYOffset); // window 스크롤 값을 ScrollY에 저장
+  }
+
+  useEffect(() => {
+    if(ScrollY > 1018 && ScrollY <2352){
+      dispatch({ type: ON_BLACK });
+      dispatch({ type: OFF_LOGO});
+    }
+    else{
+      dispatch({ type: ON_WHITE });
+    }
+    console.log("ScrollY is ", ScrollY); // ScrollY가 변화할때마다 값을 콘솔에 출력
+  }, [ScrollY])
+  //-------------스크롤
+
+  useEffect(() => {
+    const watch = () => {
+      window.addEventListener('scroll', handleFollow);
+    }
+    watch(); // addEventListener 함수를 실행
+    return () => {
+      window.removeEventListener('scroll', handleFollow); // addEventListener 함수를 삭제
+    }
+  })
 
   const dispatch = useDispatch();
   const header = useSelector(state => state.headerReducer);
-
   const onClickHandler = (e) => {
       dispatch({ type: ON_CLICK, payload : !header.clicked });
   }
@@ -23,10 +49,8 @@ function Main() {
     }
     ,[]
   )
-
   //슬라이더 앞뒤로 이동하기
   const slider = useRef();
-
   //버튼을 클릭하면 앞 뒤 배너로 이동
   const goToNextBanner= () => {
     slider.current.slickNext();
@@ -35,7 +59,6 @@ function Main() {
     // slider.current.();
     slider.current.slickPrev();
   }
-
   //프로그램 다운로드 이벤트
   const onDownload= () => {
     alert("프로그램을 설치합니다.");
@@ -82,12 +105,11 @@ function Main() {
     //한 번에 넘어가는 콘텐츠 수
     slidesToScroll: 1
 };
-
 return (
   <div className={style.mainBox}>
-    <img className={style.sliderLeftButton} src={require("../static/images/preButton.png")} onClick={goToPreBanner}/>
-    <img className={style.sliderRightButton} src={require("../static/images/nextButton.png")} onClick={goToNextBanner}/>
     <div>
+      <img className={style.sliderLeftButton} src={require("../static/images/preButton.png")} onClick={goToPreBanner}/>
+      <img className={style.sliderRightButton} src={require("../static/images/nextButton.png")} onClick={goToNextBanner}/>  
       {/* 배너 */}
       <Slider {...settings} ref={slider}>
           {/* 타이틀 */}
@@ -116,6 +138,7 @@ return (
             </div>
           </div>  
         </Slider>  
+        <div className={style.banner2} style={{ backgroundImage : "url('main/banner4.png')"}}/>
     </div>
   </div>
   )
