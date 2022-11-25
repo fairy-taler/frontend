@@ -46,7 +46,7 @@
 .contentTitleBox{
     font-size: 24px;
     font-weight: bold;
-    padding : 0px 100px 0px 100px;
+    padding : 0px 100px 0px 130px;
 }
 .contentDateBox{
     font-size : 16px;
@@ -57,7 +57,7 @@
 .contentContentBox{
     min-height: 360px;
     font-size : 16px;
-    padding : 20px 100px 20px 100px;
+    padding : 20px 100px 20px 130px;
 }
 .pageListBox{
     display: flex;

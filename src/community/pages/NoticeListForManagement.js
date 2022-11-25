@@ -5,8 +5,8 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import {callGetNoticesAPI, callGetSearchNoticesAPI } from "../../apis/community/NoticeAPICalls"
-import { callGetFaqAPI } from "../../apis/community/FaqAPICalls"
+import { callGetNoticesAPI, callGetSearchNoticesAPI } from "../../apis/community/NoticeAPICalls"
+import { callGetFaqAPI, callGetSearchFaqAPI } from "../../apis/community/FaqAPICalls"
 
 function NoticeListForManagement(){
     // 카테고리 설정 초기화
@@ -48,10 +48,17 @@ function NoticeListForManagement(){
     // 검색 이벤트 
     const onClickSearchButton = () => {
         const title = document.getElementById("searchInput").value;
-         dispatch(callGetSearchNoticesAPI({ 
+        if(noticeCategory=="공지")
+        dispatch(callGetSearchNoticesAPI({ 
             "title" : title	
           , "pageable": {page:0, size:10}}
       ));
+        else
+        dispatch(callGetSearchFaqAPI({ 
+            "title" : title	
+          , "pageable": {page:0, size:10}}
+      ));
+         
     }
 
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
