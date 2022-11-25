@@ -70,9 +70,9 @@ function Login(){
             </div>
             <button className={style.submitLogin}><img src={require("../static/images/login-btn.png")}  onClick={onClickLoginHandler} /> </button>
             <div className={style.btnGroup}>
-                <button className={style.phBtn}><img src={require("../static/images/idSearch.png")} /> </button>
-                <button className={style.phBtn}><img src={require("../static/images/pwdSearch.png")} /> </button>
-                <button className={style.phBtn}><img src={require("../static/images/join-ph.png")} /> </button>
+                <Link to="/idSearch"><button className={style.phBtn}><img src={require("../static/images/idSearch.png")} /> </button> </Link>
+                <Link to="/pwdSearch"><button className={style.phBtn}><img src={require("../static/images/pwdSearch.png")} /> </button> </Link>
+                <Link to="/join"><button className={style.phBtn}><img src={require("../static/images/join-ph.png")} /> </button> </Link>
             </div>
         </div>
     )

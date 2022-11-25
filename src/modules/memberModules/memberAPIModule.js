@@ -10,6 +10,7 @@ export const PUT_MEMBER = 'member/PUT_MEMBER';
 export const PUT_PROFILE = "profile/PUT_PROFILE"; 
 export const DELETE_MEMBER = "member/DELTE_MEMBER";
 export const GET_MEMBER_LIST = "memeber/GET_MEMBER_LIST"; 
+export const SEARCH_ID = "memeber/SEARCH_ID"; 
 
 const actions = createActions({
     [POST_LOGIN]: () => {},
@@ -19,7 +20,8 @@ const actions = createActions({
     [PUT_MEMBER]: () => {},
     [PUT_PROFILE]: () => {},
     [DELETE_MEMBER]: () => {},
-    [GET_MEMBER_LIST]: () => {} 
+    [GET_MEMBER_LIST]: () => {},
+    [SEARCH_ID]: () => {}
 })
 
 export const memberReducer = handleActions(
@@ -51,6 +53,9 @@ export const memberReducer = handleActions(
         [DELETE_MEMBER]: (state, { payload }) => {
             
             return payload;
+        },
+        [SEARCH_ID]: (state, {payload}) => {
+            return payload; 
         }
     },
     initialState

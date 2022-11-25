@@ -7,6 +7,7 @@ import {
 
 import { CHANGE_PWD } from "../../modules/memberModules/memberModule"; 
 import { useEffect, useState } from "react";
+import { callSearchPwdAPI } from "../../apis/member/MemberAPICalls"
 
 function SearchResultPwd(){
 
@@ -31,6 +32,17 @@ function SearchResultPwd(){
           });
     }
 
+    const onClickSearch = () => {
+        let body = {
+            memberName: member[1].memberName,
+            memberId: member[1].memberId,
+            newPwd: member[2].memberPwd
+        }
+        dispatch(callSearchPwdAPI({
+            form: body
+        }));
+    }
+
     // console.log(userInfo)
     return (
         <div className={style.searchDiv}>
@@ -46,7 +58,7 @@ function SearchResultPwd(){
             <div className={style.inputBox}>
                 <input type="password" name="confirmPwd" id="confirmPwd" value={member[1].confirmPwd} onChange={ onChangeHandler } placeholder="비밀번호 확인" required />
             </div>
-            <button className={style.submitBtn}><img src={require("../static/images/change-btn.png")} /> </button>
+            <button className={style.submitBtn} onClick={onClickSearch}><img src={require("../static/images/change-btn.png")} /> </button>
         </div>
     )
 }

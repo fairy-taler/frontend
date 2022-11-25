@@ -6,7 +6,8 @@ import {
     PUT_MEMBER,
     PUT_PROFILE,
     DELETE_MEMBER,
-    GET_MEMBER_LIST
+    GET_MEMBER_LIST,
+    SEARCH_ID
 } from "../../modules/memberModules/memberAPIModule"; 
 
 import {
@@ -393,6 +394,73 @@ export const callPutMemberUnblockAPI = (memberCode) => {
         if(result.status === 200){
             alert("회원 차단해제가 완료 되었습니다. ")     
             window.location.href="/manageMember"
+        }
+    };
+}
+
+export const callSearchIdAPI = ({form}) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/search-id`;
+    console.log(requestURL);
+    console.log(form)
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Access-Control-Allow-Origin": "*"    
+            },
+            body: JSON.stringify({
+                memberName: form.memberName,
+                email: form.email             
+            })
+        })
+        .then(response => response.json());
+
+        console.log('[MemberAPICalls] callSearchIdAPI RESULT : ', result);   
+
+        if(result.status === 500){
+            console.log(result);
+            alert(result.message);
+        }
+        if(result.status === 200){ 
+            // window.location.href="/idresult"      
+        }
+        dispatch({ type: SEARCH_ID,  payload: result });   
+    };
+}
+
+export const callSearchPwdAPI = ({form}) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/search-pwd`;
+    console.log(requestURL);
+    console.log(form)
+    return async (dispatch, getState) => {
+
+        const result = await fetch(requestURL, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Access-Control-Allow-Origin": "*"    
+            },
+            body: JSON.stringify({
+                memberName: form.memberName,
+                memberId: form.memberId,
+                newPwd: form.newPwd
+            })
+        })
+        .then(response => response.json());
+
+        console.log('[MemberAPICalls] callSearchPwdAPI RESULT : ', result);   
+
+        if(result.status === 500){
+            console.log(result);
+            alert(result.message);
+        }
+        if(result.status === 200){ 
+            alert("비밀번호 재설정이 완료 되었습니다. ")     
+            window.location.href="/login"
         }
     };
 }

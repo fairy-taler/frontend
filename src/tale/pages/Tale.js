@@ -54,6 +54,7 @@ function Tale(){
                 </div>
     
             </div>  
+            <div className={style.taleListDiv}> 
                 <div className={style.lineDiv}> <img className={style.lineImg} src={require("../static/images/tale-list.png")} /></div>
                 
             {/* 동화 목록 보여주기 */}
@@ -61,12 +62,13 @@ function Tale(){
                 {taleList == null ? null : taleList.map((tale, index)=>(
                 <div>
                     <div> <img className={style.taleImg} src={tale.taleInfo.thumbNail} onError={handleImgError} /> </div>
-                    <div className={style.taleTitle}> {tale.taleList.title}</div>
+                    <div className={style.taleTitle}> {tale.taleList.title ==  "" ? " 제목없음" : tale.taleList.title}</div>
                     <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}&targetTaleCode=${tale.taleInfo.id}`}><button> <img className={style.reportImg} src={require("../static/images/report.png")} /> </button></NavLink>
                 </div>
                 ))
                 }  
             
+                </div>
                 </div>
             </div>
     )

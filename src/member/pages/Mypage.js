@@ -156,7 +156,11 @@ function Mypage(){
                       
                    
                     <div className={style.profileInfo}>
-                        <div className={style.profileName}> {originMember.memberName} <span> 선생님 </span> </div>  
+                        <div className={style.profileName}> {originMember.memberName} <span> 
+                            {
+                                member[4].memberRole == "TEACHER" ? "선생님": member[4].memberRole == "STUDENT" ? "학생" : ""
+                            }
+                            </span> </div>  
                         <div className={style.profileTale}> 제작한 동화책 수 : <span> {originProfile.taleCount} </span> </div>  
                         <div className={style.profileIntro}> 소개글: </div>
                         <textarea value={member[4].intro} name="intro" onChange={ onChangeProfile }></textarea><br/> 

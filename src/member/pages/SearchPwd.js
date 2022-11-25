@@ -44,14 +44,7 @@ function SearchPwd(){
                 <input type="text" name="memberId" id="memberId" value={member[1].memberId} onChange={ onChangeHandler } placeholder="아이디" required />
             </div>
             <div className={style.inputBox}>
-                <div className={style.emailBox}>
-                    <input type="text" name="email" id="email" value={member.email} onChange={ onChangeHandler } placeholder="이메일" required />
-                    <button className={style.authBtn}> <img src={require("../static/images/auth-btn.png")}></img></button>
-                </div>
-            </div>
-            <div className={style.inputBox}>
-                <input type="text" name="mainAuth" id="mainAuth" value={member.mainAuth} onChange={ onChangeHandler } placeholder="인증번호" required/>
-                <br />
+                <input type="text" name="memberName" id="memberName" value={member[1].memberName} onChange={ onChangeHandler } placeholder="이름" required />
             </div>
             <Link to="/pwdresult"> <button className={style.submitBtn}><img src={require("../static/images/pwd-search-btn.png")} /> </button></Link>
         </div>
