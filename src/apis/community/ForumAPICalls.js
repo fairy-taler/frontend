@@ -112,9 +112,7 @@ export const callInsertCommentAPI = (forumCode, content) => {
             })
         })
         .then(response => response.json());
-
-        console.log('[MemberAPICalls] callRegisterAPI RESULT : ', result);   
-
+        console.log('[ForumAPICalls] callRegistCommentAPI RESULT : ', result);   
     };
 }
 export const callInsertForumAPI = (forumData) => {

@@ -28,7 +28,7 @@ function Header(){
     console.log(isLogin);
     
     return (
-        <div>
+        <div className={style.headerBox}>
             { header.clicked ? <Navbar/> : null}
             <div className={style.headerDiv}>
                 <button className={style.btn} onClick={ onClickHandler }>  <img className={style.headerImgMenu} src={!header.clicked? header.color=="black"? require(`../../static/images/menu-btn-black.png`):require(`../../static/images/menu-btn.png`):require(`../../static/images/close-btn.png`)}/></button>

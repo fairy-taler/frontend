@@ -11,7 +11,7 @@ import Profile from "../../member/pages/Profile"
 function ForumDetail(){
     const dispatch = useDispatch();
     const  params = useParams();
-    const [commentContent, setCommentContent] = useState("");
+    const [commentContent, setCommentContent] = useState(true);
     const result= useSelector(state => state.forumReducer);
     const member= useSelector(state => state.memberReducer);
     const forum = result?.forum;
@@ -47,7 +47,7 @@ function ForumDetail(){
         const func = callInsertCommentAPI(params[1], commentInput.value);
         func();
         commentInput.value ="";
-        setCommentContent({...commentContent});
+        setCommentContent(!commentContent);
     }
     console.log(commentContent);
 
