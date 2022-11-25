@@ -115,25 +115,25 @@ return (
           {/* 타이틀 */}
           <div>
             <div className={style.banner} style={{ backgroundImage : "url('main/banner-background1.png')"}}>
-              <div>
-                <img className={style.logoImg} src={require("../static/images/logo.png")} />
-                <img className={style.downloadButton} src={require("../static/images/downloadButton.png")} onClick={onDownload}/>
+              <div >
+                <img className={style.logoImg} src={require("../static/images/logo.png")} style={{}}/>
+                <img className={style.downloadButtonCenter} src={require("../static/images/downloadButton.png")} onClick={onDownload}/>
               </div>
             </div>
           </div>  
           <div>
             <div className={style.banner} style={{ backgroundImage : "url('main/banner-background2.png')"}}>
-              <div>
-                <img className={style.bannerTextImg} src={require("../static/images/bannerText1.png")} />
-                <img className={style.downloadButton} src={require("../static/images/downloadButton.png")} onClick={onDownload}/>
+              <div className={style.bannerImgBox}>
+                <img className={style.bannerTextImgLeft} style={{margin:"auto"}} src={require("../static/images/bannerText1.png")} />
+                <img className={style.downloadButtonLeft} src={require("../static/images/downloadButton.png")} onClick={onDownload}/>
               </div>
             </div>
           </div>  
           <div>
             <div className={style.banner} style={{ backgroundImage : "url('main/banner-background3.png')"}}>
-              <div>
-                <img className={style.bannerTextImg} src={require("../static/images/bannerText2.png")} />
-                <img className={style.downloadButton} src={require("../static/images/downloadButton.png")} onClick={onDownload}/>
+              <div className={style.bannerImgBox}>
+                <img className={style.bannerTextImgRight} src={require("../static/images/bannerText2.png")} />
+                <img className={style.downloadButtonRight} src={require("../static/images/downloadButton.png")} onClick={onDownload}/>
               </div>
             </div>
           </div>  
