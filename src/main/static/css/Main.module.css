@@ -45,7 +45,7 @@
   z-index: 1;
 }
 .downloadButtonCenter{
-  width : 7vw;
+  width : 10vw;
 }
 .bannerTextImgLeft{
   width : 25vw;
@@ -56,7 +56,7 @@
 .downloadButtonLeft{
   width : 10vw;
   position: absolute;
-  top : 67vh;
+  top : 68vh;
   left : 20vw;
 }
 .bannerTextImgRight{
@@ -68,7 +68,7 @@
 .downloadButtonRight{
   width : 10vw;
   position: absolute;
-  top : 66vh;
+  top : 68vh;
   right : 20vw;
 }
 .logoImg{
