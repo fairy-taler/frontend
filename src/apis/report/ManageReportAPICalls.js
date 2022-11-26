@@ -27,6 +27,29 @@ export const callGetReportsAPI = (pageable) => {
     };
 }
 
+export const callGetReportsByTaleIdAPI = (data) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/reports/taleId?id=${data.id}&page=${data.pageable.page}&size=${data.pageable.size}&sort=createDate,desc`;
+
+    return async (dispatch, getState) => {
+        const result = await fetch(requestURL,{
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*" 
+            }
+        })
+        .then(res => res.json());
+        
+        console.log('[ReportAPICalls] callGetReportsAPI RESULT : ', result);
+        
+        dispatch({ type:SET_REPORT_LIST,  payload: result.data});
+
+    };
+}
+
 export const callGetReportAPI = (reportCode) => {
     const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/reports/${reportCode}`;
 

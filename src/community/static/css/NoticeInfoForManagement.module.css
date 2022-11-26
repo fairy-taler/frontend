@@ -36,6 +36,7 @@
     padding : 10px 100px 10px 100px;
     display : flex;
     justify-content: space-between;
+    align-items: center;
 }
 .editButton{
     margin : 10px;
@@ -43,10 +44,6 @@
     height: 25px;
     background : black;
     color : white;
-}
-.subTitleBox img{
-    height : 24px;
-    margin : 1vw;
 }
 .lineImg{
     padding : 0px 100px 0px 100px;
@@ -101,4 +98,9 @@
 }
 .insertButton{
     width : 100px;
+}
+.updateButton{
+    height : 30px;
+    margin : auto;
+    padding : 5px;
 }

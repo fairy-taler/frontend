@@ -5,12 +5,18 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useLocation, useParams } from 'react-router';
+import QueryString from "qs";
 import {callGetNoticesAPI } from "../../apis/community/NoticeAPICalls"
-import { callGetReportsAPI } from "../../apis/report/ManageReportAPICalls"
+import { callGetReportsAPI, callGetReportsByTaleIdAPI } from "../../apis/report/ManageReportAPICalls"
 
 function NoticeListForManagement(){
     // 카테고리 설정 초기화
     const [noticeCategory, setNoticeCategory] = useState("공지");
+    const location = useLocation();
+    const queryData = QueryString.parse(location.search, { ignoreQueryPrefix: true });
+    console.log("querydata",queryData)
+    
     // 신고 정보 불어오기
     const result = useSelector(state => state.reportManageReducer);
     const datas  =  result?.reportList?.content;
@@ -24,11 +30,20 @@ function NoticeListForManagement(){
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
+        queryData?.id !=undefined ?  dispatch(callGetReportsByTaleIdAPI({"id":queryData?.id ,"pageable" :{	
+            page:0, size:10}}
+        )):
         dispatch(callGetReportsAPI({	
             page:0, size:10}
-        ));
-    },[])
+        ))
 
+       
+    },[])
+    const onclickPageButton = (e) =>{
+        dispatch(callGetReportsAPI({	
+            page:e.target.id, size:10}
+        ));
+    }
 
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
@@ -65,13 +80,14 @@ function NoticeListForManagement(){
                                     <td id={data.reportCode} style={{width : "10%" , textAlign:"left"}}>{data?.category}</td>
                                     <td id={data.reportCode} style={{width : "10%" , textAlign:"left"}}>{data?.reporterId}</td>
                                     <td id={data.reportCode} style={{width : "10%" , textAlign:"left"}}>{data?.targetId}</td>
-                                    <td id={data.reportCode} style={{width : "40%" , textAlign:"left"}}>{data?.targetTaleTitle? data?.targetTaleTitle:"지정된 동화가 없습니다."}</td>
+                                    <td id={data.reportCode} style={data?.targetTaleTitle? {width : "40%" , textAlign:"left"} :{width : "40%" , textAlign:"left", color : "#AAAAAA"}  }>
+                                            {data?.targetTaleTitle? data?.targetTaleTitle:"지정된 동화가 없습니다."}</td>
                                     <td id={data.reportCode} sityle={{width : "10%", textAlign:"left"}}>{data?.createDate?.substr(0,10)}</td>
                             </tr>
                     ))}
                 </table>
             </div>
-            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
+            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton} id={index} onClick={onclickPageButton}>{index+1}</span>))}</div>
         </div>
     )
 }

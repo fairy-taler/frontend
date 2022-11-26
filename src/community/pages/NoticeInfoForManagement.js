@@ -51,9 +51,9 @@ function NoticeInfo(){
             <div className={style.subTitleBox}>
                 <NavLink to="/managementNotices"><img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/></NavLink>
                 <div>
-                <span className={style.editButton} style={{background : "#6666FF"}}>수정</span>
-                <span className={style.editButton} style={{background : "#FF6666"}} onClick={onClickDelteNotice}>삭제</span>
-                <span className={style.editButton}>비공개로 변경</span>
+                <img className={style.updateButton} src={require("../static/images/update-button.png")}/>
+                <img className={style.updateButton} src={require("../static/images/private-button.png")}/>
+                <img className={style.updateButton} src={require("../static/images/delete-button.png")}/>
                 </div>
             </div>
             {/* 공지사항 제목 */}
