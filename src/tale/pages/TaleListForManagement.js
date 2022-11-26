@@ -69,7 +69,7 @@ function TaleListForManagement(){
         <div className={style.noticeBox}>
             <div className={style.betweenBox}>
                 {/* 타이틀 */}
-                <div className={style.title}>동화 목록 (총 {result?.totalElements}개)</div>
+                <div className={style.title}>동화 목록 (총 {result?.totalElement}개)</div>
                 {/* 검색창 */}
                 <div className={style.searchBox}>
                     <select className={style.searchSelect} ><option value="이름">제작자</option><option value="제목">제목</option></select>

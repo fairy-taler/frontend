@@ -61,12 +61,12 @@ function NoticeListForManagement(){
                     <tr styleName><th>번호</th><th>카테고리</th><th>신고자ID</th><th>대상자ID</th><th>동화 제목</th><th>신고 일자</th></tr>
                     {datas?.map((data, index)=>(
                             <tr className={style.communityTableHover} onClick={toNoticesInfo} id={data.reportCode}>
-                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"center"}}>{data?.reportCode}</td>
-                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"center"}}>{data?.category}</td>
-                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"center"}}>{data?.reporterId}</td>
-                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"center"}}>{data?.targetId}</td>
-                                    <td id={data.reportCode} style={{width : "40%" , textAlign:"center"}}>{data?.targetTaleTitle? data?.targetTaleTitle:"지정된 동화가 없습니다."}</td>
-                                    <td id={data.reportCode} sityle={{width : "10%", textAlign:"center"}}>{data?.createDate?.substr(0,10)}</td>
+                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"left"}}>{data?.reportCode}</td>
+                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"left"}}>{data?.category}</td>
+                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"left"}}>{data?.reporterId}</td>
+                                    <td id={data.reportCode} style={{width : "10%" , textAlign:"left"}}>{data?.targetId}</td>
+                                    <td id={data.reportCode} style={{width : "40%" , textAlign:"left"}}>{data?.targetTaleTitle? data?.targetTaleTitle:"지정된 동화가 없습니다."}</td>
+                                    <td id={data.reportCode} sityle={{width : "10%", textAlign:"left"}}>{data?.createDate?.substr(0,10)}</td>
                             </tr>
                     ))}
                 </table>
