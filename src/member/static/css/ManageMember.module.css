@@ -139,3 +139,7 @@ th{
 .searchImg{
     width: 70%;
 }
+
+.communityTableHover:hover{
+    background-color: #EEEEEE;
+}
