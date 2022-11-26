@@ -54,16 +54,15 @@ function TaleListForManagement(){
             dispatch(callGetTalesAPI({	
             page:0, size:10})));
     }
-
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
 
     const toTaleInfo = (e) =>{
         console.log(
             "url", e.target)
-         navigate(
-            `/manageTale/${e.target.id}`
-          );
+        //  navigate(
+        //     `/manageTale/${e.target.id}`
+        //   );
     }
     return (
         <div className={style.noticeBox}>
@@ -89,7 +88,8 @@ function TaleListForManagement(){
                                     <td id={data?.id} style={{width : "60%" , textAlign:"left"}} onClick={toTaleInfo}>{data?.title}</td>
                                     <td id={data?.id} style={{width : "10%" , textAlign:"left"}}>{data?.writerId}</td>
                                     <td id={data?.id} style={{width : "10%" , textAlign:"left"}}>{data?.createAt?.substr(0,10)}</td>
-                                    <td id={data?.id} style={{width : "10%" , textAlign:"left"}}>신고보기({data?.reportSize})</td>
+                                    <td id={data?.id} style={{width : "10%" , textAlign:"left"}} onClick={()=>{navigate(`/manageReports?id=${data?.id}`)}}
+                                                                                                >신고보기({data?.reportSize})</td>
                                     <td id={data?.id} style={{width : "10%" , textAlign:"left"}}><img className={style.blockButton}
                                                                                                       onClick={data?.isBlock == 'Y'? onClickUnBlockButton : onClickBlockButton} id={data?.id}
                                                                                                       src={data?.isBlock =='Y'?
