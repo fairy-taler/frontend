@@ -9,6 +9,7 @@
   height: 100vh;
   margin : 0px;
   height: 100%;
+  margin-top : -20px;
   position:fixed;
 }
 
