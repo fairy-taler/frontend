@@ -33,6 +33,7 @@ import InsertReport from "./report/pages/InsertReport";
 import ReportListForManagement from "./report/pages/ReportListForManagement";
 import TaleListForManagement from "./tale/pages/TaleListForManagement";
 import ReportInfo from "./report/pages/RepotInfoForManagement";
+import TaleInfoForManagement from "./tale/pages/TaleInfoForManagement";
 
 function App() {
   return (
@@ -69,6 +70,7 @@ function App() {
           <Route path="/manageReports" element={<ReportListForManagement/>}/>
           <Route path="/manageReports/:1" element={<ReportInfo/>}/>
           <Route path="/manageTale" element={<TaleListForManagement/>}/>
+          <Route path="/manageTale/:1" element={<TaleInfoForManagement/>}/>
           <Route path="/*" element={<Error />} exact />
         </Route>
       </Routes>
