@@ -5,11 +5,12 @@ import {
 } from '../../modules/mainModules/headerModule';
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { callGetTalesAPI,callGetTalesByTitleAPI } from "../../apis/tale/ManageTaleAPICalls"
+import { callGetTalesAPI,callGetTalesByTitleAPI,callUpdateBlockTaleAPI,callUpdateUnBlockTaleAPI } from "../../apis/tale/ManageTaleAPICalls"
 
 function TaleListForManagement(){
     // 카테고리 설정 초기화
     const [noticeCategory, setNoticeCategory] = useState("공지");
+    const [update, setUpdate] = useState(true);
     // 신고 정보 불어오기
     const result = useSelector(state => state.taleManageReducer)?.taleList;
     console.log("data", result)
@@ -39,10 +40,31 @@ function TaleListForManagement(){
             page:e.target.id, size:10}, title:searchText}
         ));
     }
+    // 차단 버튼 클릭 이벤트
+    const onClickBlockButton = (e) => {
+        const func = callUpdateBlockTaleAPI(e.target.id);
+        func().then( () =>{
+            console.log("업데이트 되었습ㄴ디ㅏ.")
+            setUpdate(!update)
+        })
+    }
+    const onClickUnBlockButton = (e) => {
+        const func = callUpdateUnBlockTaleAPI(e.target.id);
+        func().then(
+            dispatch(callGetTalesAPI({	
+            page:0, size:10})));
+    }
+
     //리스트 클릭시 해당 정보로 이동하는 이벤트 함수
     const navigate = useNavigate();
 
-    
+    const toTaleInfo = (e) =>{
+        console.log(
+            "url", e.target)
+         navigate(
+            `/manageTale/${e.target.id}`
+          );
+    }
     return (
         <div className={style.noticeBox}>
             <div className={style.betweenBox}>
@@ -61,12 +83,18 @@ function TaleListForManagement(){
             {/* 공지사항 리스트 */}
             <div className={style.tableBox}>
                 <table className={style.communityTable}>
+                <tr styleName><th>동화 제목</th><th>작성자</th><th>생성일</th><th>신고</th><th>차단</th></tr>
                     {tales?.map((data, index)=>(
-                            <tr id={index}>
-                                    <td id={noticeCategory=="공지"? data?.noticeCode : data?.faqCode} style={{width : "10%" , textAlign:"left"}}>[{data?.id}]</td>
-                                    <td id={noticeCategory=="공지"? data?.noticeCode : data?.faqCode} style={{width : "60%" , textAlign:"left"}}>{data?.title}</td>
-                                    <td id={noticeCategory=="공지"? data?.noticeCode : data?.faqCode} style={{width : "10%" , textAlign:"left"}}>{data?.createAt?.substr(0,10)}</td>
-                                    <td id={noticeCategory=="공지"? data?.noticeCode : data?.faqCode} style={{width : "10%", textAlign:"right"}}>{data?.createDate?.substr(0,10)}</td>
+                            <tr id={index} >
+                                    <td id={data?.id} style={{width : "60%" , textAlign:"left"}} onClick={toTaleInfo}>{data?.title}</td>
+                                    <td id={data?.id} style={{width : "10%" , textAlign:"left"}}>{data?.writerId}</td>
+                                    <td id={data?.id} style={{width : "10%" , textAlign:"left"}}>{data?.createAt?.substr(0,10)}</td>
+                                    <td id={data?.id} style={{width : "10%" , textAlign:"left"}}>신고보기({data?.reportSize})</td>
+                                    <td id={data?.id} style={{width : "10%" , textAlign:"left"}}><img className={style.blockButton}
+                                                                                                      onClick={data?.isBlock == 'Y'? onClickUnBlockButton : onClickBlockButton} id={data?.id}
+                                                                                                      src={data?.isBlock =='Y'?
+                                                                                                            require("../static/images/unblock-button.png"):
+                                                                                                            require("../static/images/block-button.png")}></img></td>
                             </tr>
                     ))}
                 </table>

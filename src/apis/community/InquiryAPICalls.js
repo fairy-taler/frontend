@@ -5,7 +5,7 @@ import {
 
 
 export const callGetInquirysAPI = (pageable) => {
-    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/inquirys?page=${pageable.page}&size=${pageable.size}`;
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/inquirys?page=${pageable.page}&size=${pageable.size}&sort=createDate,desc`;
 
     return async (dispatch, getState) => {
         const result = await fetch(requestURL,{

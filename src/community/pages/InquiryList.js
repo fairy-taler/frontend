@@ -16,8 +16,13 @@ function InquiryList(){
                      {"tag":"공지", "title" : "9월 정기점검 안내", "author": "test01", "status": "Y", "date" :"2022-9-23"},
                      {"tag":"공지", "title" : "8월 정기점검 안내", "author": "test01", "status": "N", "date" :"2022-8-23"}];
 
-    const pages = Array(10).fill()
-    
+    const pages = Array(result?.inquiryList?.totalPages).fill()
+    // 페이지 버튼 클릭
+    const onClickPageButton = (e) => {
+        dispatch(callGetInquirysAPI({	
+            page:e.target.id, size:10}
+        ));
+    }
     // 헤더 설정 변경
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerReducer);
@@ -55,7 +60,7 @@ function InquiryList(){
                 </table>
             </div>
             {/* 페이지 버튼 */}
-            <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton}>{index+1}</span>))}</div>
+            <div className={style.pageListBox}>{pages.map((page, index)=>(<span id={index} className={style.pageButton} onClick={onClickPageButton}>{index+1}</span>))}</div>
         </div>
     )
 }
