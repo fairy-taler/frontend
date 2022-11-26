@@ -72,7 +72,7 @@ function TaleListForManagement(){
                 <div className={style.title}>동화 목록 (총 {result?.totalElement}개)</div>
                 {/* 검색창 */}
                 <div className={style.searchBox}>
-                    <select className={style.searchSelect} ><option value="이름">제작자</option><option value="제목">제목</option></select>
+                    <select className={style.searchSelect} ><option value="제목">제목</option><option value="이름">제작자</option></select>
                     <div className={style.searchInputBox}>
                         <input id="searchInput" placeholder="검색어를 입력하세요."/>
                         <img onClick={onClickSearchButton} src={require("../static/images/search-btn.png")}/>
