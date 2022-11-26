@@ -46,8 +46,25 @@
 .contentTitleBox{
     font-size: 24px;
     font-weight: bold;
-    padding : 0px 100px 0px 100px;
+    padding : 0px 100px 0px 130px;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
 }
+.contentTitle{
+    font-size: 26px;
+    padding-bottom: 15px;
+}
+.titleProfile{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 5px;
+}
+.titleProfile div{
+    font-size: 5px;
+}
+
 .contentDateBox{
     font-size : 16px;
     font-weight: bold;
@@ -57,7 +74,7 @@
 .contentContentBox{
     min-height: 360px;
     font-size : 16px;
-    padding : 20px 100px 20px 100px;
+    padding : 20px 100px 20px 130px;
 }
 .pageListBox{
     display: flex;
@@ -140,10 +157,14 @@
     margin : 5px;
     padding: 10px 20px 10px 10px;
 }
-.contentTitleBox{
-    display: flex;
-    justify-content: space-between;
-}
 .contentTitleBox .contentNickname{
     font-size: 16px;
+}
+
+.profileImg{
+    width: 30px;
+    height: 30px;
+    border: #444444 solid 1px;
+    border-radius: 100%;
+    margin-right : 10px;
 }

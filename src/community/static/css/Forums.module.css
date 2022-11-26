@@ -114,16 +114,18 @@
     padding: 10px;
     background: #f4ad58;
 }
-
+.categoryBtn:hover, .categoryBtnGray:hover{
+    opacity: 0.8;
+}
 .categoryBtnGray{
     font-family: 'Nanum Gothic', sans-serif;
     font-weight: 700;
     font-size: 20px;
-    color: #7f561f;
+    color: white;
     width: 100px;
     margin : 5px;
     border : none;
     border-radius: 30px;
     padding: 10px;
-    background: #CCCCCC;
+    background: #d28b36;
 }

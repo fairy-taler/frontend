@@ -98,3 +98,26 @@ export const callDeleteFaqAPI = (faqCode) => {
 
     };
 }
+//  FAQ 검색
+export const callGetSearchFaqAPI = (data) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/faq/title?title=${data.title}&page=${data.pageable.page}&size=${data.pageable.size}&sort=createDate,desc`;
+
+    return async (dispatch, getState) => {
+        const result = await fetch(requestURL,{
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*" 
+            }
+        })
+        .then(res => res.json());
+        
+        console.log('[FaqAPICalls] callGetSearchFaqAPI RESULT : ', result);
+        
+        dispatch({ type:SET_FAQ_LIST,  payload: result.data});
+
+    };
+}

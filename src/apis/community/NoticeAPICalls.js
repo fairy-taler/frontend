@@ -121,3 +121,27 @@ export const callUpdateNoticeToPrivateAPI = (noticeData) => {
 
     };
 }
+
+//  공지사항 검색
+export const callGetSearchNoticesAPI = (data) => {
+    const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/notices/title?title=${data.title}&page=${data.pageable.page}&size=${data.pageable.size}`;
+
+    return async (dispatch, getState) => {
+        const result = await fetch(requestURL,{
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Authorization": "Bearer " + window.localStorage.getItem("accessToken"),
+                "accessToken":  window.localStorage.getItem("accessToken"),
+                "Access-Control-Allow-Origin": "*" 
+            }
+        })
+        .then(res => res.json());
+        
+        console.log('[ForumNoticeCalls] callGetSearchNoticeAPI RESULT : ', result);
+        
+        dispatch({ type:SET_NOTICE_LIST,  payload: result.data});
+
+    };
+}

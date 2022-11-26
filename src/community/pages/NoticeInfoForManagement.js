@@ -44,17 +44,12 @@ function NoticeInfo(){
             <div className={style.betweenBox}>
                 {/* 공지사항 타이틀 */}
                 <img className={style.titleImg} src={require("../static/images/notice-title.png")}/>
-                {/* 검색창 */}
-                <div className={style.searchBox}>
-                    <input placeholder="검색어를 입력하세요."/>
-                    <img src={require("../static/images/search-btn.png")}/>
-                </div>
             </div>
             {/* border line */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 목록 / 이전으로 버튼 */}
             <div className={style.subTitleBox}>
-                <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
+                <NavLink to="/managementNotices"><img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/></NavLink>
                 <div>
                 <span className={style.editButton} style={{background : "#6666FF"}}>수정</span>
                 <span className={style.editButton} style={{background : "#FF6666"}} onClick={onClickDelteNotice}>삭제</span>
