@@ -29,17 +29,6 @@ body{
     text-align: -webkit-center;
 }
 
-.inputBox input[type="text"], input[type="password"]  {
-    font-family: 'Nanum Gothic', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    width: 300px;
-    height: 30px;
-    margin : 5px;
-    border : 1px solid #888888;
-    border-radius: 30px;
-    padding: 10px 20px 10px 10px;
-}
 
 textarea {
     font-family: 'Nanum Gothic', sans-serif;
@@ -112,6 +101,7 @@ textarea {
     border: #000000 solid 2px;
     border-radius: 100%;
     margin-top: 40px;
+    background-color: #ffffff;
 }
 
 .profile{
