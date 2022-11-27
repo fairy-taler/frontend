@@ -17,7 +17,7 @@ function Main() {
   }
 
   useEffect(() => {
-    if(ScrollY > 1018 && ScrollY <2352){
+    if(ScrollY > 482 && ScrollY <1413){
       dispatch({ type: ON_BLACK });
       dispatch({ type: OFF_LOGO});
     }
@@ -108,8 +108,8 @@ function Main() {
 return (
   <div className={style.mainBox}>
     <div>
-      <img className={style.sliderLeftButton} src={require("../static/images/preButton.png")} onClick={goToPreBanner}/>
-      <img className={style.sliderRightButton} src={require("../static/images/nextButton.png")} onClick={goToNextBanner}/>  
+      {/* <img className={style.sliderLeftButton} src={require("../static/images/preButton.png")} onClick={goToPreBanner}/>
+      <img className={style.sliderRightButton} src={require("../static/images/nextButton.png")} onClick={goToNextBanner}/>   */}
       {/* 배너 */}
       <Slider {...settings} ref={slider}>
           {/* 타이틀 */}
@@ -138,6 +138,9 @@ return (
             </div>
           </div>  
         </Slider>  
+        {/* 스크롤 */}
+        <a className={style.scroll} onClick={()=>{window.scrollTo({ left: 0, top: 800, behavior: "smooth" })}}><span></span><span></span></a>
+        <a className={style.scroll2} onClick={()=>{window.scrollTo({ left: 0, top: 800, behavior: "smooth" })}}><span></span><span></span></a>
         <div className={style.banner2} style={{ backgroundImage : "url('main/banner4.png')"}}/>
     </div>
   </div>
