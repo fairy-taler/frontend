@@ -15,7 +15,7 @@ function Profile(memberId){
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerReducer);
     const profile = useSelector(state => state.profileMemberReducer); 
-    console.log("data", profile?.profile?.memberCode);
+    console.log(profile, profile?.profile?.memberCode);
     const [close, setClose] = useState(false);
 
     useEffect(()=>{
@@ -38,16 +38,16 @@ function Profile(memberId){
         <div className={style.profileComponent}>
             { close == true ? null : 
             <div className={style.ProfileSection}>
-                <div className={style.profile}>
+                <div className={style.profile2}>
             
-                    <img className={style.profileImg} src={profile.imgUrl} onError={handleImgError}></img> 
+                    <img className={style.profileImg2} src={profile.profile.imgUrl} onError={handleImgError}></img> 
                    
-                    <div className={style.profileInfo}>
+                    <div className={style.profileInfo2}>
                         <div className={style.xBtn}> <button onClick={onClickClose}>X </button></div>
                         <div className={style.profileName}> {profile.memberName} <span> 선생님 </span> </div>  
                         <div className={style.profileTale}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
                         <div className={style.profileIntro}> 소개글: </div>
-                        <div> {profile.intro}</div><br/> 
+                        <div className={style.profileIntroText}> {profile.profile.intro}</div><br/> 
                         <Link to="/tale" state={memberId}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
                         <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}`}><button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button></NavLink>
 

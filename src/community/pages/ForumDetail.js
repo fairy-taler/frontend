@@ -71,7 +71,7 @@ function ForumDetail(){
                     </div>
                 <div className={style.titleProfile}  onClick={onClickNickname(forum?.memberId)}>
                     <img className={style.profileImg} src={forum?.profileUrl}></img> 
-                    <div >
+                    <div className={style.titleProfileDiv}>
                         <div className={style.contentNickname} onClick={onClickNickname(forum?.memberId)}>{forum?.nickname}
                         <div>
                             {forum?.createDate.substr(0,10)}
