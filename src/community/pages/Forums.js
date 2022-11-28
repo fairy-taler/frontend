@@ -62,8 +62,9 @@ function Forums(){
         }
     }
     const onClickCategory = (e) => {
-        setCategory(e.target.textContent)
-        dispatch(callGetForumsByCategoryAPI(e.target.textContent,{	
+        setCategory(e.target.id)
+        console.log("category", e.target.id)
+        dispatch(callGetForumsByCategoryAPI( e.target.id,{	
             page:0, size:10}
         ));
         setCurrentPage(0)
@@ -89,7 +90,6 @@ function Forums(){
     }
     // 헤더 설정 변경
     const dispatch = useDispatch();
-
     useEffect(()=>{
         dispatch({ type: ON_CLICK, payload : false});
         dispatch({ type: ON_BLACK});
@@ -99,44 +99,49 @@ function Forums(){
     },[])
 
     return (
-        <div className={style.noticeBox}>
+        <div className={style.noticeBox} style={{backgroundImage : "url('main/background.png')", backgroundRepeat: "round" }}>
             <div className={style.betweenBox}>
                 {/* 공지사항 타이틀 */}
-                <div className={style.forumTitle}> 자유 게시판 </div>
+                {/* <div className={style.forumTitle}> 자유 게시판 </div> */}
+                <img className={style.forumTitle} src={require('../static/images/forumTitle.png')}/>
                 {/* 검색창 */}
-                <div className={style.searchBox}>
-                    <input placeholder="검색어를 입력하세요." id="searchInput"/>
-                    <img src={require("../static/images/search-btn.png")} onClick={onClickSearchButton} />
+            </div>
+            <div className={style.board}>
+                <div className={style.buttonGroup}>
+                    <div>
+                        <img className={style.categoryBtn} src={require("../static/images/all.png")} onClick={onClickAllPost} id="all"/>
+                        <img className={style.categoryBtn} src={require("../static/images/data.png")} onClick={onClickCategory} id="정보공유"/>
+                        <img className={style.categoryBtn} src={require("../static/images/tale.png")} onClick={onClickCategory} id="동화"/>
+                        <img className={style.categoryBtn} src={require("../static/images/my-forum.png")} onClick={onClickMyPost} id="자유"/>
+                        {/* <button className={style.categoryBtn} onClick={onClickCategory}>자유</button>
+                        <button className={style.categoryBtn} onClick={onClickCategory}>정보공유</button>
+                        <button className={style.categoryBtn} onClick={onClickCategory}>동화</button>
+                        <button className={style.categoryBtnGray} onClick={onClickMyPost}>내 글</button> */}
+                    </div>
+                    <div style={{display:"flex"}}>
+                        <div className={style.searchBox} >
+                            <input placeholder="검색어를 입력하세요." id="searchInput"/>
+                            <img src={require("../static/images/search-btn.png")} onClick={onClickSearchButton} />
+                        </div>
+                        <NavLink to="/insertForum"><img className={style.categoryBtn} src={require("../static/images/insert-button.png")} onClick={onClickAllPost} id="자유"/></NavLink>
+                       
+                    </div>
+                    {/* <NavLink to="/insertForum"><img className={style.insertButton} src={require("../static/images/insert-btn.png")} /></NavLink> */}
+                {/* </div> */}
                 </div>
-            </div>
-            <div className={style.buttonGroup}>
-                <div>
-                
-                    <button className={style.categoryBtn} onClick={onClickAllPost}>전체</button>
-                    <button className={style.categoryBtn} onClick={onClickCategory}>자유</button>
-                    <button className={style.categoryBtn} onClick={onClickCategory}>정보공유</button>
-                    <button className={style.categoryBtn} onClick={onClickCategory}>동화</button>
-                    <button className={style.categoryBtnGray} onClick={onClickMyPost}>내 글</button>
-                </div>
-                <div className={style.insertButtonBox}>
-
-                <NavLink to="/insertForum">
-                    <button className={style.categoryBtnGray} >등록하기</button></NavLink>
-            </div>
-            </div>
-            <img className={style.lineImg} src={require("../static/images/line.png")} />
-            {/* 게시글 리스트 */}
-            <div className={style.tableBox}>
-                <table className={style.communityTable}>
-                    {forums==null? null:forums.map((forum, index)=>(
-                            <tr id={forum.forumCode}>
-                                    <td id={forum.forumCode} style={{width : "100px" , textAlign:"left"}}>[{forum.category}]</td>
-                                    <td id={forum.forumCode}  onClick={toNoticesInfo} >{forum.title}</td>
-                                    <td id={forum.forumCode} style={{width : "120px", textAlign:"right"}} onClick={onClickNickname(forum.memberId)}>{forum.nickname}</td>
-                                    <td id={forum.forumCode} style={{width : "120px", textAlign:"right"}}>{forum.createDate.substr(0,10)}</td>
-                            </tr>
-                    ))}
-                </table>
+                {/* 게시글 리스트 */}
+                <div className={style.tableBox}v style={{paddingTop : "30px"}}>
+                    <table className={style.communityTable}>
+                        {forums==null? null:forums.map((forum, index)=>(
+                                <tr id={forum.forumCode} style={{ verticalAlign:"center"}}>
+                                        <td id={forum.forumCode} style={{width : "100px" , textAlign:"left", verticalAlign:"center"}}>[{forum.category}]</td>
+                                        <td id={forum.forumCode}  onClick={toNoticesInfo} >{forum.title}</td>
+                                        <td id={forum.forumCode} style={{width : "120px", textAlign:"center"}} onClick={onClickNickname(forum.memberId)}>{forum.nickname}</td>
+                                        <td id={forum.forumCode} style={{width : "120px", textAlign:"right"}}>{forum.createDate.substr(0,10)}</td>
+                                </tr>
+                        ))}
+                    </table>
+                </div>      
             </div>
             <div className={style.pageListBox}>{pages.map((page, index)=>(<span className={style.pageButton} onClick={onClickPageButton} style={currentPage==index+1? {fontWeight:"bold", color:"black"}:null}id={index+1}>{index+1}</span>))}</div>
         </div>

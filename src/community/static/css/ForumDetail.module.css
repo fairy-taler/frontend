@@ -2,7 +2,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 10vh;
+    padding-bottom: 10%;
+    background-image : url('../images/background.png');
+    background-repeat: repeat-y;
+    background-size: 100%;
 }
 .searchBox{
     width : 250px;
@@ -33,15 +36,16 @@
     width : 16px;
 }
 .subTitleBox{
-    padding : 10px 100px 10px 100px
+    padding : 20px 100px 10px 0px
 }
 .subTitleBox img{
     height : 24px;
     margin : 1vw;
 }
 .lineImg{
-    padding : 0px 100px 0px 100px;
-    height : 4px;
+    height : 1.5px;
+    width: 100%;
+    opacity: 40%;
 }
 .contentTitleBox{
     font-size: 24px;
@@ -52,14 +56,17 @@
     flex-direction: column;
 }
 .contentTitle{
-    font-size: 26px;
-    padding-bottom: 15px;
+    font-size: 28px;
+    padding-left: 10px;
+    padding-top : 10px;
+    padding-bottom : 10px;
+    background-color: #fdf1e4;
 }
 .titleProfile{
     display: flex;
     align-items: center;
     justify-content: left;
-    padding: 5px;
+    padding: 20px 0px 0px 12px;
 }
 .titleProfileDiv{
     font-size: 5px;
@@ -74,7 +81,7 @@
 .contentContentBox{
     min-height: 360px;
     font-size : 16px;
-    padding : 20px 100px 20px 130px;
+    padding : 40px 80px 20px 12px;
 }
 .pageListBox{
     display: flex;
@@ -92,7 +99,10 @@
 .betweenBox{
     display: flex;
     justify-content: space-between;
-    padding : 100px 100px 10px 100px;
+    padding-left : 38%;
+    padding-right : 40%;
+    padding-top: 40px;
+    padding-bottom: 60px;
 }
 .leftBox{
     display: flex;
@@ -117,9 +127,11 @@
 }
 .commentInputBox{
     display: flex;
+    padding : 50px 0px 30px 0px;
 }
 .commentInputBox input{
     width : 80%;
+    height : 30px;
     font-size: 16px;
 }
 .commentInputBox div{
@@ -150,21 +162,30 @@
     width : 15%;
 }
 
+
 .forumTitle{
        font-family: 'NanumSquareNeo-Variable';
     font-weight: 900;
     font-size: 30px;
-    margin : 5px;
-    padding: 10px 20px 10px 10px;
+    height: 50px;
+    padding: 0;
 }
 .contentTitleBox .contentNickname{
     font-size: 16px;
+    
 }
 
 .profileImg{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border: #444444 solid 1px;
     border-radius: 100%;
     margin-right : 10px;
+}
+.board{
+    background-image : url('../images/board5.png');
+    background-repeat: round;
+    width : 94%;
+    margin : 0px auto 10px auto;
+    
 }

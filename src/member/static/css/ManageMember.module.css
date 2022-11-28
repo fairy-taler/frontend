@@ -5,15 +5,16 @@
     margin-bottom: 10vh;
 }
 .searchBox{
-    width : 200px;
-    height : 30px;
+    width : 250px;
+    height : 23px;
     border : 1px solid #BBBBBB;
     display : flex;
     justify-content: space-between;
     align-items: center;
     padding : 5px;
-
-    margin-bottom: 5px;
+    background-color: #fdf1e4;
+    margin : auto;
+    margin-bottom : 4px;
 }
 .searchBox img {
     height : 80%;
@@ -22,7 +23,7 @@
     height : 100%;
     border : none;
     font-weight: bold;
-    font-size: 11px;
+    background-color: #fdf1e4;
 }
 .titleImg{
     height: 50px;
@@ -150,9 +151,6 @@ th{
     min-width: 80px;
 }
 
-.searchImg{
-    width: 70%;
-}
 
 .communityTableHover:hover{
     background-color: #EEEEEE;

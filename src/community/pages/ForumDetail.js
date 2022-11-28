@@ -52,41 +52,48 @@ function ForumDetail(){
     console.log(commentContent);
 
     return (
-        <div className={style.noticeBox}>
+        <div className={style.noticeBox} >
+            <div className={style.board} >
             <div className={style.betweenBox}>
                 {/* 타이틀 */}
-                <div className={style.forumTitle}> 자유 게시판 </div>
-                
+                {/* <div className={style.forumTitle}> 자유 게시판 </div> */}
+                <img className={style.forumTitle} src={require('../static/images/forumTitle.png')}/>
             </div>
             {/* border line */}
-            <img className={style.lineImg} src={require("../static/images/line.png")} />
+            {/* <img className={style.lineImg} src={require("../static/images/line.png")} /> */}
             {/* 목록 / 이전으로 버튼 */}
-            <NavLink to="/forums"><div className={style.subTitleBox}>
-                <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
-            </div></NavLink>
+          
             {/* 게시글 제목 */}
             <div className={style.contentTitleBox}>
+            <NavLink to="/forums"><div className={style.subTitleBox}>
+            <img className={style.titleImg} src={require("../static/images/before-list-btn.png")}/>
+            </div></NavLink>
+            <img className={style.lineImg} src={require("../static/images/line2p.png")} />
                 <div className={style.contentTitle}> 
                         {forum?.title}
-                    </div>
+                </div>
+            <img className={style.lineImg} src={require("../static/images/line2p.png")} />
                 <div className={style.titleProfile}  onClick={onClickNickname(forum?.memberId)}>
                     <img className={style.profileImg} src={forum?.profileUrl}></img> 
-                    <div className={style.titleProfileDiv}>
+                    <div>
                         <div className={style.contentNickname} onClick={onClickNickname(forum?.memberId)}>{forum?.nickname}
                         <div>
                             {forum?.createDate.substr(0,10)}
                         </div>      
                     </div>
                 </div>
-                
                 {clickProfile == null ? null : <Profile value={clickProfile} /> }
                 </div>
+                
+                <div className={style.contentContentBox}>
+                    {forum?.content}
+                </div>
+            {/* <img className={style.lineImg} src={require("../static/images/line2p.png")} /> */}
             </div>
             {/* 게시글 내용 */}
-            <div className={style.contentContentBox}>
-                {forum?.content}
+            
+            {/* 다음 게시글 */}
             </div>
-            <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 댓글창 */}
             <div className={style.commentBox}>
                 <div className={style.commentTitle}>댓글 총 {forum?.comments?.length}개</div>
@@ -97,7 +104,7 @@ function ForumDetail(){
                         <button onClick={onClickdata}>댓글</button>
                 </div>
                 {/* 댓글 목록 */}
-                <div>
+                <div >
                     {forum?.comments?.map((comment, index)=>(<div className={style.commentsBox} onClick={onClickNickname(comment.memberId)}>
                                                         <img className={style.profileImg} src={comment?.profileUrl}></img> 
                                                         <div className={style.id}>{comment.nickname}</div>
@@ -106,15 +113,6 @@ function ForumDetail(){
                                                     </div>))}
                 </div>
             </div>
-            {/* 다음 게시글 */}
-            <img className={style.lineImg} src={require("../static/images/line.png")} />
-            <div className={style.nextContentsBox}>
-                <span style={{width : "5%"}}><img src={require("../static/images/under-arrow-btn.png")}/></span>
-                <span style={{width : "10%"}}>[{nextResult.tag}]</span>
-                <span style={{width : "75%"}}>{nextResult.title}</span>
-                <span >{nextResult.date}</span>
-            </div>
-            <img className={style.lineImg} src={require("../static/images/line.png")} />
         </div>
     )
 }

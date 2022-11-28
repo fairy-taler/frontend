@@ -4,16 +4,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 10vh;
+    margin-bottom: 1.5%;
 }
 .searchBox{
     width : 250px;
-    height : 30px;
+    height : 23px;
     border : 1px solid #BBBBBB;
     display : flex;
     justify-content: space-between;
     align-items: center;
     padding : 5px;
+    background-color: #fdf1e4;
+    margin : auto;
 }
 .searchBox img {
     height : 80%;
@@ -22,6 +24,7 @@
     height : 100%;
     border : none;
     font-weight: bold;
+    background-color: #fdf1e4;
 }
 .titleImg{
     height : 32px;
@@ -34,32 +37,35 @@
     margin : 1vw;
 }
 .lineImg{
-    padding : 0px 100px 0px 100px;
     height : 4px;
+    padding: 0px;
 }
 .tableBox{
     height : 560px;
-    padding : 16px 0px 0px 0px
+    padding : 5px 0px 0px 0px
 }
 .communityTable{
     width : 100%;
     font-weight : bold;
-    padding-top : 15px;
+    padding-top : 5px;
     padding: 0px 100px 0px 100px;
     font-size : 14px;
 }
 .communityTable tr:hover{
-    background-color: #EEEEEE;
+    /* background-color: #EEEEEE; */
+    
+    background-color: #fdf1e4;
 }
 .communityTable td {
     align-items: center;
     padding : auto;
-    padding : 0px 0px 20px 20px;
+    padding : 15px 0px 15px 10px;
+    vertical-align: center;
 }
 .pageListBox{
     display: flex;
     justify-content: center;
-    padding : 10px 100px 0px 100px;
+    padding : 100px 100px 0px 100px;
 }
 .pageButton {
     font-size: 16px;
@@ -72,7 +78,7 @@
 .betweenBox{
     display: flex;
     justify-content: space-between;
-    padding : 100px 100px 10px 100px;
+    padding : 30px 100px 10px 485px;
 }
 .leftBox{
     display: flex;
@@ -92,13 +98,13 @@
        font-family: 'NanumSquareNeo-Variable';
     font-weight: 900;
     font-size: 30px;
-    margin : 5px;
-    padding: 10px 20px 10px 10px;
+    height: 50px;
+    padding: 10px 0px 10px 100px;
 }
 
 .buttonGroup{
     display: flex;;
-    margin: 0px 0px 10px 100px ;
+    margin: 40px 0px 10px 50px ;
     justify-content: space-between;
 }
 
@@ -108,11 +114,11 @@
     font-size: 20px;
     color: #7f561f;
     width: 100px;
-    margin : 5px;
+    /* width : 50px; */
     border : none;
     border-radius: 30px;
-    padding: 10px;
-    background: #f4ad58;
+    padding: 5px;
+    /* background: #f4ad58; */
 }
 .categoryBtn:hover, .categoryBtnGray:hover{
     opacity: 0.8;
@@ -125,7 +131,13 @@
     width: 100px;
     margin : 5px;
     border : none;
-    border-radius: 30px;
+    /* border-radius: 30px; */
     padding: 10px;
-    background: #d28b36;
+    /* background: #d28b36; */
+}
+.board{
+    background-image : url('../images/board2.png');
+    background-repeat: round;
+    width : 94%;
+    margin : auto;
 }

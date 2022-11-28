@@ -99,9 +99,11 @@ function ManageMember(){
                 <button onClick={onClickReport}> {option == "REPORT" ? <img src={require("../static/images/click-report.png")}></img>:<img src={require("../static/images/unclick-report.png")}></img>}</button>
             
             </div>
-            <div className={style.searchBox}>
-                    <input placeholder="검색어를 입력하세요." onChange={onChangeKeyword}/>
-                    <button onClick={onClickSearch}> <img className={style.searchImg} src={require("../static/images/search-btn.png")}/></button>
+            <div>
+                <div className={style.searchBox}>
+                        <input placeholder="검색어를 입력하세요." onChange={onChangeKeyword}/>
+                        <img onClick={onClickSearch} className={style.searchImg} src={require("../static/images/search-btn.png")}/>
+                    </div>
                 </div>
             </div>    
             {/* 회원 정보 */}
