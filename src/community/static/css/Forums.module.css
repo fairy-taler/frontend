@@ -89,7 +89,7 @@
 }
 
 .forumTitle{
-    font-family: 'Nanum Gothic', sans-serif;
+       font-family: 'NanumSquareNeo-Variable';
     font-weight: 900;
     font-size: 30px;
     margin : 5px;
@@ -103,7 +103,7 @@
 }
 
 .categoryBtn{
-    font-family: 'Nanum Gothic', sans-serif;
+       font-family: 'NanumSquareNeo-Variable';
     font-weight: 700;
     font-size: 20px;
     color: #7f561f;
@@ -118,7 +118,7 @@
     opacity: 0.8;
 }
 .categoryBtnGray{
-    font-family: 'Nanum Gothic', sans-serif;
+       font-family: 'NanumSquareNeo-Variable';
     font-weight: 700;
     font-size: 20px;
     color: white;
