@@ -117,13 +117,24 @@ textarea {
 }
 
 .profileImg2{
-    width: 200px;
-    height: 200px;
-    border: #000000 solid 2px;
-    border-radius: 100%;
+    width: 100px;
+    height: 100px;
     margin-top: 40px;
     margin-left: 20px;
+
 }
+
+.profileImgFrame2{
+    width: 200px;
+    height: 200px;
+    margin: 30px 20px 20px 25px;
+
+    background-image: url("../images//profile-img-frame.png");
+    background-repeat: round;
+
+    border-radius: 20px;
+}
+
 .profile{
     display: flex;
     margin-bottom: 100px;
@@ -139,8 +150,13 @@ textarea {
 }
 
 .profileInfo2{
-    margin: 0px 0px 0px 50px;
+    background-image: url("../images//profile-intro.png");
+    background-repeat: round;
+    margin: 30px 50px 0px 50px;
     text-align: left;
+    width: 350px;
+    height: 210px;
+    padding: 15px;
 }
 
 .profileInfo div, .profileInfo2 div {
@@ -165,6 +181,15 @@ textarea {
     font-weight: 300;
 }
 
+.profileTale2, .profileIntro2{
+    font-size : 16px
+}
+
+.profileTale2 span, .profileIntro2 span {
+    font-weight: 300;
+}
+
+
 .mypageBtn{
     margin: 30px 10px 0px 0px;
     width: 130px;
@@ -179,8 +204,9 @@ textarea {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -352px;
-    margin-top: -350px;
+    margin-left: -400px;
+    background-image: url("../images//profile-frame.png");
+    background-repeat: round;
 }
 
 .ProfileSection{
@@ -189,6 +215,15 @@ textarea {
     justify-content: space-evenly;
     background: white;
     border: 1px solid;
+    padding: 30px;
+    border-radius: 30px;
+
+}
+
+.ProfileSection2{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
     padding: 30px;
     border-radius: 30px;
 }
@@ -200,4 +235,35 @@ textarea {
 .profileIntroText{
     font-size: 16px;
     font-weight: 100;
+}
+
+.profileIntroText2{
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.profileImgBookFrame{
+    background-image: url("../images//profile-book.png");
+    background-repeat: round;
+    height: 300px;
+    width: 250px;
+    margin: 30px 0px 0px 50px;
+}
+
+.profileBtnGroup{ 
+    margin: 10px 30px 0px 50px;
+}
+
+.profileBtn{
+    width: 185px
+}
+
+.profileName2{
+    font-size: 18px;
+}
+
+.profileXBtn{
+    position: absolute;
+    left: 90%;
+    font-size: 35px;
 }
