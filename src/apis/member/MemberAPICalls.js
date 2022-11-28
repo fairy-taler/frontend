@@ -216,11 +216,12 @@ export const callUpdateMemberAPI = ({form}) => {
 export const callUpdateProfileAPI = ({form}) => {
     const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}/members/profile`;
     //const requestURL = `http://localhost:8080/members/profile`;
-    console.log(requestURL);
+    console.log(form);
     return async (dispatch, getState) => {
         const formData = new FormData();
-
-        formData.append("profileImg", form.profileImg)
+        if(form.profileImg != ''){
+            formData.append("profileImg", form.profileImg)
+        }
         formData.append("intro", form.intro)
 
         const result = await axios(requestURL, {

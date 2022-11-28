@@ -6,12 +6,15 @@
 }
 .searchBox{
     width : 250px;
-    height : 30px;
+    height : 23px;
     border : 1px solid #BBBBBB;
     display : flex;
     justify-content: space-between;
     align-items: center;
     padding : 5px;
+    background-color: #fdf1e4;
+    margin : auto;
+    margin-bottom : 4px;
 }
 .searchBox img {
     height : 80%;
@@ -20,10 +23,11 @@
     height : 100%;
     border : none;
     font-weight: bold;
+    background-color: #fdf1e4;
 }
 .titleImg{
-    height : 32px;
-    margin : 1vw;
+    height: 50px;
+    margin-right: 39px;
 }
 .nextContentsBox{
     padding : 10px 100px 10px 100px;
@@ -74,9 +78,20 @@
 }
 .betweenBox{
     display: flex;
-    justify-content: space-between;
-    padding : 100px 100px 10px 100px;
+    justify-content: center;
+    padding : 50px 100px 10px 100px;
 }
+
+.betweenBox2{
+
+    padding : 50px 100px 0px 100px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+
+    align-items: flex-end;
+}
+
 .leftBox{
     display: flex;
     justify-content: space-between;
@@ -93,37 +108,37 @@
 
 .btnGroup{
     display: flex;
-    padding: 50px 100px 10px 100px;
 }
 
 .btnGroup img {
-    width: 150px;
+    width: 100px;
     padding: 0;
     margin: 0px
 }
 
 .memberCount{
     padding: 15px 100px 15px 100px;
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .memberList{
     min-height: 800px;
+    background-image: url("../images/member-manage-back.png");
 }
 
 .memberTable {
-    padding: 15px 100px 100px 100px;
     border-spacing: 30px;
     width: 100%;
+    text-align-last: center;
 }
 
 .memberTable tr{
-    font-size: 15px;
+    font-size: 12px;
     padding: 100px;
 }
 
 th{
-  font-size : 24px;  
+  font-size : 18px;  
   text-align: left;
   border-bottom: #000000 solid 2px;
 }
@@ -136,10 +151,16 @@ th{
     min-width: 80px;
 }
 
-.searchImg{
-    width: 70%;
-}
 
 .communityTableHover:hover{
     background-color: #EEEEEE;
+}
+
+.btnGroup button{
+    padding: 0;
+}
+
+.memberListContainer{
+    padding: 0px 100px 0px 100px;
+
 }

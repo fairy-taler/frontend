@@ -15,7 +15,7 @@ function Profile(memberId){
     const dispatch = useDispatch();
     const header = useSelector(state => state.headerReducer);
     const profile = useSelector(state => state.profileMemberReducer); 
-    console.log("data", profile?.profile?.memberCode);
+    console.log(profile, profile?.profile?.memberCode);
     const [close, setClose] = useState(false);
 
     useEffect(()=>{
@@ -35,22 +35,29 @@ function Profile(memberId){
 
     console.log(memberId)
     return (
-        <div className={style.profileComponent}>
+        <div className={style.profileComponent} >
             { close == true ? null : 
-            <div className={style.ProfileSection}>
-                <div className={style.profile}>
             
-                    <img className={style.profileImg} src={profile.imgUrl} onError={handleImgError}></img> 
-                   
-                    <div className={style.profileInfo}>
-                        <div className={style.xBtn}> <button onClick={onClickClose}>X </button></div>
-                        <div className={style.profileName}> {profile.memberName} <span> 선생님 </span> </div>  
-                        <div className={style.profileTale}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
-                        <div className={style.profileIntro}> 소개글: </div>
-                        <div> {profile.intro}</div><br/> 
-                        <Link to="/tale" state={memberId}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
-                        <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}`}><button><img className={style.mypageBtn} src={require("../static/images/report.png")}></img></button></NavLink>
+            <div className={style.ProfileSection2}>
 
+                <div className={style.profileXBtn}> <button className={style.profileXBtn} onClick={onClickClose}>X </button></div>
+                <div className={style.profile2}>
+                    <div className={style.profileImgBookFrame}>  
+
+                    <img className={style.profileImgFrame2} src={profile.profile.imgUrl} onError={handleImgError}></img> 
+                    </div>
+                        <div>
+                        <div className={style.profileInfo2}>
+                            
+                        <div className={style.profileName2}> {profile.memberName} <span> 선생님 </span> </div>  
+                        <div className={style.profileTale2}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
+                        <div className={style.profileIntro2}> 소개글: </div>
+                        <div className={style.profileIntroText2}> {profile.profile.intro}</div>
+                        </div>
+                        <div className={style.profileBtnGroup}>
+                        <Link to="/tale" state={memberId}><img className={style.profileBtn} src={require("../static/images/view-tale-btn.png")}></img></Link>
+                        <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}`}><button><img className={style.profileBtn} src={require("../static/images/report-btn.png")}></img></button></NavLink>
+                        </div>
                     </div>
                 </div>
               

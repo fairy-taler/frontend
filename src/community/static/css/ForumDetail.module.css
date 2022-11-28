@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 30%;
+    padding-bottom: 10%;
     background-image : url('../images/background.png');
     background-repeat: repeat-y;
     background-size: 100%;
@@ -68,7 +68,7 @@
     justify-content: left;
     padding: 20px 0px 0px 12px;
 }
-.titleProfile div{
+.titleProfileDiv{
     font-size: 5px;
 }
 
@@ -164,7 +164,7 @@
 
 
 .forumTitle{
-    font-family: 'Nanum Gothic', sans-serif;
+       font-family: 'NanumSquareNeo-Variable';
     font-weight: 900;
     font-size: 30px;
     height: 50px;
@@ -186,6 +186,6 @@
     background-image : url('../images/board5.png');
     background-repeat: round;
     width : 94%;
-    margin : 100px auto 10px auto;
+    margin : 0px auto 10px auto;
     
 }

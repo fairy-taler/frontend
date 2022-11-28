@@ -62,8 +62,9 @@ function Forums(){
         }
     }
     const onClickCategory = (e) => {
-        setCategory(e.target.textContent)
-        dispatch(callGetForumsByCategoryAPI(e.target.textContent,{	
+        setCategory(e.target.id)
+        console.log("category", e.target.id)
+        dispatch(callGetForumsByCategoryAPI( e.target.id,{	
             page:0, size:10}
         ));
         setCurrentPage(0)
@@ -108,10 +109,10 @@ function Forums(){
             <div className={style.board}>
                 <div className={style.buttonGroup}>
                     <div>
-                        <img className={style.categoryBtn} src={require("../static/images/all.png")} onClick={onClickAllPost} id="동화"/>
-                        <img className={style.categoryBtn} src={require("../static/images/data.png")} onClick={onClickAllPost} id="자유"/>
-                        <img className={style.categoryBtn} src={require("../static/images/tale.png")} onClick={onClickAllPost} id="자유"/>
-                        <img className={style.categoryBtn} src={require("../static/images/my-forum.png")} onClick={onClickAllPost} id="자유"/>
+                        <img className={style.categoryBtn} src={require("../static/images/all.png")} onClick={onClickAllPost} id="all"/>
+                        <img className={style.categoryBtn} src={require("../static/images/data.png")} onClick={onClickCategory} id="정보공유"/>
+                        <img className={style.categoryBtn} src={require("../static/images/tale.png")} onClick={onClickCategory} id="동화"/>
+                        <img className={style.categoryBtn} src={require("../static/images/my-forum.png")} onClick={onClickMyPost} id="자유"/>
                         {/* <button className={style.categoryBtn} onClick={onClickCategory}>자유</button>
                         <button className={style.categoryBtn} onClick={onClickCategory}>정보공유</button>
                         <button className={style.categoryBtn} onClick={onClickCategory}>동화</button>

@@ -2,7 +2,7 @@
 
 .searchDiv{
     text-align: center;
-    font-family: 'Nanum Gothic', sans-serif;
+       font-family: 'NanumSquareNeo-Variable';
     font-weight: 900;
     font-size: 20px;
 }
@@ -27,11 +27,11 @@
 }
 
 .inputBox{ 
-    font-family: 'Nanum Gothic', sans-serif;
+       font-family: 'NanumSquareNeo-Variable';
 }
 
 .inputBox input[type="text"], input[type="password"]  {
-    font-family: 'Nanum Gothic', sans-serif;
+       font-family: 'NanumSquareNeo-Variable';
     font-weight: 700;
     font-size: 20px;
     width: 300px;
@@ -39,7 +39,7 @@
     margin : 5px;
     border : 1px solid #888888;
     border-radius: 30px;
-    padding: 10px 20px 10px 10px;
+    padding: 10px 10px 10px 20px;
 }
 
 .submitBtn img{

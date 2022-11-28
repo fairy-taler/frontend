@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 10vh;
+    margin-bottom: 1.5%;
 }
 .searchBox{
     width : 250px;
@@ -65,7 +65,7 @@
 .pageListBox{
     display: flex;
     justify-content: center;
-    padding : 20px 100px 20px 100px;
+    padding : 100px 100px 0px 100px;
 }
 .pageButton {
     font-size: 16px;
@@ -78,7 +78,7 @@
 .betweenBox{
     display: flex;
     justify-content: space-between;
-    padding : 100px 200px 10px 100px;
+    padding : 30px 100px 10px 485px;
 }
 .leftBox{
     display: flex;
@@ -88,14 +88,14 @@
 .insertButtonBox{
     display: flex;
     justify-content: right;
-    padding : 10px 100px 10px 100px;
+    padding : 0px 100px;
 }
 .insertButton{
     width : 100px;
 }
 
 .forumTitle{
-    font-family: 'Nanum Gothic', sans-serif;
+       font-family: 'NanumSquareNeo-Variable';
     font-weight: 900;
     font-size: 30px;
     height: 50px;
@@ -109,7 +109,7 @@
 }
 
 .categoryBtn{
-    font-family: 'Nanum Gothic', sans-serif;
+       font-family: 'NanumSquareNeo-Variable';
     font-weight: 700;
     font-size: 20px;
     color: #7f561f;
@@ -124,7 +124,7 @@
     opacity: 0.8;
 }
 .categoryBtnGray{
-    font-family: 'Nanum Gothic', sans-serif;
+       font-family: 'NanumSquareNeo-Variable';
     font-weight: 700;
     font-size: 20px;
     color: white;
