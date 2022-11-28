@@ -167,6 +167,7 @@ textarea {
     flex-direction: row;
     height: 400px;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: start;
     /* width: 100%; */
     padding: 90px 125px;
@@ -392,10 +393,10 @@ textarea {
 }
 
 .ProfileSection2{
-    margin-bottom: 20px;
     display: flex;
     justify-content: space-evenly;
     padding: 30px;
+    padding-bottom: 0px;
     border-radius: 30px;
 }
 
