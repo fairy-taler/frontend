@@ -86,27 +86,29 @@ function ManageMember(){
     return (
         <div className={style.noticeBox}>
             <div className={style.betweenBox}>
-                <img className={style.titleImg} src={require("../static/images/manage-member-title.png")}/>
+                <img className={style.titleImg} src={require("../static/images/manage-member.png")}/>
                 {/* 검색창 */}
-                <div className={style.searchBox}>
-                    <input placeholder="검색어를 입력하세요." onChange={onChangeKeyword}/>
-                    <button onClick={onClickSearch}> <img className={style.searchImg} src={require("../static/images/search-btn.png")}/></button>
-                </div>
+
             </div>
-            {/* border line */}
-            <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 메뉴 선택 */}
+            <div className={style.betweenBox2}>
             <div className={style.btnGroup}>
                 <button onClick={onClickAll}> {option == "ALL" ? <img src={require("../static/images/click-all.png")}></img>:<img src={require("../static/images/unclick-all.png")}></img>}</button> 
                 <button onClick={onClickTeacher}>{option == "TEACHER" ? <img src={require("../static/images/click-teacher.png")}></img>:<img src={require("../static/images/unclick-teacher.png")}></img>}</button>
                 <button onClick={onClickStudent}>{option == "STUDENT" ? <img src={require("../static/images/click-student.png")}></img>:<img src={require("../static/images/unclick-student.png")}></img>}</button>
-                <button onClick={onClickReport}> <img src={require("../static/images/report-manage.png")}></img></button>
+                <button onClick={onClickReport}> {option == "REPORT" ? <img src={require("../static/images/click-report.png")}></img>:<img src={require("../static/images/unclick-report.png")}></img>}</button>
+            
             </div>
+            <div className={style.searchBox}>
+                    <input placeholder="검색어를 입력하세요." onChange={onChangeKeyword}/>
+                    <button onClick={onClickSearch}> <img className={style.searchImg} src={require("../static/images/search-btn.png")}/></button>
+                </div>
+            </div>    
             {/* 회원 정보 */}
             
             { option == "REPORT" ? 
+            <div className={style.memberListContainer}>
             <div className={style.memberList}>
-                
                 <table className={style.memberTable}>
                     <tr styleName><th>번호</th><th>카테고리</th><th>신고자ID</th><th>대상자ID</th><th>신고 일자</th></tr>
                     {datas?.map((data, index)=>(
@@ -122,8 +124,10 @@ function ManageMember(){
                     ))}
                 </table>
             </div>
+            </div>
             :
             <>
+            <div className={style.memberListContainer}>
             <div className={style.memberList}>
             <table className={style.memberTable} id="memberListTable" >
                 <th>순번</th><th>역할</th><th>이름</th><th>아이디</th><th>닉네임</th><th>이메일</th><th>전화번호</th><th>차단 여부</th>
@@ -151,12 +155,13 @@ function ManageMember(){
             }  
             </table>
 
-            </div>
+            </div></div>
             <img className={style.lineImg} src={require("../static/images/line.png")}/>
             <div className={style.memberCount}> 총 회원 수 : <span> {memberCnt} </span> </div>
             
             <img className={style.lineImg} src={require("../static/images/line.png")} />
-        </>
+            
+            </>
         }
         </div>
     )
