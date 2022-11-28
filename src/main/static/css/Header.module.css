@@ -4,6 +4,7 @@
     left: 0%;
     z-index: 3;
     width : 100vw;
+    position:fixed;
 }
 .headerDiv {
     display: flex;
@@ -20,6 +21,7 @@
 }
 .logoImg{
     height : 30px;
+    
 }
 .btn{
     text-decoration: none;

@@ -1,5 +1,4 @@
 .footerBox {
-    background-color: white;
     width : 100vw;
     height : 5vh;
     display: flex;
@@ -8,4 +7,5 @@
     width : 20%;
     height : 25%;
     margin : auto;
+    
 }
