@@ -17,7 +17,7 @@ function Main() {
   }
 
   useEffect(() => {
-    if(ScrollY > 482 && ScrollY <1413){
+    if(ScrollY > 716 && ScrollY <1496){
       dispatch({ type: ON_BLACK });
       dispatch({ type: OFF_LOGO});
     }
