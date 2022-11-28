@@ -50,7 +50,8 @@ export const callLoginAPI = ({form}) => {
 
         if(result.status === 500){
             console.log(result);
-            alert(result.message);
+            //alert(result.message);
+            alert("아이디 또는 비밀번호를 확인해주세요");
         }
         if(result.status === 200){
             window.localStorage.setItem('accessToken', result.data.accessToken);            
