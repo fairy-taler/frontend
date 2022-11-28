@@ -31,9 +31,9 @@ body{
 
 
 textarea {
-       font-family: 'NanumSquareNeo-Variable';
+    font-family: 'NanumSquareNeo-Variable';
     font-weight: 100;
-    font-size: 20px;
+    font-size: 12px;
     width: 400px;
     height: 100px;
     margin : 5px;
@@ -66,9 +66,6 @@ textarea {
     height: 32px;
 }
 
-.lineImg{
-    width: 100%;
-}
 
 .lineDiv{
     
@@ -168,15 +165,20 @@ textarea {
 .taleList{
     display: flex;
     flex-direction: row;
+    height: 400px;
     flex-wrap: wrap;
     align-items: start;
-    width: 100%;
+    /* width: 100%; */
+    padding: 90px 125px;
+    background-image: url("../images/tale-frame.png");
+    background-repeat: round;
 }
 
-.taleImg{
-    padding: 50px;
-    width: 150px;
-    height: 200px;
+.taleImg{   
+     padding: 35px;
+    width: 140px;
+
+    padding-bottom: 15px;
 }
 
 .taleTitle{
@@ -190,5 +192,259 @@ textarea {
 
 .taleListDiv{
     padding: 10px 100px;
-    margin: 0px 100px 200px 100px;
+    margin: 0px 100px 100px 50px;
+}
+
+
+.mypageText2{
+    margin-top: 50px
+}
+
+.changeForm{
+    text-align: -webkit-center;
+}
+
+.inputBox input[type="text"], input[type="password"]  {
+       font-family: 'NanumSquareNeo-Variable';
+    font-weight: 700;
+    font-size: 20px;
+    width: 300px;
+    height: 30px;
+    margin : 5px;
+    border : 1px solid #888888;
+    border-radius: 30px;
+    padding: 10px 10px 10px 20px;
+}
+
+textarea {
+       font-family: 'NanumSquareNeo-Variable';
+    font-weight: 100;
+    font-size: 20px;
+    width: 400px;
+    height: 100px;
+    margin : 5px;
+    border : 1px solid #888888;
+    border-radius: 30px;
+    padding: 10px 20px 10px 10px;
+    resize: none;
+}
+
+.authBtn img{
+    height: 52px;
+}
+.emailBox, .passwordBox{
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.submitBtn img{
+    width: 332px;
+    margin: 50px 0px 20px 0px; 
+}
+
+.title{
+    margin: 100px 0px 0px 100px;
+    display: flex;
+}
+
+.title img{
+    height: 32px;
+}
+
+.lineImg{
+    width: 400px;
+}
+
+.lineDiv{
+    padding: 50px 100px 70px 100px;
+}
+
+.ChangeSection{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.unregist{
+    margin-bottom: 100px;
+}
+
+.unregist button{
+    text-decoration: underline;
+       font-family: 'NanumSquareNeo-Variable';
+    font-weight: 900;
+    font-size: 16px;
+    width: 300px;
+    text-align: center;
+}
+
+.changeInfo{
+    font-size: large;
+}
+
+.profileImg{
+    width: 200px;
+    height: 200px;
+    border: #000000 solid 2px;
+    border-radius: 100%;
+    margin-top: 40px;
+}
+
+.profileImg2{
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    margin-left: 20px;
+
+}
+
+.profileImgFrame2{
+    width: 150px;
+    height: 150px;
+    margin: 30px 20px 20px 25px;
+
+    background-image: url("../images/profile-img-frame.png");
+    background-repeat: round;
+
+    border-radius: 20px;
+}
+
+.profile{
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.profile2{
+    background-image: url("../images/white-back.png");
+    display: flex;
+    background-repeat: round;
+}
+
+.profileInfo2{
+    background-repeat: round;
+    margin: 21px 20px 0px 20px;
+    text-align: left;
+    width: 350px;
+    height: 240px;
+    padding: 30px;
+}
+
+.profileInfo div, .profileInfo2 div {
+    margin-bottom: 20px;
+}
+
+.profileName{
+    font-size: 40px;
+}
+
+.profileName span {
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.profileTale, .profileIntro{
+    font-size : 18px
+}
+
+.profileTale span, .profileIntro span {
+    font-weight: 300;
+}
+
+.profileTale2, .profileIntro2{
+    font-size : 16px
+}
+
+.profileTale2 span, .profileIntro2 span {
+    font-weight: 300;
+}
+
+
+.mypageBtn{
+    margin: 30px 10px 0px 0px;
+    width: 130px;
+}
+
+.imgUploadBtn{
+    height: 0px;
+}
+
+.profileComponent{
+    z-index: 10000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    background-image: url("../images/profile-frame.png");
+    background-repeat: round;
+}
+
+.ProfileSection{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    background: white;
+    border: 1px solid;
+    padding: 30px;
+    border-radius: 30px;
+
+}
+
+.ProfileSection2{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.xBtn{
+    text-align:right;
+}
+
+.profileIntroText{
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.profileIntroText2{
+
+    background-image: url("../images/profile-intro.png");
+    font-size: 12px;
+    font-weight: 100;
+
+    background-repeat: round;
+    font-weight: 100;
+    height: 100px;
+    width: 300px;
+    padding-top: 20px;
+    padding-left: 20px;
+
+}
+
+.profileImgBookFrame{
+    background-image: url("../images/profile-book.png");
+    background-repeat: round;
+    height: 250px;
+    width: 200px;
+    margin: 45px 0px 0px 50px;
+}
+
+.profileBtnGroup{ 
+    margin: 10px 30px 0px 50px;
+}
+
+.profileBtn{
+    width: 185px
+}
+
+.profileName2{
+    font-size: 23px;
+}
+
+.profileXBtn{
+    position: absolute;
+    left: 90%;
+    font-size: 35px;
 }

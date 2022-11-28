@@ -158,11 +158,11 @@ textarea {
 .profileInfo2{
     background-image: url("../images//profile-intro.png");
     background-repeat: round;
-    margin: 30px 50px 0px 50px;
+    margin: 50px 50px 0px 50px;
     text-align: left;
-    width: 350px;
-    height: 210px;
-    padding: 15px;
+    width: 300px;
+    height: 150px;
+    padding: 30px;
 }
 
 .profileInfo div, .profileInfo2 div {
@@ -213,6 +213,7 @@ textarea {
     margin-left: -400px;
     background-image: url("../images//profile-frame.png");
     background-repeat: round;
+    margin-top: -200px;
 }
 
 .ProfileSection{
@@ -261,11 +262,11 @@ textarea {
 }
 
 .profileBtn{
-    width: 185px
+    width: 180px
 }
 
 .profileName2{
-    font-size: 18px;
+    font-size: 23px;
 }
 
 .profileXBtn{

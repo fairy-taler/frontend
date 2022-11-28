@@ -40,23 +40,37 @@ function Tale(){
         e.target.src = defaultImg;
     }
 
+
+
+
     return (
         <div className={style.changeForm}>
 
-            <div className={style.ChangeSection}>
-                <div className={style.profile}>
-                    <img className={style.profileImg} src={profile.profile.imgUrl} onError={handleImgError}></img> 
+        <div className={style.ProfileSection2}>
 
-                    <div className={style.profileInfo}>
-                        <div className={style.profileName}> {profile.memberName} <span> 선생님 </span> </div>  
-                        <div className={style.profileTale}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
-                        <div className={style.profileIntro}> 소개글: </div>
-                        <textarea value={profile.profile.intro} name="intro"></textarea><br/> 
-                    </div>
+        <div className={style.profile2}>
+            <div className={style.profileImgBookFrame}>  
+
+            <img className={style.profileImgFrame2} src={profile.profile.imgUrl} onError={handleImgError}></img> 
+            </div>
+                <div>
+                <div className={style.profileInfo2}>
                     
+                <div className={style.profileName2}> {profile.memberName} <span> 선생님 </span> </div>  
+                <div className={style.profileTale2}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
+                <div className={style.profileIntro2}> 소개글: </div>
+                 {profile.profile.intro == null ?  <div className={style.profileIntroText2}> "" </div>
+                  : <div className={style.profileIntroText2}> {profile.profile.intro}</div>
+                  }
                 </div>
+                <div className={style.profileBtnGroup}>
+                
+                </div>
+            </div>
+        </div>
+
+        </div>
     
-            </div>  
             <div className={style.taleListDiv}> 
                 <div className={style.lineDiv}> <img className={style.lineImg} src={require("../static/images/tale-list.png")} /></div>
                 
