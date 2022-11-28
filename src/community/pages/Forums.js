@@ -120,7 +120,8 @@ function Forums(){
                 </div>
                 <div className={style.insertButtonBox}>
 
-                <NavLink to="/insertForum"><img className={style.insertButton} src={require("../static/images/insert-btn.png")}/></NavLink>
+                <NavLink to="/insertForum">
+                    <button className={style.categoryBtnGray} >등록하기</button></NavLink>
             </div>
             </div>
             <img className={style.lineImg} src={require("../static/images/line.png")} />

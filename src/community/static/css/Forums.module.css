@@ -82,7 +82,7 @@
 .insertButtonBox{
     display: flex;
     justify-content: right;
-    padding : 10px 100px 10px 100px;
+    padding : 0px 100px;
 }
 .insertButton{
     width : 100px;

@@ -38,7 +38,7 @@ body{
     margin : 5px;
     border : 1px solid #888888;
     border-radius: 30px;
-    padding: 10px 20px 10px 10px;
+    padding: 10px 10px 10px 20px;
 }
 
 textarea {
@@ -116,9 +116,21 @@ textarea {
     margin-top: 40px;
 }
 
+.profileImg2{
+    width: 200px;
+    height: 200px;
+    border: #000000 solid 2px;
+    border-radius: 100%;
+    margin-top: 40px;
+    margin-left: 20px;
+}
 .profile{
     display: flex;
     margin-bottom: 100px;
+}
+
+.profile2{
+    display: flex;
 }
 
 .profileInfo{
@@ -126,7 +138,12 @@ textarea {
     text-align: left;
 }
 
-.profileInfo div {
+.profileInfo2{
+    margin: 0px 0px 0px 50px;
+    text-align: left;
+}
+
+.profileInfo div, .profileInfo2 div {
     margin-bottom: 20px;
 }
 
@@ -178,4 +195,9 @@ textarea {
 
 .xBtn{
     text-align:right;
+}
+
+.profileIntroText{
+    font-size: 16px;
+    font-weight: 100;
 }
