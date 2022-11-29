@@ -56,7 +56,8 @@ function Profile(memberId){
                         </div>
                         <div className={style.profileBtnGroup}>
                         <Link to="/tale" state={memberId}><img className={style.profileBtn} src={require("../static/images/view-tale-btn.png")}></img></Link>
-                        <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}`}><button><img className={style.profileBtn} src={require("../static/images/report-btn.png")}></img></button></NavLink>
+                        <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}`}><img className={style.profileBtn} src={require("../static/images/like-btn.png")}></img></NavLink>
+                        <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}`}><img className={style.profileBtn} src={require("../static/images/tale-report-btn.png")}></img></NavLink>
                         </div>
                     </div>
                 </div>

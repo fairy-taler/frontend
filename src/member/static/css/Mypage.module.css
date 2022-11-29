@@ -258,11 +258,13 @@ textarea {
 }
 
 .profileBtnGroup{ 
-    margin: 10px 30px 0px 50px;
+    margin: 10px 40px 0px 40px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .profileBtn{
-    width: 180px
+    height: 55px;
 }
 
 .profileName2{

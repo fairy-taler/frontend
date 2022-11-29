@@ -164,7 +164,7 @@ function Mypage(){
                         <div className={style.profileTale}> 제작한 동화책 수 : <span> {originProfile.taleCount} </span> </div>  
                         <div className={style.profileIntro}> 소개글: </div>
                         <textarea value={member[4].intro} name="intro" onChange={ onChangeProfile }></textarea><br/> 
-                        <Link to="/tale" state={{ value: member[3].memberId }}><img className={style.mypageBtn} src={require("../static/images/view-tale.png")}></img></Link>
+                        <Link to="/tale" state={{ value: member[3].memberId }}><img className={style.mypageBtn} src={require("../static/images/view-tale1.png")}></img></Link>
                         <button onClick={onClickUpdateProfile}><img className={style.mypageBtn} src={require("../static/images/edit-profile.png")}></img></button> 
                     </div>
                 </div>
