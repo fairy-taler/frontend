@@ -33,6 +33,7 @@ button{
 .menus{
   background-color: white;
   padding: 100px;
+  z-index: 50;
 }
 
 .btnGroup{

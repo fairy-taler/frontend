@@ -99,7 +99,7 @@ function Forums(){
     },[])
 
     return (
-        <div className={style.noticeBox} style={{backgroundImage : "url('main/background.png')", backgroundRepeat: "round" }}>
+        <div className={style.noticeBox}>
             <div className={style.betweenBox}>
                 {/* 공지사항 타이틀 */}
                 {/* <div className={style.forumTitle}> 자유 게시판 </div> */}
@@ -130,14 +130,14 @@ function Forums(){
                 {/* </div> */}
                 </div>
                 {/* 게시글 리스트 */}
-                <div className={style.tableBox}v style={{paddingTop : "30px"}}>
+                <div className={style.tableBox}v style={{paddingTop : "40px"}}>
                     <table className={style.communityTable}>
                         {forums==null? null:forums.map((forum, index)=>(
                                 <tr id={forum.forumCode} style={{ verticalAlign:"center"}}>
-                                        <td id={forum.forumCode} style={{width : "100px" , textAlign:"left", verticalAlign:"center"}}>[{forum.category}]</td>
+                                        <td id={forum.forumCode} style={{padding: "0px",width : "100px" , textAlign:"center", verticalAlign:"center"}}>[{forum.category}]</td>
                                         <td id={forum.forumCode}  onClick={toNoticesInfo} >{forum.title}</td>
                                         <td id={forum.forumCode} style={{width : "120px", textAlign:"center"}} onClick={onClickNickname(forum.memberId)}>{forum.nickname}</td>
-                                        <td id={forum.forumCode} style={{width : "120px", textAlign:"right"}}>{forum.createDate.substr(0,10)}</td>
+                                        <td id={forum.forumCode} style={{padding: "10px",width : "120px", textAlign:"right"}}>{forum.createDate.substr(0,10)}</td>
                                 </tr>
                         ))}
                     </table>
