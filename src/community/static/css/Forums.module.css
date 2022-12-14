@@ -230,7 +230,7 @@
         justify-content: space-between;
         align-items: center;
         padding : 5px;
-        background-color: #fdf1e4;
+        background-color: #E6E2DF;
         margin : auto 0 auto 0;
     }
     .searchBox img {
@@ -241,11 +241,14 @@
         border : none;
         font-weight: bold;
         font-size: 8px;
-        background-color: #fdf1e4;
+        background-color: #E6E2DF;
     }
     
+.communityTable tr:hover{
+    background-color: #fdf1e400;
+}
     .board{
-        overflow: scroll;
+        /* overflow: scroll; */
         /* z-index: -10; */
     }
     
@@ -253,6 +256,9 @@
         font-size: 8px;
         padding : 0px 4px 0px 4px;
         color : #BBBBBB;
+    }
+    .categoryBtn:hover, .categoryBtnGray:hover{
+        opacity: 1.0;
     }
 }
 .categoryBtn:hover, .categoryBtnGray:hover{

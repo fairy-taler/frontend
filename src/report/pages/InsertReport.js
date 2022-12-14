@@ -49,7 +49,7 @@ function InsertReport(){
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 제목 입력란 */}
             <div className={style.subTitleBox}>
-                <select id="categoryInput" style={{fontSize:"16px",width:"100%", padding:"10px"}}>
+                <select id="categoryInput">
                     <option>언어 폭력 및 성희롱적인 게시글 또는 댓글</option>
                     <option>부적절한 컨텐츠 제작</option>
                     <option>기타</option>

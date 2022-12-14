@@ -109,3 +109,67 @@
     margin : 5px;
     padding: 0px 20px 10px 10px;
 }
+@media (max-width: 600px) {
+    
+.insertFileBox{
+    padding : 0px 40px 0px 40px;
+}
+.lineImg{
+    padding : 0px 40px 0px 40px;
+    height : 1px;
+}
+.betweenBox{
+    display: flex;
+    justify-content: center;
+    padding : 20px 40px 10px 40px;
+    justify-content: left;
+}
+.forumTitle{
+    font-family: 'NanumSquareNeo-Variable';
+    font-size : 16px;
+    padding: 0 0 0 0;
+}
+.subTitleBox{
+    display: flex;
+    justify-content: space-between;
+    padding : 10px 40px 10px 40px;
+}
+.titleImg{
+    height : 16px;
+}
+.subTitleBox img{
+    height : 16px;
+}
+.subTitleBox select{
+    width : 250px;
+    border : 1px solid #BBBBBB;
+    background-color: #E6E2DF;
+}
+.titleInputBox{
+    width : 100%;
+    display: flex;
+    background-color: #E6E2DF;
+}
+.titleInput{
+    border : none;
+    flex: 1;
+    height: 100%;
+    background-color: #E6E2DF;
+}
+.contentInputBox{
+    padding : 0px 40px 0px 40px;
+}
+.contentInput{
+    min-height: 448px;
+    border : 1px solid #CCCCCC;
+    width : 88%;
+    height : 100%;
+    resize: none;
+    font-size : 12px;
+}
+
+.insertButton{
+    width : 80px;
+    padding : 10px 0px 10px 0px;
+}
+}
