@@ -105,10 +105,10 @@ function ServiceCenter(){
                 <table className={style.communityTable}>
                     {myInquirys?.map((inquiry, index)=>(
                         <tr onClick={toInquiryInfo} key={inquiry.inquiryCode} id={index}>
-                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} style={{width : "100px"}}>[내 문의]</td>
-                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} >{inquiry?.title}</td>
-                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} style={inquiry?.answer == null? {color:"gray"}:null}>{inquiry?.answer == null? "답변 미완료" : "답변 완료" }</td>
-                            <td  key={inquiry.inquiryCode} id={inquiry.inquiryCode} >{inquiry?.createDate.substr(0,10)}</td>
+                            <td  key={inquiry.inquiryCode} className={style.td_code} id={inquiry.inquiryCode} >[내 문의]</td>
+                            <td  key={inquiry.inquiryCode} className={style.td_title}  id={inquiry.inquiryCode} >{inquiry?.title}</td>
+                            <td  key={inquiry.inquiryCode} className={style.td_user_id} id={inquiry.inquiryCode} style={inquiry?.answer == null? {color:"gray"}:null}>{inquiry?.answer == null? "답변 미완료" : "답변 완료" }</td>
+                            <td  key={inquiry.inquiryCode} className={style.td_date} id={inquiry.inquiryCode} >{inquiry?.createDate.substr(0,10)}</td>
                         </tr>))}
                 </table>
             </div>
