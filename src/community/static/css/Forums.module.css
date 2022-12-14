@@ -95,7 +95,6 @@
 .insertButton{
     width : 100px;
 }
-
 .forumTitle{
        font-family: 'NanumSquareNeo-Variable';
     font-weight: 900;
@@ -112,7 +111,7 @@
     position : relative;
 }
 
-.categoryBtn{
+.categoryBtn, .insertBtn{
     font-family: 'NanumSquareNeo-Variable';
     font-weight: 700;
     font-size: 20px;
@@ -143,7 +142,23 @@
 }
 @media (max-width: 600px) {
     .categoryBtn {
-        width: 50px;
+        width: 55px;
+        margin : 0px;
+        padding: 0px;
+        padding-right : 2px;
+    }
+    .insertBtn{
+        width: 55px;
+        margin : 0px;
+        padding: 0px;
+    }
+    .insertBtnBox{
+        position: relative;
+        left: 84%;
+        bottom : 28px;
+        width : 60px;
+        height : 31px;
+
     }
     /* 게시글 테이블 */
     .communityTable{
@@ -182,23 +197,23 @@
     
     .betweenBox{
         display: flex;
-        justify-content: space-between;
-        padding : 5% 0 0 30%;
+        justify-content: center;
+        align-items: center;
+        padding : 30px 0 0 0;
     }
     .forumTitle{
         font-family: 'NanumSquareNeo-Variable';
-        height: 30px;
-        padding: 0 0 0 0;
+        height: 35px;
+        padding: 0px 0px 0 0;
     }
     .buttonGroup{
-        margin: 30px 0px 60px 0px;
+        margin: 40px 0px 30px 0px;
         justify-content: space-between;
         flex-direction: column;
-        
     }
     .buttonGroup1{
         position: relative;
-        top : 37.6px;
+        top : 25.5px;
         /* z-index: 0; */
     }
     .buttonGroup2{
@@ -228,12 +243,23 @@
         font-size: 8px;
         background-color: #fdf1e4;
     }
+    
+    .board{
+        overflow: scroll;
+        /* z-index: -10; */
+    }
+    
+    .pageButton {
+        font-size: 8px;
+        padding : 0px 4px 0px 4px;
+        color : #BBBBBB;
+    }
 }
 .categoryBtn:hover, .categoryBtnGray:hover{
     opacity: 0.8;
 }
 .categoryBtnGray{
-       font-family: 'NanumSquareNeo-Variable';
+    font-family: 'NanumSquareNeo-Variable';
     font-weight: 700;
     font-size: 20px;
     color: white;
@@ -249,6 +275,6 @@
     background-repeat: round;
     width : 94%;
     margin : auto;
-    overflow: scroll;
+    /* overflow: scroll; */
     /* z-index: -10; */
 }

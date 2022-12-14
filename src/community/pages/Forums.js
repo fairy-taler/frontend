@@ -125,8 +125,8 @@ function Forums(){
                             <input placeholder="검색어를 입력하세요." id="searchInput"/>
                             <img src={require("../static/images/search-btn.png")} onClick={onClickSearchButton} />
                         </div>
-                        <NavLink to="/insertForum"><img className={style.categoryBtn} src={require("../static/images/insert-button.png")} onClick={onClickAllPost} id="자유"/></NavLink>
-                    </div>
+                    </div><NavLink to="/insertForum"  className={style.insertBtnBox} ><img className={style.insertBtn} src={require("../static/images/insert-button.png")} onClick={onClickAllPost} id="자유"/></NavLink>
+                    
                     {/* <NavLink to="/insertForum"><img className={style.insertButton} src={require("../static/images/insert-btn.png")} /></NavLink> */}
                 {/* </div> */}
                 </div>

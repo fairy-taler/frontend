@@ -2,9 +2,10 @@
     width : 100vw;
     height : 5vh;
     display: flex;
+    position : relative;
+    bottom : 0px;
 }
 .footerImg{
     height : 25%;
     margin : auto;
-    
 }

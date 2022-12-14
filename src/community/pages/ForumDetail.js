@@ -99,7 +99,6 @@ function ForumDetail(){
                 <div className={style.commentTitle}>댓글 총 {forum?.comments?.length}개</div>
                 {/* 댓글 작성 */}
                 <div className={style.commentInputBox}>
-                        <div>{member?.nickname}</div>
                         <input id="commentInput" className={style.commentInput} placeholder="댓글 추가..."/>
                         <button onClick={onClickdata}>댓글</button>
                 </div>
