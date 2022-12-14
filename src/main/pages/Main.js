@@ -61,34 +61,34 @@ function Main() {
   }
   //프로그램 다운로드 이벤트
   const onDownload= () => {
-    alert("프로그램을 설치합니다.");
-    fetch('/%EC%B1%85%EC%9E%A5%EC%86%8D%EA%B3%A0%EC%96%91%EC%9D%B4.zip', {
-      method: 'GET',
-      // content-type은 따로 지정하지 않았습니다. 
-    })
-    .then((response) => response.blob())
-    .then((blob) => {
+    alert("지금은 설치할 수 없습니다.");
+    // fetch('/%EC%B1%85%EC%9E%A5%EC%86%8D%EA%B3%A0%EC%96%91%EC%9D%B4.zip', {
+    //   method: 'GET',
+    //   // content-type은 따로 지정하지 않았습니다. 
+    // })
+    // .then((response) => response.blob())
+    // .then((blob) => {
   
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
+    //   const url = window.URL.createObjectURL(blob);
+    //   const link = document.createElement('a');
       
-      link.setAttribute(
-        'href',
-        url,
-      );
-      link.setAttribute(
-        'download',
-        '책장속고양이.zip',
-      );
+    //   link.setAttribute(
+    //     'href',
+    //     url,
+    //   );
+    //   link.setAttribute(
+    //     'download',
+    //     '책장속고양이.zip',
+    //   );
   
-      document.body.appendChild(link);
+    //   document.body.appendChild(link);
   
-      link.click();
+    //   link.click();
   
-      link.parentNode.removeChild(link);
+    //   link.parentNode.removeChild(link);
       
-      window.URL.revokeObjectURL(url)
-    });
+    //   window.URL.revokeObjectURL(url)
+    // });
   }
   //슬라이더 배너 설정
   const settings = {
@@ -120,28 +120,12 @@ return (
                 <img className={style.downloadButtonCenter} src={require("../static/images/new-download-button.png")} onClick={onDownload}/>
               </div>
             </div>
-          </div>  
-          <div>
-            <div className={style.banner} style={{ backgroundImage : "url('main/banner-background2.png')"}}>
-              <div className={style.bannerImgBox}>
-                <img className={style.bannerTextImgLeft} style={{margin:"auto"}} src={require("../static/images/bannerText1.png")} />
-                <img className={style.downloadButtonLeft} src={require("../static/images/new-download-button.png")} onClick={onDownload}/>
-              </div>
-            </div>
-          </div>  
-          <div>
-            <div className={style.banner} style={{ backgroundImage : "url('main/banner-background3.png')"}}>
-              <div className={style.bannerImgBox}>
-                <img className={style.bannerTextImgRight} src={require("../static/images/bannerText2.png")} />
-                <img className={style.downloadButtonRight} src={require("../static/images/new-download-button.png")} onClick={onDownload}/>
-              </div>
-            </div>
-          </div>  
+          </div>   
         </Slider>  
         {/* 스크롤 */}
         <a className={style.scroll} onClick={()=>{window.scrollTo({ left: 0, top: 800, behavior: "smooth" })}}><span></span><span></span></a>
         <a className={style.scroll2} onClick={()=>{window.scrollTo({ left: 0, top: 800, behavior: "smooth" })}}><span></span><span></span></a>
-        <div className={style.banner2} style={{ backgroundImage : "url('main/banner4.png')"}}/>
+        <div className={style.banner2} />
     </div>
   </div>
   )

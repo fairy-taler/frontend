@@ -46,6 +46,7 @@
     height : 1.5px;
     width: 100%;
     opacity: 40%;
+    z-index: -1;
 }
 .contentTitleBox{
     font-size: 24px;
@@ -187,5 +188,154 @@
     background-repeat: round;
     width : 94%;
     margin : 0px auto 10px auto;
+    /* z-index: -10; */
+}
+
+@media (max-width: 600px) {
+    .categoryBtn {
+        width: 50px;
+    }
+    /* 게시글 테이블 */
+    .communityTable{
+        width : 90%;
+        font-weight : bold;
+        padding-top : 5px;
+        padding: 0px 0px 0px 10px;
+        font-size : 8px;
+    }
+    .td_code{
+        padding: 0px;
+        width : 50px;
+        text-align : center;
+        vertical-align : center;
+    }
+    .td_user_id{
+        width : 50px;
+        text-align:center;
+    }
+    .td_date{
+        padding: 10px;
+        width : 50px;
+        text-align:right;
+    }
+
+    .tableBox{
+        height : 560px;
+        padding : 0px 0px 60px 0px;
+    }
     
+    .betweenBox{
+        display: flex;
+        justify-content: space-between;
+        padding : 5% 0 0 30%;
+    }
+    .forumTitle{
+        font-family: 'NanumSquareNeo-Variable';
+        height: 30px;
+        padding: 0 0 0 0;
+    }
+    .buttonGroup{
+        margin: 30px 0 40px 0px;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .buttonGroup1{
+        position: relative;
+        top : 37.6px;
+        /* z-index: 0; */
+    }
+    .buttonGroup2{
+        position: relative;
+        bottom : 37.6px;
+        justify-content: right;
+        /* z-index: 0; */
+    }
+    .searchBox{
+        width : 200px;
+        height : 13px;
+        border : 1px solid #BBBBBB;
+        display : flex;
+        justify-content: space-between;
+        align-items: center;
+        padding : 5px;
+        background-color: #fdf1e4;
+        margin : auto 0 auto 0;
+    }
+    .searchBox img {
+        height : 90%;
+    }
+    .searchBox input{
+        height : 100%;
+        border : none;
+        font-weight: bold;
+        font-size: 8px;
+        background-color: #fdf1e4;
+    }
+    .contentTitle{
+        font-size: 8px;
+    }
+    .contentTitleBox{
+        font-size: 24px;
+        font-weight: bold;
+        padding : 40px 30px 0px 30px;
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+    }
+    .contentContentBox{
+        min-height: 100px;
+        font-size : 8px;
+        padding : 40px 40px 60px 40px;
+    }
+    .subTitleBox{
+        padding : 00px 100px 00px 0px
+    }
+    .subTitleBox img{
+        height : 12px;
+        margin : 1vw;
+}
+
+.titleProfile{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 4px 0px 4px 12px;
+}
+.titleProfileDiv{
+    font-size: 5px;
+}
+.profileImg{
+    width: 20px;
+    height: 20px;
+    border: #444444 solid 1px;
+    border-radius: 100%;
+    margin : 0 5px 0 0;
+}
+
+.contentTitleBox .contentNickname{
+    font-size: 8px;
+    
+}
+.commentBox{
+    padding : 10px 40px 10px 40px;
+    font-weight: bold;
+}
+.commentTitle{
+    font-size:12px;
+}
+.commentInputBox{
+    padding : 10px 0px 10px 0px;
+    font-size: 12px;
+}
+.commentInputBox input,.commentInputBox div, .commentInputBox button{
+    font-size: 12px;
+    margin : auto;
+}
+.commentsBox{
+    font-size: 8px;
+    margin: auto;
+}
+.commentsBox img, .commentsBox div{
+    margin : auto;
+}
 }

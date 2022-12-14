@@ -52,7 +52,6 @@
 .communityTable td {
     align-items: center;
     padding : auto;
-    padding : 0px 0px 20px 20px;
 }
 .pageListBox{
     display: flex;
@@ -84,4 +83,125 @@
 }
 .insertButton{
     width : 100px;
+}
+
+.td_code{
+    padding: 0px;
+    width : 100px;
+    text-align : center;
+    vertical-align : center;
+}
+.td_user_id{
+    width : 120px;
+    text-align:center;
+}
+.td_date{
+    padding: 10px;
+    width : 120px;
+    text-align:right;
+    
+}
+@media (max-width: 600px) {
+    .insertButtonBox{
+        display: flex;
+        justify-content: right;
+        padding : 10px 40px 10px 40px;
+    }
+    .insertButton{
+        width : 80px;
+    }
+    .categoryBtn {
+        width: 50px;
+    }
+    /* 게시글 테이블 */
+    .communityTable{
+        width : 100%;
+        font-weight : bold;
+        padding-top : 5px;
+        padding: 0px 40px 0px 40px;
+        font-size : 8px;
+    }
+    .td_code{
+        padding: 0px;
+        width : 50px;
+        text-align : center;
+        vertical-align : center;
+    }
+    .td_user_id{
+        width : 50px;
+        text-align:center;
+    }
+    .td_date{
+        padding: 10px;
+        width : 50px;
+        text-align:right;
+    }
+
+    .tableBox{
+        height : 250px;
+        padding : 0px 0px 60px 0px;
+    }
+    
+    .betweenBox{
+        display: flex;
+        justify-content: space-between;
+        padding : 0 40px 0 40px;
+    }
+    .forumTitle{
+        font-family: 'NanumSquareNeo-Variable';
+        height: 30px;
+        padding: 0 0 0 0;
+    }
+    .buttonGroup{
+        margin: 30px 0 40px 0px;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .buttonGroup1{
+        position: relative;
+        top : 37.6px;
+        /* z-index: 0; */
+    }
+    .buttonGroup2{
+        position: relative;
+        bottom : 37.6px;
+        justify-content: right;
+        /* z-index: 0; */
+    }
+    .searchBox{
+        width : 200px;
+        height : 13px;
+        border : 1px solid #BBBBBB;
+        display : flex;
+        justify-content: space-between;
+        align-items: center;
+        padding : 5px;
+        background-color: #fdf1e4;
+        margin : auto 0 auto 0;
+    }
+    .searchBox img {
+        height : 90%;
+    }
+    .searchBox input{
+        height : 100%;
+        border : none;
+        font-weight: bold;
+        font-size: 8px;
+        background-color: #fdf1e4;
+    }
+    
+.titleImg{
+    height : 16px;
+    margin : 1vw;
+}
+.subTitleImg{
+    width : 70px;
+    height : 12px;
+    padding-left : 40px;
+    margin : 1vw;
+}
+.lineImg{
+    padding : 0px 40px 0px 40px;
+    height : 4px;
+}
 }
