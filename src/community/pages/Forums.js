@@ -108,7 +108,7 @@ function Forums(){
             </div>
             <div className={style.board}>
                 <div className={style.buttonGroup}>
-                    <div>
+                    <div className={style.buttonGroup1}>
                         <img className={style.categoryBtn} src={require("../static/images/all.png")} onClick={onClickAllPost} id="all"/>
                         <img className={style.categoryBtn} src={require("../static/images/data.png")} onClick={onClickCategory} id="정보공유"/>
                         <img className={style.categoryBtn} src={require("../static/images/tale.png")} onClick={onClickCategory} id="동화"/>
@@ -118,7 +118,7 @@ function Forums(){
                         <button className={style.categoryBtn} onClick={onClickCategory}>동화</button>
                         <button className={style.categoryBtnGray} onClick={onClickMyPost}>내 글</button> */}
                     </div>
-                    <div style={{display:"flex"}}>
+                    <div style={{display:"flex"}} className={style.buttonGroup2}>
                         <div className={style.searchBox} >
                             <input placeholder="검색어를 입력하세요." id="searchInput"/>
                             <img src={require("../static/images/search-btn.png")} onClick={onClickSearchButton} />
@@ -130,14 +130,14 @@ function Forums(){
                 {/* </div> */}
                 </div>
                 {/* 게시글 리스트 */}
-                <div className={style.tableBox}v style={{paddingTop : "40px"}}>
+                <div className={style.tableBox} >
                     <table className={style.communityTable}>
                         {forums==null? null:forums.map((forum, index)=>(
                                 <tr id={forum.forumCode} style={{ verticalAlign:"center"}}>
-                                        <td id={forum.forumCode} style={{padding: "0px",width : "100px" , textAlign:"center", verticalAlign:"center"}}>[{forum.category}]</td>
-                                        <td id={forum.forumCode}  onClick={toNoticesInfo} >{forum.title}</td>
-                                        <td id={forum.forumCode} style={{width : "120px", textAlign:"center"}} onClick={onClickNickname(forum.memberId)}>{forum.nickname}</td>
-                                        <td id={forum.forumCode} style={{padding: "10px",width : "120px", textAlign:"right"}}>{forum.createDate.substr(0,10)}</td>
+                                        <td id={forum.forumCode} className={style.td_code} >[{forum.category}]</td>
+                                        <td id={forum.forumCode} className={style.td_title} onClick={toNoticesInfo} >{forum.title}</td>
+                                        <td id={forum.forumCode} className={style.td_user_id} onClick={onClickNickname(forum.memberId)}>{forum.nickname}</td>
+                                        <td id={forum.forumCode} className={style.td_date} >{forum.createDate.substr(0,10)}</td>
                                 </tr>
                         ))}
                     </table>
