@@ -46,6 +46,7 @@
     height : 1.5px;
     width: 100%;
     opacity: 40%;
+    z-index: -1;
 }
 .contentTitleBox{
     font-size: 24px;
@@ -187,6 +188,7 @@
     background-repeat: round;
     width : 94%;
     margin : 0px auto 10px auto;
+    z-index: -10;
     
 }
 
