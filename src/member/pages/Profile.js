@@ -41,19 +41,22 @@ function Profile(memberId){
             
             <div className={style.ProfileSection2}>
 
+            <div className={style.profileXBtn}> <button className={style.profileXBtn} onClick={onClickClose}>X </button></div>
             <div className={style.profileImgBookFrame}>  
 
             <img className={style.profileImgFrame2} src={profile.profile.imgUrl} onError={handleImgError}></img> 
             </div>
+            <br/>
                 <div>
                 <div className={style.profileInfo2}>
                 <div className={style.profileGroup}>
                     <div className={style.profileName2}> {profile.memberName} <span> 선생님 </span> </div>  
                     <div className={style.profileTale2}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
                 </div>
-                <div className={style.profileIntroText2}><div className={style.startLeft}>소개글: </div>
+                <br/>
+                <div className={style.profileIntroText3}><div className={style.startLeft}>소개글: </div>
                  {profile.profile.intro == null ?  <div> "" </div>
-                  : <div > {profile.profile.intro}</div>
+                  : <div className={style.padding5} > {profile.profile.intro}</div>
                   }
                 </div>
                 </div>

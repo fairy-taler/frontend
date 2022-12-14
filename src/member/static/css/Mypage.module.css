@@ -17,13 +17,12 @@
         display: block !important;
         background-color: white;
         background-image: none !important; 
-        width: 50vh;
         border: 1px solid;
         border-radius: 10px;
         height:auto !important;
     }
     .profileImgBookFrame{
-        margin: 45px 0px 0px 0px !important;
+        margin: 10px 0px 0px 0px !important;
     }
     .profileIntroText2{
         width: 50vw !important;
@@ -45,7 +44,7 @@
     }
 
     .lineDiv{
-        padding: 50px 0px 50px 0px !important;
+        padding: 10px 0px 30px 0px !important;
         text-align: center;
         display: flex;
         justify-content: center;
@@ -148,6 +147,7 @@ body{
 textarea {
     border-radius: 0px;
     padding: 0px;
+    margin:0px
 }
 
 .authBtn img{
@@ -227,7 +227,7 @@ textarea {
 .profileImgFrame2{
     width: 150px;
     height: 150px;
-    margin: 30px 20px 20px 25px;
+    margin: 30px 10px 0px 15px;
 
     background-image: url("../images/profile-img-frame.png");
     background-repeat: round;
@@ -251,8 +251,6 @@ textarea {
 .profileInfo2{
     background-repeat: round;
     margin: 21px 20px 0px 20px;
-    padding: 30px;
-    padding-bottom: 10px;
 }
 
 .profileInfo span {
@@ -266,7 +264,6 @@ textarea {
 
 
 .profileInfo div, .profileInfo2 div {
-    margin-bottom: 10px;
     justify-content: center;
 }
 
@@ -305,9 +302,6 @@ textarea {
     width: 130px;
 }
 
-.imgUploadBtn{
-    height: 0px;
-}
 
 .profileComponent{
     z-index: 10000;
@@ -358,7 +352,7 @@ textarea {
     background-repeat: round;
     font-weight: 100;
     width: 300px;
-    padding-top: 20px;
+    padding-top: 10px;
 
 }
 
@@ -371,7 +365,7 @@ textarea {
 }
 
 .profileBtnGroup{ 
-    margin: 0px 40px 20px 40px;
+    margin: 0px 40px 10px 40px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -393,9 +387,11 @@ textarea {
 .profileIntroText2 textarea{
     background: none;
     border: none;
+    border-radius: 0px;
     font-size: 12px;
     width: 250px;
     padding-right: 10px;
+    margin:0px
 }
 
 .profileGroup{

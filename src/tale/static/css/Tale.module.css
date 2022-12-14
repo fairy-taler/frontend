@@ -10,14 +10,13 @@
     .profile2{
         display: block !important;
         background-color: white;
-        background-image: none !important; 
-        width: 50vh;
+        background-image: none !important;
         border: 1px solid;
         border-radius: 10px;
-        height:auto !important;
+        height: auto !important;
     }
     .profileImgBookFrame{
-        margin: 45px 0px 0px 0px !important;
+        margin: 10px 0px 0px 0px !important;
     }
     .profileIntroText2{
         width: 50vw !important;
@@ -39,7 +38,7 @@
     }
 
     .lineDiv{
-        padding: 50px 0px 50px 0px !important;
+        padding: 10px 0px 30px 0px !important;
         text-align: center;
         display: flex;
         justify-content: center;
@@ -47,6 +46,8 @@
 
     .taleList{
         padding: 0px !important;
+        width: 90vw;
+        height: 40vh !important;
     }
     .taleImg{
         padding: 15px !important;
@@ -99,6 +100,33 @@
 
     .profileIntroText2 div{
         width: 190px;
+    }
+
+    .ProfileSection2{
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profileComponent{
+        margin-left: -40% !important;
+        width: 80vw;
+        top: 25% !important;
+    }
+
+    .profileBtnGroup2 a img{
+        height: 30px !important;
+    }
+
+    .profileXBtn{
+        left: 75% !important; 
+        color: black;
+        top: 5%; 
+    }
+
+    .profileIntroText3{ 
+        width: 50vw !important;
+        margin-left: 10px !important;
+        margin-bottom: 10px;
     }
 }
 
@@ -427,11 +455,10 @@ textarea {
 .profileInfo2{
     background-repeat: round;
     margin: 21px 20px 0px 20px;
-    padding: 30px;
-    padding-bottom: 10px;
 }
 .startLeft{
     text-align: left;
+    margin-bottom: 0px !important;
 }
 
 .profileInfo span {
@@ -439,7 +466,6 @@ textarea {
 }
 
 .profileInfo div, .profileInfo2 div {
-    margin-bottom: 10px;
     text-align: -webkit-left;
     justify-content: center;
 }
@@ -528,8 +554,23 @@ textarea {
     font-weight: 100;
     height: 100px;
     width: 300px;
-    padding-top: 20px;
-    padding-left: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+
+}
+
+.profileIntroText3{
+
+    background-image: url("../images/profile-intro.png");
+    font-size: 12px;
+    font-weight: 100;
+
+    background-repeat: round;
+    font-weight: 100;
+    height: 100px;
+    width: 300px;
+    padding-top: 10px;
+    padding-left: 10px;
 
 }
 
@@ -573,4 +614,8 @@ textarea {
 
 .profileName2 span{
     margin-right: 15px;
+}
+
+.padding5{
+   padding-right: 5px;
 }

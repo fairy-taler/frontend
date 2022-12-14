@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
+@media (max-width: 600px){
+
+    .inputBox input[type="password"]{
+        font-size: 20px !important;
+        width: 300px !important;
+        height: 30px !important;
+    }
+
+    .selectBtn img{
+        height: 50px !important;
+    }
+
+}
+
 .joinDiv{
     text-align: center;
     margin-top: 50px;

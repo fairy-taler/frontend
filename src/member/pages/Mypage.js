@@ -139,14 +139,13 @@ function Mypage(){
             <div className={style.title}><img src={require("../static/images/mypage.png")} /></div>
 
             <div className={style.ProfileSection2}>
-
+ 
 <div className={style.profile2}>
 
     <div className={style.profileImgBookFrame}>  
     <React.Fragment>
         <button className={style.imgUploadBtn} onClick={handleButtonClick}>
             <img className={style.profileImgFrame2} src={member[4].imgUrl} onError={handleImgError}></img> 
-
         </button>
         <input type="file"
                 ref={fileInput}
@@ -154,17 +153,18 @@ function Mypage(){
                 style={{ display: "none" }} />
     </React.Fragment> 
     </div>
+    <br/>
         <div>
         <div className={style.profileInfo2}>
         
         <div className={style.profileGroup}>
-        <div className={style.profileName2}> {originMember.memberName} <span> 선생님 </span> </div>  
+        <div className={style.profileName2}> {originMember.memberName} <span> 선생님 </span> </div> 
         <div className={style.profileTale2}> 제작한 동화책 수 : <span> {originProfile.taleCount} </span> </div>  
         </div>
+        <br/>
+        <div className={style.profileIntroText2}><div className={style.startLeft}> &nbsp; 소개글: </div>
 
-        <div className={style.profileIntroText2}><div className={style.startLeft}> &nbsp; &nbsp; &nbsp; 소개글: </div>
-
-            <textarea className={style.startLeft} value={member[4].intro} name="intro" onChange={ onChangeProfile }></textarea><br/> 
+            <textarea value={member[4].intro} name="intro" onChange={ onChangeProfile }></textarea><br/> 
             </div>
         </div>
         <div className={style.profileBtnGroup}>
