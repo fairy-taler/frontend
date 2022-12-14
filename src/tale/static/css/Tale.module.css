@@ -1,5 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
+@media (max-width: 600px){
+
+
+    .title{
+        margin: 30px 0px 0px 30px !important;
+    }
+
+    .profile2{
+        display: block !important;
+        background-color: white;
+        background-image: none !important; 
+        width: 50vh;
+        border: 1px solid;
+        border-radius: 10px;
+        height:auto !important;
+    }
+    .profileImgBookFrame{
+        margin: 45px 0px 0px 0px !important;
+    }
+    .profileIntroText2{
+        width: 50vw !important;
+    }
+    .profileInfo2{
+        width: auto !important;
+        margin: 0px 20px 0px 20px !important;
+    }
+
+    .taleListDiv{
+        margin: 0px !important;
+        padding: 0px !important;
+        text-align: unset !important;
+    }
+
+    .lineImg{
+        width: 70vw !important;
+        height: 1px;
+    }
+
+    .lineDiv{
+        padding: 50px 0px 50px 0px !important;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .taleList{
+        padding: 0px !important;
+    }
+    .taleImg{
+        padding: 15px !important;
+        width: 20vw !important;
+        margin-top: 40px;
+    }
+    .taleTitle{
+        font-size: 12px !important;
+    }
+    .mypageBtn{
+        width: 18vw !important;
+    }
+
+    .mypageText, .mypageText2{
+        font-size: 16px !important;
+    }
+    .inputBox input[type="text"], input[type="password"] {
+        font-size: 16px !important;
+        height: 20px !important;
+        width: 250px !important;
+    }
+    .passwordBox input[type="password"] {
+        font-size: 16px !important;
+        height: 20px !important;
+        width: 160px !important;
+    }
+    .authBtn img{
+        height: 40px !important;
+    }
+
+    .submitBtn img{
+        width: 280px !important;
+    }
+
+    .unregist button{
+        font-size: 12px !important;
+    }
+
+    textarea{
+        width: 160px !important;
+        height: 50px !important;
+    }
+
+    .profileName2{
+        font-size: 14px !important;
+    }
+    .profileTale2{
+        font-size: 10px !important;
+    }
+
+    .profileIntroText2 div{
+        width: 190px;
+    }
+}
+
 
 .selectBtn img{
     height: 100px;
@@ -325,14 +427,21 @@ textarea {
 .profileInfo2{
     background-repeat: round;
     margin: 21px 20px 0px 20px;
-    text-align: left;
-    width: 350px;
-    height: 240px;
     padding: 30px;
+    padding-bottom: 10px;
+}
+.startLeft{
+    text-align: left;
+}
+
+.profileInfo span {
+    text-align: left;
 }
 
 .profileInfo div, .profileInfo2 div {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    text-align: -webkit-left;
+    justify-content: center;
 }
 
 .profileName{
@@ -396,7 +505,7 @@ textarea {
     display: flex;
     justify-content: space-evenly;
     padding: 30px;
-    padding-bottom: 0px;
+    padding-bottom: 30px;
     border-radius: 30px;
 }
 
@@ -435,7 +544,14 @@ textarea {
 .profileBtnGroup{ 
     margin: 10px 30px 0px 50px;
 }
-
+.profileBtnGroup2{ 
+    margin: 0px 40px 20px 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.profileBtn2{
+    height: 55px;
+}
 .profileBtn{
     width: 185px
 }
@@ -448,4 +564,13 @@ textarea {
     position: absolute;
     left: 90%;
     font-size: 35px;
+}
+
+.profileGroup{
+    display: flex;
+    align-items: flex-end;
+}
+
+.profileName2 span{
+    margin-right: 15px;
 }

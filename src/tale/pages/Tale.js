@@ -55,16 +55,15 @@ function Tale(){
             </div>
                 <div>
                 <div className={style.profileInfo2}>
-                    
-                <div className={style.profileName2}> {profile.memberName} <span> 선생님 </span> </div>  
-                <div className={style.profileTale2}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
-                <div className={style.profileIntro2}> 소개글: </div>
-                 {profile.profile.intro == null ?  <div className={style.profileIntroText2}> "" </div>
-                  : <div className={style.profileIntroText2}> {profile.profile.intro}</div>
+                <div className={style.profileGroup}>
+                    <div className={style.profileName2}> {profile.memberName} <span> 선생님 </span> </div>  
+                    <div className={style.profileTale2}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
+                </div>
+                <div className={style.profileIntroText2}><div className={style.startLeft}>소개글: </div>
+                 {profile.profile.intro == null ?  <div> "" </div>
+                  : <div > {profile.profile.intro}</div>
                   }
                 </div>
-                <div className={style.profileBtnGroup}>
-                
                 </div>
             </div>
         </div>
