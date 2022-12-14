@@ -60,7 +60,7 @@ function Login(){
 
     return (
         <div className={style.loginDiv}>
-            <Link to="/"> <img className={style.loginLogo} src={require('../static/images/logo.png')}></img></Link><br/>
+            <Link to="/"> <img className={style.loginLogo} src={require('../static/images/minilogo.png')}></img></Link><br/>
             <img className={style.loginP} src={require('../static/images/login-ph.png')}></img>
             <div className={style.inputBox}>
                     <input type="text" name="memberId" id="memberId" value={member.memberId} onChange={ onChangeHandler } placeholder="아이디" required />

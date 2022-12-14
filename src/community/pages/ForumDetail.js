@@ -53,6 +53,7 @@ function ForumDetail(){
 
     return (
         <div className={style.noticeBox} >
+            {clickProfile == null ? null : <Profile value={clickProfile} /> }
             <div className={style.board} >
             <div className={style.betweenBox}>
                 {/* 타이틀 */}
@@ -82,7 +83,7 @@ function ForumDetail(){
                         </div>      
                     </div>
                 </div>
-                {clickProfile == null ? null : <Profile value={clickProfile} /> }
+                
                 </div>
                 
                 <div className={style.contentContentBox}>

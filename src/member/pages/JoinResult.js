@@ -22,7 +22,7 @@ function JoinResult(){
 
     return (
         <div className={style.joinDiv}>
-            <Link to="/"> <img className={style.joinLogo} src={require('../static/images/logo.png')}></img></Link><br/>
+            <Link to="/"> <img className={style.joinLogo} src={require('../static/images/minilogo.png')}></img></Link><br/>
             <img className={style.joinResult} src={require('../static/images/join-result.png')}></img><br/>
             <button><img className={style.joinResult} src={require('../static/images/download.png')}></img> </button> 
         </div>

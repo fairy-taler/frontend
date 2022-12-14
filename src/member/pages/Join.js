@@ -22,7 +22,7 @@ function Join(){
 
     return (
         <div className={style.joinDiv}>
-            <Link to="/"> <img className={style.joinLogo} src={require('../static/images/logo.png')}></img></Link><br/>
+            <Link to="/"> <img className={style.joinLogo} src={require('../static/images/minilogo.png')}></img></Link><br/>
             <img className={style.joinP} src={require('../static/images/join-p.png')}></img>
             {member[0].memberRole == '' ? <SelectRole/>:<InputInfo/>}
         </div>
