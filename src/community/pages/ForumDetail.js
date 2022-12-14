@@ -109,7 +109,10 @@ function ForumDetail(){
                                                         <img className={style.profileImg} src={comment?.profileUrl}></img> 
                                                         <div className={style.id}>{comment.nickname}</div>
                                                         <div className={style.contents}>{comment.content}</div>
-                                                        <div className={style.createDate}>{comment.createDate.substr(0,10)}</div>
+                                                        <div className={style.createDate}>
+                                                            <div>{comment.createDate.substr(5,5)}</div>
+                                                            <div>{comment.createDate.substr(11,5)}</div>
+                                                        </div>
                                                     </div>))}
                 </div>
             </div>

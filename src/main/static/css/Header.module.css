@@ -28,3 +28,39 @@
     z-index: 100;
     padding: 0; 
 }
+
+
+
+@media (max-width: 600px) {
+    
+.headerBox{
+    top: 0%;
+    left: 0%;
+    z-index: 3;
+    width : 100vw;
+}
+.headerDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 30px 0px;
+    z-index: 1;
+}
+.headerImg{
+    height: 2vh;
+}
+.headerImgMenu{
+    height: 1.5vh;
+}
+.logoImg{
+    height : 25px;
+}
+.btn{
+    text-decoration: none;
+    border: none;
+    background: none;
+    z-index: 100;
+    padding: 0; 
+}
+
+}

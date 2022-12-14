@@ -309,7 +309,7 @@
     height: 20px;
     border: #444444 solid 1px;
     border-radius: 100%;
-    margin : auto;
+    margin : 0 5px 0 0;
 }
 
 .contentTitleBox .contentNickname{
@@ -328,11 +328,14 @@
     font-size: 12px;
 }
 .commentInputBox input,.commentInputBox div, .commentInputBox button{
-
     font-size: 12px;
-    padding : auto;
+    margin : auto;
 }
 .commentsBox{
     font-size: 8px;
+    margin: auto;
+}
+.commentsBox img, .commentsBox div{
+    margin : auto;
 }
 }

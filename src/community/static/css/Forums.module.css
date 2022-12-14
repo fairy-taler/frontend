@@ -18,6 +18,7 @@
     padding : 5px;
     background-color: #fdf1e4;
     margin : auto;
+    /* z-index: 10; */
 }
 .searchBox img {
     height : 80%;
@@ -52,6 +53,7 @@
     padding-top : 5px;
     padding: 0px 100px 0px 100px;
     font-size : 14px;
+    /* z-index: -2; */
 }
 .communityTable tr:hover{
     background-color: #fdf1e4;
@@ -106,10 +108,12 @@
     display: flex;;
     margin: 40px 0px 10px 50px ;
     justify-content: space-between;
+    z-index : 1;
+    position : relative;
 }
 
 .categoryBtn{
-       font-family: 'NanumSquareNeo-Variable';
+    font-family: 'NanumSquareNeo-Variable';
     font-weight: 700;
     font-size: 20px;
     color: #7f561f;
@@ -184,6 +188,7 @@
         margin: 30px 0 40px 0px;
         justify-content: space-between;
         flex-direction: column;
+        
     }
     .buttonGroup1{
         position: relative;
@@ -194,7 +199,7 @@
         position: relative;
         bottom : 37.6px;
         justify-content: right;
-        /* z-index: 0; */
+        /* z-index: -1; */
     }
     .searchBox{
         width : 200px;
