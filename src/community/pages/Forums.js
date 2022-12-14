@@ -109,7 +109,9 @@ function Forums(){
             <div className={style.board}>
                 <div className={style.buttonGroup}>
                     <div className={style.buttonGroup1}>
-                        <img className={style.categoryBtn} src={require("../static/images/all.png")} onClick={onClickAllPost} id="all"/>
+                        {/* <img className={style.categoryBtn} src={require("../static/images/all.png")} onClick={onClickAllPost} id="all"/> */}
+                        
+                        <img className={style.categoryBtn} src={require("../static/images/all.png")} onClick={()=>{alert("hello")}} id="all"/>
                         <img className={style.categoryBtn} src={require("../static/images/data.png")} onClick={onClickCategory} id="정보공유"/>
                         <img className={style.categoryBtn} src={require("../static/images/tale.png")} onClick={onClickCategory} id="동화"/>
                         <img className={style.categoryBtn} src={require("../static/images/my-forum.png")} onClick={onClickMyPost} id="자유"/>
@@ -124,7 +126,6 @@ function Forums(){
                             <img src={require("../static/images/search-btn.png")} onClick={onClickSearchButton} />
                         </div>
                         <NavLink to="/insertForum"><img className={style.categoryBtn} src={require("../static/images/insert-button.png")} onClick={onClickAllPost} id="자유"/></NavLink>
-                       
                     </div>
                     {/* <NavLink to="/insertForum"><img className={style.insertButton} src={require("../static/images/insert-btn.png")} /></NavLink> */}
                 {/* </div> */}

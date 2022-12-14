@@ -188,8 +188,7 @@
     background-repeat: round;
     width : 94%;
     margin : 0px auto 10px auto;
-    z-index: -10;
-    
+    /* z-index: -10; */
 }
 
 @media (max-width: 600px) {
@@ -243,13 +242,13 @@
     .buttonGroup1{
         position: relative;
         top : 37.6px;
-        z-index: 0;
+        /* z-index: 0; */
     }
     .buttonGroup2{
         position: relative;
         bottom : 37.6px;
         justify-content: right;
-        z-index: 0;
+        /* z-index: 0; */
     }
     .searchBox{
         width : 200px;
@@ -310,7 +309,7 @@
     height: 20px;
     border: #444444 solid 1px;
     border-radius: 100%;
-    margin-right : 10px;
+    margin : auto;
 }
 
 .contentTitleBox .contentNickname{

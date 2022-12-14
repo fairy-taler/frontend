@@ -125,7 +125,7 @@ return (
         {/* 스크롤 */}
         <a className={style.scroll} onClick={()=>{window.scrollTo({ left: 0, top: 800, behavior: "smooth" })}}><span></span><span></span></a>
         <a className={style.scroll2} onClick={()=>{window.scrollTo({ left: 0, top: 800, behavior: "smooth" })}}><span></span><span></span></a>
-        <div className={style.banner2} style={{ backgroundImage : "url('main/banner4.png')"}}/>
+        <div className={style.banner2} />
     </div>
   </div>
   )

@@ -19,6 +19,7 @@
 .banner2{
   background-repeat:round;
   /* background-size: 100%; */
+  background-image: url("../images/main/banner4.png");
   width : 100vw;
   height : 550vh;
 }
@@ -139,30 +140,24 @@
   .banner{
     width : 100vw;
     /* height : 100vh; */
-    height : 50vh;
+    height : 70vh;
     margin : 0px;
     padding : 0px;
     background-repeat: round;
     display : flex;
     justify-content: space-between;
   }
-.banner2{
-  background-repeat:round;
-  /* background-size: 100%; */
-  width : 100vw;
-  height : 200vh;
-}
 
 /* 스크롤  */
 .scroll2 {
   padding-top: 60px;
-  top: 40.5vh;
+  top: 60.5vh;
   left: 50%;
   position: absolute;
 }
 .scroll {
   padding-top: 60px;
-  top: 39.5vh;
+  top: 59.5vh;
   left: 50%;
   position: absolute;
 }
@@ -202,5 +197,11 @@
   40% {
     transform: rotate(-45deg) translate(0, 0);
   }
+}
+.banner2{
+  background-repeat:round;
+  background-image: url("../images/main/banner1.png"); /* background-size: 100%; */
+  width : 100vw;
+  height : 210vh;
 }
 }
