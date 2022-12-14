@@ -150,8 +150,6 @@
         padding: 0px 0px 0px 10px;
         font-size : 8px;
     }
-    .td_title{    
-    }
     .td_code{
         padding: 0px;
         width : 50px;
@@ -241,5 +239,6 @@
     background-repeat: round;
     width : 94%;
     margin : auto;
+    overflow: scroll;
     z-index: -1;
 }
