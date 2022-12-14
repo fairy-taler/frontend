@@ -111,7 +111,7 @@
     padding : 0px 100px 0px 100px;
 }
 .forumTitle{
-       font-family: 'NanumSquareNeo-Variable';
+    font-family: 'NanumSquareNeo-Variable';
     font-weight: 900;
     font-size: 30px;
     margin : 5px;
@@ -120,8 +120,22 @@
 
 @media (max-width: 600px) {
     
+.forumTitle{
+    font-family: 'NanumSquareNeo-Variable';
+    font-weight: 900;
+    font-size: 30px;
+    margin : 5px;
+    padding: 10px 20px 10px 10px;
+}
 .insertFileBox{
-    padding : 0px 40px 0px 40px;
+    padding : 15px 50px 15px 50px;
+}
+.titleInputBoxTitle{
+    font-family: 'NanumSquareNeo-Variable';
+    font-weight: 900;
+    font-size: 16px;
+    width : 50px;
+    margin : 5px;
 }
 .lineImg{
     padding : 0px 40px 0px 40px;
@@ -135,59 +149,75 @@
 }
 .forumTitle{
     font-family: 'NanumSquareNeo-Variable';
-    font-size : 16px;
+    font-size : 20px;
     padding: 0 0 0 0;
 }
 .subTitleBox{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding : 10px 40px 10px 40px;
+    margin : 20px 40px 20px 40px;
+    padding : 0 0 0 10px;
 }
 .titleImg{
     height : 16px;
     margin : auto;
-
+    padding : auto;
 }
 .subTitleBox img{
     height : 16px;
 }
+.subTitleBox1 {
+    position : relative;
+    top : 33px;
+}
 .subTitleBox select{
-    width : 250px;
+    width : 90px;
+    padding : 4px;
     border : 1px solid #BBBBBB;
-    background-color: #E6E2DF;
+    background-color: white;
+    position : relative;
+    bottom : 33px;
 }
 .titleInputBox{
     width : 100%;
     display: flex;
-    background-color: #E6E2DF;
+    background-color: #FFFFFF00;
 }
 .titleInput{
     border : none;
     flex: 1;
     height: 100%;
-    background-color: #E6E2DF;
+    background-color: #FFFFFF00;
 }
 .contentInputBox{
-    padding : 0px 40px 0px 40px;
+    padding : 15px 40px 15px 40px;
+    display: flex;
+    justify-content: center;
 }
 .contentInput{
     min-height: 448px;
     border : 1px solid #CCCCCC;
-    width : 88%;
+    width : 90%;
     height : 100%;
     resize: none;
     font-size : 12px;
 }
 
 textarea{
-    width: 88% !important;
+    width: 80% !important;
     border : 1px solid #888888;
     border-radius: 15px;
-    padding : 12px;
-    margin : 4px;
+    padding : 5% 5% 0 5%;
+    margin : 0px;
+}
+.insertButtonBox{
+    display: flex;
+    justify-content: center;
+    padding : 15px 100px 10px 100px;
 }
 .insertButton{
-    width : 80px;
+    width : 120px;
     padding : 10px 0px 10px 0px;
 }
 }

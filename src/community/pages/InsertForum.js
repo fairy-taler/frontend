@@ -42,11 +42,11 @@ function InsertForum(){
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 제목 입력란 */}
             <div className={style.subTitleBox}>
-                <div>
-                    <img className={style.titleImg} src={require("../static/images/title-text.png")}/>
-                </div>
-                <div className={style.titleInputBox}>
-                    <input id="titleInput" className={style.titleInput}  placeholder="제목을 입력해주세요." />
+                <div className={style.subTitleBox1} style={{display : "flex"}}>
+                    <div className={style.titleInputBoxTitle}> 제목</div>
+                    <div className={style.titleInputBox}>
+                        <input id="titleInput" className={style.titleInput}  placeholder="제목을 입력해주세요." />
+                    </div>
                 </div>
                 <select id="categoryInput">
                     <option>자유</option>
