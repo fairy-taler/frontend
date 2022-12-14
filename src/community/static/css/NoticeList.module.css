@@ -59,7 +59,7 @@
     padding : 10px 100px 0px 100px;
 }
 .pageButton {
-    font-size: 16px;
+    font-size: 8px;
     padding : 0px 4px 0px 4px;
     color : #BBBBBB;
 }
@@ -133,7 +133,7 @@
     }
     .td_date{
         padding: 10px;
-        width : 50px;
+        width : 30px;
         text-align:right;
     }
 
@@ -145,7 +145,7 @@
     .betweenBox{
         display: flex;
         justify-content: space-between;
-        padding : 0 40px 0 40px;
+        padding : 20px 40px 10px 40px;
     }
     .forumTitle{
         font-family: 'NanumSquareNeo-Variable';
@@ -169,14 +169,14 @@
         /* z-index: 0; */
     }
     .searchBox{
-        width : 200px;
+        width : 150px;
         height : 13px;
         border : 1px solid #BBBBBB;
         display : flex;
         justify-content: space-between;
         align-items: center;
         padding : 5px;
-        background-color: #fdf1e4;
+        background-color: #E6E2DF;
         margin : auto 0 auto 0;
     }
     .searchBox img {
@@ -187,7 +187,7 @@
         border : none;
         font-weight: bold;
         font-size: 8px;
-        background-color: #fdf1e4;
+        background-color: #E6E2DF;
     }
     
 .titleImg{
@@ -202,6 +202,6 @@
 }
 .lineImg{
     padding : 0px 40px 0px 40px;
-    height : 4px;
+    height : 1px;
 }
 }

@@ -65,13 +65,13 @@ function NoticeInfo(){
             </div>
             {/* 다음 공지사항 */}
             <img className={style.lineImg} src={require("../static/images/line.png")} />
-            <div className={style.nextContentsBox}>
+            {/* <div className={style.nextContentsBox}>
                 <span style={{width : "5%"}}><img src={require("../static/images/under-arrow-btn.png")}/></span>
                 <span style={{width : "10%"}}>[{nextResult.tag}]</span>
                 <span style={{width : "75%"}}>{nextResult.title}</span>
                 <span >{nextResult.date}</span>
             </div>
-            <img className={style.lineImg} src={require("../static/images/line.png")} />
+            <img className={style.lineImg} src={require("../static/images/line.png")} /> */}
         </div>
     )
 }

@@ -68,9 +68,9 @@ function NoticeList(){
                 <table className={style.communityTable}>
                     {notices?.map((notice, index)=>(
                             <tr onClick={toNoticesInfo} id={notice?.noticeCode}>
-                                    <td id={notice?.noticeCode} style={{width : "50px" , textAlign:"left"}}>[공지]</td>
-                                    <td id={notice?.noticeCode}>{notice?.title}</td>
-                                    <td id={notice?.noticeCode} style={{width : "120px", textAlign:"right"}}>{notice?.createDate.substr(0,10)}</td>
+                                    <td id={notice?.noticeCode} className={style.td_code}>[공지]</td>
+                                    <td id={notice?.noticeCode} className={style.td_title}>{notice?.title}</td>
+                                    <td id={notice?.noticeCode}  className={style.td_date}>{notice?.createDate.substr(5,5)}</td>
                             </tr>
                     ))}
                 </table>

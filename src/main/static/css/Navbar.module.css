@@ -10,7 +10,7 @@
   margin : 0px;
   height: 100%;
   margin-top : -20px;
-  position:fixed;
+  position:fixed;z-index: 50;
 }
 
 .flexDiv{

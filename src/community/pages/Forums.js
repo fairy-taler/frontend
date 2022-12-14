@@ -125,8 +125,8 @@ function Forums(){
                             <input placeholder="검색어를 입력하세요." id="searchInput"/>
                             <img src={require("../static/images/search-btn.png")} onClick={onClickSearchButton} />
                         </div>
-                        <NavLink to="/insertForum"><img className={style.categoryBtn} src={require("../static/images/insert-button.png")} onClick={onClickAllPost} id="자유"/></NavLink>
-                    </div>
+                    </div><NavLink to="/insertForum"  className={style.insertBtnBox} ><img className={style.insertBtn} src={require("../static/images/insert-button.png")} onClick={onClickAllPost} id="자유"/></NavLink>
+                    
                     {/* <NavLink to="/insertForum"><img className={style.insertButton} src={require("../static/images/insert-btn.png")} /></NavLink> */}
                 {/* </div> */}
                 </div>
@@ -138,7 +138,7 @@ function Forums(){
                                         <td id={forum.forumCode} className={style.td_code} >[{forum.category}]</td>
                                         <td id={forum.forumCode} className={style.td_title} onClick={toNoticesInfo} >{forum.title}</td>
                                         <td id={forum.forumCode} className={style.td_user_id} onClick={onClickNickname(forum.memberId)}>{forum.nickname}</td>
-                                        <td id={forum.forumCode} className={style.td_date} >{forum.createDate.substr(0,10)}</td>
+                                        <td id={forum.forumCode} className={style.td_date} >{forum.createDate.substr(5,5)}</td>
                                 </tr>
                         ))}
                     </table>

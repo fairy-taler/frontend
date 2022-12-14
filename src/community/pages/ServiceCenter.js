@@ -83,9 +83,9 @@ function ServiceCenter(){
                 <table className={style.communityTable}>
                     {faqs?.map((faq, index)=>(
                         <tr onClick={toFAQInfo} key={faq.faqCode} id={index}>
-                            <td  id={faq.faqCode} style={{width : "100px"}}>[FAQ]</td>
+                            <td  id={faq.faqCode}>[FAQ]</td>
                             <td  id={faq.faqCode}>{faq.title}</td>
-                            <td  id={faq.faqCode}>{faq.createDate.substr(0,10)}</td>
+                            <td  id={faq.faqCode}>{faq.createDate.substr(5,5)}</td>
                         </tr>))}
                 </table>
             </div>
@@ -105,10 +105,10 @@ function ServiceCenter(){
                 <table className={style.communityTable}>
                     {myInquirys?.map((inquiry, index)=>(
                         <tr onClick={toInquiryInfo} key={inquiry.inquiryCode} id={index}>
-                            <td  key={inquiry.inquiryCode} className={style.td_code} id={inquiry.inquiryCode} >[내 문의]</td>
+                            <td  key={inquiry.inquiryCode} className={style.td_code} id={inquiry.inquiryCode} >[문의]</td>
                             <td  key={inquiry.inquiryCode} className={style.td_title}  id={inquiry.inquiryCode} >{inquiry?.title}</td>
                             <td  key={inquiry.inquiryCode} className={style.td_user_id} id={inquiry.inquiryCode} style={inquiry?.answer == null? {color:"gray"}:null}>{inquiry?.answer == null? "답변 미완료" : "답변 완료" }</td>
-                            <td  key={inquiry.inquiryCode} className={style.td_date} id={inquiry.inquiryCode} >{inquiry?.createDate.substr(0,10)}</td>
+                            <td  key={inquiry.inquiryCode} className={style.td_date} id={inquiry.inquiryCode} >{inquiry?.createDate.substr(5,5)}</td>
                         </tr>))}
                 </table>
             </div>
