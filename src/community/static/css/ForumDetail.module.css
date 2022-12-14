@@ -51,7 +51,7 @@
 .contentTitleBox{
     font-size: 24px;
     font-weight: bold;
-    padding : 0px 100px 0px 130px;
+    padding : 0px 70px 0px 85px;
     display: flex;
     justify-content: left;
     flex-direction: column;
@@ -190,19 +190,12 @@
     margin : 0px auto 10px auto;
     /* z-index: -10; */
 }
-
 @media (max-width: 600px) {
     .categoryBtn {
         width: 50px;
     }
     /* 게시글 테이블 */
-    .communityTable{
-        width : 90%;
-        font-weight : bold;
-        padding-top : 5px;
-        padding: 0px 0px 0px 10px;
-        font-size : 8px;
-    }
+    
     .td_code{
         padding: 0px;
         width : 50px;

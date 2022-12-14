@@ -51,7 +51,7 @@
     width : 100%;
     font-weight : bold;
     padding-top : 5px;
-    padding: 0px 100px 0px 100px;
+    padding: 0px 40px 0px 40px;
     font-size : 14px;
     /* z-index: -2; */
 }
@@ -159,6 +159,10 @@
         text-align : center;
         vertical-align : center;
     }
+    .td_title{
+        overflow: scroll;
+        height : 3px;
+    }
     .td_user_id{
         width : 50px;
         text-align:center;
@@ -170,8 +174,10 @@
     }
 
     .tableBox{
-        height : 560px;
-        padding : 0px 0px 60px 0px;
+        max-height : 470px;
+        padding : 0px 0px 0px 0px;
+        margin-bottom :100px;
+        overflow: scroll;
     }
     
     .betweenBox{
@@ -185,7 +191,7 @@
         padding: 0 0 0 0;
     }
     .buttonGroup{
-        margin: 30px 0 40px 0px;
+        margin: 30px 0px 60px 0px;
         justify-content: space-between;
         flex-direction: column;
         

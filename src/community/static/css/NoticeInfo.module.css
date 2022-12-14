@@ -46,7 +46,7 @@
 .contentTitleBox{
     font-size: 24px;
     font-weight: bold;
-    padding : 0px 100px 0px 130px;
+    padding : 0px 70px 0px 110px;
 }
 .contentDateBox{
     font-size : 16px;
@@ -89,4 +89,123 @@
 }
 .insertButton{
     width : 100px;
+}
+
+@media (max-width: 600px) {
+    .categoryBtn {
+        width: 50px;
+    }
+    /* 게시글 테이블 */
+    .communityTable{
+        width : 90%;
+        font-weight : bold;
+        padding-top : 5px;
+        padding: 0px 0px 0px 10px;
+        font-size : 8px;
+    }
+    .td_code{
+        padding: 0px;
+        width : 50px;
+        text-align : center;
+        vertical-align : center;
+    }
+    .td_user_id{
+        width : 50px;
+        text-align:center;
+    }
+    .td_date{
+        padding: 10px;
+        width : 50px;
+        text-align:right;
+    }
+
+    .tableBox{
+        height : 560px;
+        padding : 0px 0px 60px 0px;
+    }
+    
+    .betweenBox{
+        display: flex;
+        justify-content: space-between;
+        padding : 10px 0 0 40px;
+    }
+    .forumTitle{
+        font-family: 'NanumSquareNeo-Variable';
+        height: 30px;
+        padding: 0 0 0 0;
+    }
+    .buttonGroup{
+        margin: 30px 0 40px 0px;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .buttonGroup1{
+        position: relative;
+        top : 37.6px;
+        /* z-index: 0; */
+    }
+    .buttonGroup2{
+        position: relative;
+        bottom : 37.6px;
+        justify-content: right;
+        /* z-index: 0; */
+    }
+    .searchBox{
+        width : 200px;
+        height : 13px;
+        border : 1px solid #BBBBBB;
+        display : flex;
+        justify-content: space-between;
+        align-items: center;
+        padding : 5px;
+        background-color: #fdf1e4;
+        margin : auto 0 auto 0;
+    }
+    .searchBox img {
+        height : 90%;
+    }
+    .searchBox input{
+        height : 100%;
+        border : none;
+        font-weight: bold;
+        font-size: 8px;
+        background-color: #fdf1e4;
+    }
+    .contentTitle{
+        font-size: 8px;
+    }
+    .contentTitleBox{
+        font-size: 16px;
+        font-weight: bold;
+        padding : 0 40px 0 40px;
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+    }
+    .contentDateBox{
+        font-size : 8px;
+        font-weight: bold;
+        padding : 0px 40px 0px 40px;
+        text-align: right;
+    }
+    .contentContentBox{
+        min-height: 100px;
+        font-size : 8px;
+        padding : 40px 40px 60px 40px;
+    }
+    .subTitleBox{
+        padding : 0px 0px 00px 40px
+    }
+    .subTitleBox img{
+        height : 12px;
+        margin : 1vw;
+}
+.titleImg{
+    height : 16px;
+    margin : 1vw;
+}
+.lineImg{
+    padding : 0px 40px 0px 40px;
+    height : 1px;
+}
 }

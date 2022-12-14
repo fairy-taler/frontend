@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top : 2vh;
     margin-bottom: 10vh;
 }
 .searchBox{
@@ -118,7 +119,7 @@
         width : 100%;
         font-weight : bold;
         padding-top : 5px;
-        padding: 0px 40px 0px 40px;
+        padding: 5px 40px 5px 40px;
         font-size : 8px;
     }
     .td_code{
@@ -138,14 +139,14 @@
     }
 
     .tableBox{
-        height : 250px;
+        height : 200px;
         padding : 0px 0px 60px 0px;
     }
     
     .betweenBox{
         display: flex;
         justify-content: space-between;
-        padding : 0 40px 0 40px;
+        padding : 20px 40px 10px 40px;
     }
     .forumTitle{
         font-family: 'NanumSquareNeo-Variable';
@@ -176,7 +177,7 @@
         justify-content: space-between;
         align-items: center;
         padding : 5px;
-        background-color: #fdf1e4;
+        background-color: #E6E2DF;
         margin : auto 0 auto 0;
     }
     .searchBox img {
@@ -187,7 +188,7 @@
         border : none;
         font-weight: bold;
         font-size: 8px;
-        background-color: #fdf1e4;
+        background-color: #E6E2DF;
     }
     
 .titleImg{
@@ -202,6 +203,6 @@
 }
 .lineImg{
     padding : 0px 40px 0px 40px;
-    height : 4px;
+    height : 1px;
 }
 }

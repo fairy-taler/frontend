@@ -138,7 +138,7 @@ function Forums(){
                                         <td id={forum.forumCode} className={style.td_code} >[{forum.category}]</td>
                                         <td id={forum.forumCode} className={style.td_title} onClick={toNoticesInfo} >{forum.title}</td>
                                         <td id={forum.forumCode} className={style.td_user_id} onClick={onClickNickname(forum.memberId)}>{forum.nickname}</td>
-                                        <td id={forum.forumCode} className={style.td_date} >{forum.createDate.substr(0,10)}</td>
+                                        <td id={forum.forumCode} className={style.td_date} >{forum.createDate.substr(5,5)}</td>
                                 </tr>
                         ))}
                     </table>
