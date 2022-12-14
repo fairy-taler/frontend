@@ -19,6 +19,7 @@
 .banner2{
   background-repeat:round;
   /* background-size: 100%; */
+  background-image: url("../images/main/banner4.png");
   width : 100vw;
   height : 550vh;
 }
@@ -133,4 +134,74 @@
   40% {
     transform: rotate(-45deg) translate(0, 0);
   }
+}
+
+@media (max-width: 600px) {
+  .banner{
+    width : 100vw;
+    /* height : 100vh; */
+    height : 70vh;
+    margin : 0px;
+    padding : 0px;
+    background-repeat: round;
+    display : flex;
+    justify-content: space-between;
+  }
+
+/* 스크롤  */
+.scroll2 {
+  padding-top: 60px;
+  top: 60.5vh;
+  left: 50%;
+  position: absolute;
+}
+.scroll {
+  padding-top: 60px;
+  top: 59.5vh;
+  left: 50%;
+  position: absolute;
+}
+.scroll span,.scroll2 span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  box-sizing: border-box;
+}    
+@-webkit-keyframes sdb {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+}
+@keyframes sdb {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+.banner2{
+  background-repeat:round;
+  background-image: url("../images/main/banner1.png"); /* background-size: 100%; */
+  width : 100vw;
+  height : 210vh;
+}
 }
