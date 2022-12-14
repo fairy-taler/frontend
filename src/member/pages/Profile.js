@@ -39,33 +39,35 @@ function Profile(memberId){
             { close == true ? null : 
             
             
-            <div className={style.ProfileSection2}>
+            <div className={style.ProfileSection3}>
 
             <div className={style.profileXBtn}> <button className={style.profileXBtn} onClick={onClickClose}>X </button></div>
-            <div className={style.profileImgBookFrame}>  
+            <div className={style.divGroup}>
+            <div className={style.profileImgBookFrame3}>  
 
-            <img className={style.profileImgFrame2} src={profile.profile.imgUrl} onError={handleImgError}></img> 
+            <img className={style.profileImgFrame3} src={profile.profile.imgUrl} onError={handleImgError}></img> 
             </div>
-            <br/>
                 <div>
-                <div className={style.profileInfo2}>
-                <div className={style.profileGroup}>
-                    <div className={style.profileName2}> {profile.memberName} <span> 선생님 </span> </div>  
-                    <div className={style.profileTale2}> 제작한 동화책 수 : <span> {profile.taleCount} </span> </div>  
+                <div className={style.profileInfo3}>
+                <div className={style.profileGroup3}>
+                    <div className={style.profileName3}> {profile.memberName} <span> 선생님 </span> </div>  
+                    <div className={style.profileTale3}> 제작한 동화책: <span> {profile.taleCount} </span> </div>  
                 </div>
-                <br/>
-                <div className={style.profileIntroText3}><div className={style.startLeft}>소개글: </div>
+                <div className={style.profileIntroText3}><div className={style.startLeft3}>소개글: </div>
                  {profile.profile.intro == null ?  <div> "" </div>
                   : <div className={style.padding5} > {profile.profile.intro}</div>
                   }
+                  
                 </div>
-                </div>
-                        <div className={style.profileBtnGroup2}>
+                <div className={style.profileBtnGroup3}>
                         <Link to="/tale" state={memberId}><img className={style.profileBtn2} src={require("../static/images/view-tale-btn.png")}></img></Link>
                         <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}`}><img className={style.profileBtn2} src={require("../static/images/like-btn.png")}></img></NavLink>
                         <NavLink to={`/insertReport?targetCode=${profile?.profile?.memberCode}`}><img className={style.profileBtn2} src={require("../static/images/tale-report-btn.png")}></img></NavLink>
                         </div>
-                    </div>
+                </div>
+                </div>
+                </div>
+                    
                 </div>
               
             }

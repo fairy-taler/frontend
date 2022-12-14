@@ -153,15 +153,13 @@ function Mypage(){
                 style={{ display: "none" }} />
     </React.Fragment> 
     </div>
-    <br/>
         <div>
         <div className={style.profileInfo2}>
         
         <div className={style.profileGroup}>
         <div className={style.profileName2}> {originMember.memberName} <span> 선생님 </span> </div> 
-        <div className={style.profileTale2}> 제작한 동화책 수 : <span> {originProfile.taleCount} </span> </div>  
+        <div className={style.profileTale2}> 제작한 동화책: <span> {originProfile.taleCount} </span> </div>  
         </div>
-        <br/>
         <div className={style.profileIntroText2}><div className={style.startLeft}> &nbsp; 소개글: </div>
 
             <textarea value={member[4].intro} name="intro" onChange={ onChangeProfile }></textarea><br/> 
