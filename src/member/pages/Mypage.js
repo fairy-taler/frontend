@@ -137,37 +137,48 @@ function Mypage(){
     return (
         <div className={style.changeForm}>
             <div className={style.title}><img src={require("../static/images/mypage.png")} /></div>
+
+            <div className={style.ProfileSection2}>
+ 
+<div className={style.profile2}>
+
+    <div className={style.profileImgBookFrame}>  
+    <React.Fragment>
+        <button className={style.imgUploadBtn} onClick={handleButtonClick}>
+            <img className={style.profileImgFrame2} src={member[4].imgUrl} onError={handleImgError}></img> 
+        </button>
+        <input type="file"
+                ref={fileInput}
+                onChange={handleChange}
+                style={{ display: "none" }} />
+    </React.Fragment> 
+    </div>
+    <br/>
+        <div>
+        <div className={style.profileInfo2}>
+        
+        <div className={style.profileGroup}>
+        <div className={style.profileName2}> {originMember.memberName} <span> 선생님 </span> </div> 
+        <div className={style.profileTale2}> 제작한 동화책 수 : <span> {originProfile.taleCount} </span> </div>  
+        </div>
+        <br/>
+        <div className={style.profileIntroText2}><div className={style.startLeft}> &nbsp; 소개글: </div>
+
+            <textarea value={member[4].intro} name="intro" onChange={ onChangeProfile }></textarea><br/> 
+            </div>
+        </div>
+        <div className={style.profileBtnGroup}>
+            <Link to="/tale" state={{ value: member[3].memberId }}><img className={style.mypageBtn} src={require("../static/images/view-tale1.png")}></img></Link>
+            <a onClick={onClickUpdateProfile}><img className={style.mypageBtn} src={require("../static/images/edit-profile.png")}></img></a> 
+        </div>
+    </div>
+</div>
+
+</div>
+
             <div className={style.lineDiv}> <img className={style.lineImg} src={require("../static/images/line.png")} /></div>
             
             <div className={style.ChangeSection}>
-                <div className={style.profile}>
-                
-                <React.Fragment>
-                    <button className={style.imgUploadBtn} onClick={handleButtonClick}>
-
-                        <img className={style.profileImg} src={member[4].imgUrl} onError={handleImgError}></img> 
-
-                    </button>
-                    <input type="file"
-                           ref={fileInput}
-                           onChange={handleChange}
-                           style={{ display: "none" }} />
-                </React.Fragment> 
-                      
-                   
-                    <div className={style.profileInfo}>
-                        <div className={style.profileName}> {originMember.memberName} <span> 
-                            {
-                                member[4].memberRole == "TEACHER" ? "선생님": member[4].memberRole == "STUDENT" ? "학생" : ""
-                            }
-                            </span> </div>  
-                        <div className={style.profileTale}> 제작한 동화책 수 : <span> {originProfile.taleCount} </span> </div>  
-                        <div className={style.profileIntro}> 소개글: </div>
-                        <textarea value={member[4].intro} name="intro" onChange={ onChangeProfile }></textarea><br/> 
-                        <Link to="/tale" state={{ value: member[3].memberId }}><img className={style.mypageBtn} src={require("../static/images/view-tale1.png")}></img></Link>
-                        <button onClick={onClickUpdateProfile}><img className={style.mypageBtn} src={require("../static/images/edit-profile.png")}></img></button> 
-                    </div>
-                </div>
                 
                 <div className={style.changeInfo}> 
                 <div className={style.mypageText}> 로그인 정보 </div>
