@@ -109,6 +109,111 @@
     margin : 5px;
     padding: 0px 20px 10px 10px;
 }
+
+@media (max-width: 600px) {
+    
+.forumTitle{
+    font-family: 'NanumSquareNeo-Variable';
+    font-weight: 900;
+    font-size: 30px;
+    margin : 5px;
+    padding: 10px 20px 10px 10px;
+}
+.insertFileBox{
+    padding : 15px 50px 15px 50px;
+}
+.titleInputBoxTitle{
+    font-family: 'NanumSquareNeo-Variable';
+    font-weight: 900;
+    font-size: 12px;
+    width : 50px;
+    margin : 5px;
+}
+.lineImg{
+    padding : 0px 40px 0px 40px;
+    height : 1px;
+}
+.betweenBox{
+    display: flex;
+    justify-content: center;
+    padding : 20px 40px 10px 40px;
+    justify-content: left;
+}
+.forumTitle{
+    font-family: 'NanumSquareNeo-Variable';
+    font-size : 20px;
+    padding: 0 0 0 0;
+}
+.subTitleBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin : 20px 40px 20px 40px;
+    padding : 0 0 0 10px;
+}
+.titleImg{
+    height : 20px;
+    padding : auto;
+}
+.subTitleBox img{
+    height : 16px;
+}
+.subTitleBox1 {
+    position : relative;
+    top : 33px;
+}
+.subTitleBox select{
+    width : 90px;
+    padding : 4px;
+    border : 1px solid #BBBBBB;
+    background-color: white;
+    position : relative;
+    bottom : 33px;
+}
+.titleInputBox{
+    width : 100%;
+    display: flex;
+    background-color: #FFFFFF00;
+}
+.titleInput{
+    border : none;
+    flex: 1;
+    height: 100%;
+    background-color: #FFFFFF00;
+    padding : 2px 2px 2px 12px;
+}
+.contentInputBox{
+    padding : 15px 40px 15px 40px;
+    display: flex;
+    justify-content: center;
+}
+.contentInput{
+    min-height: 448px;
+    border : 1px solid #CCCCCC;
+    width : 90%;
+    height : 100%;
+    resize: none;
+    font-size : 12px;
+}
+
+textarea{
+    width: 80% !important;
+    border : 1px solid #888888;
+    border-radius: 15px;
+    padding : 5% 5% 0 5%;
+    margin : 0px;
+}
+.insertButtonBox{
+    display: flex;
+    justify-content: center;
+    padding : 15px 100px 10px 100px;
+}
+.insertButton{
+    width : 120px;
+    padding : 10px 0px 10px 0px;
+}
+}
+/* 
 @media (max-width: 600px) {
     
 .insertFileBox{
@@ -172,4 +277,4 @@
     width : 80px;
     padding : 10px 0px 10px 0px;
 }
-}
+} */

@@ -38,10 +38,10 @@ function InsertInquiry(){
             <img className={style.lineImg} src={require("../static/images/line.png")} />
             {/* 제목 입력란 */}
             <div className={style.subTitleBox}>
-                <div>
-                    <img className={style.titleImg} src={require("../static/images/title-text.png")}/>
-                </div>
                 <div className={style.titleInputBox}>
+                <div className={style.titleInputTitle}> 
+                    제목
+                </div>
                     <input id="titleInput" className={style.titleInput}  placeholder="제목을 입력해주세요."/>
                 </div>
             </div>
